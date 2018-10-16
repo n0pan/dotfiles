@@ -2224,9 +2224,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-724 209 445 77 -1920 0 1920 1080 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-945 260 609 401 -1920 0 1920 1080 </string>
+	<string>-1013 405 609 401 -1920 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1543 247 928 394 -1920 0 1920 1080 </string>
+	<string>-1543 157 796 486 -1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>366 136 984 646 0 0 1920 1080 </string>
 	<key>New Bookmarks</key>
@@ -2980,6 +2980,8 @@
 			<key>Use Non-ASCII Font</key>
 			<true/>
 			<key>Use Tab Color</key>
+			<false/>
+			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
 			<real>0.85625117658132521</real>
