@@ -19,9 +19,9 @@ set hlsearch " Highlight search results.
 set undolevels=1000
 set history=1000
 
-" 1 tab == 4 spaces.
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces.
+set shiftwidth=2
+set tabstop=2
 set expandtab " Use spaces instead of tabs.
 set smarttab " Be smart when using tabs.
 set number " Display line numbers.
