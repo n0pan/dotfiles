@@ -33,3 +33,5 @@
 9. set iTerm2 options to ~/dotfiles/ITERM
 
 10. restart iTerm2
+
+![](screenshot.png)
