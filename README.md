@@ -23,4 +23,6 @@
 
 8. navigate to ~/.config/nvim/ayu-theme and install Roboto Mono for Powerline font
 
-9. restart iTerm2
+9. set iTerm2 options to ~/dotfiles/ITERM
+
+10. restart iTerm2
