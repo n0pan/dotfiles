@@ -7,6 +7,8 @@ call plug#begin('~/.config/nvim')
 
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'Yggdroot/indentLine'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 
 "...
 set termguicolors     " enable true colors support
