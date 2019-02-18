@@ -10,27 +10,34 @@
 
 `pip3 install --user neovim`
 
-3. copy dotfiles
+`brew install neovim`
+
+4. install PlugInstall
+
+`curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+
+5. copy dotfiles
 
 `git clone https://github.com/n0pan/dotfiles.git`
 
-4. install tmux
+6. install tmux
 
 `brew install tmux`
 
-5. copy .zshrc
+7. copy .zshrc
 
 `cp ~/dotfiles/zshrc/.zshrc ~/.zshrc`
 
-6. copy .config files
+8. copy .config files
 
 `cp ~/dotfiles/.config/nvim ~/.config/nvim`
 
-7. launch nvim and run :PlugInstall
+9. launch nvim and run :PlugInstall
 
-8. navigate to ~/.config/nvim/ayu-theme and install Roboto Mono for Powerline font
+10. navigate to ~/.config/nvim/ayu-theme and install Roboto Mono for Powerline font
 
-9. set iTerm2 options to ~/dotfiles/ITERM
+11. set iTerm2 options to ~/dotfiles/ITERM
 
 10. restart iTerm2
 
