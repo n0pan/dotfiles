@@ -39,6 +39,18 @@
 
 11. set iTerm2 options to ~/dotfiles/ITERM
 
-10. restart iTerm2
+12. install fontforge
+
+`brew install fontforge`
+
+13. clone ligaturizer
+
+`git clone https://github.com/ToxicFrog/Ligaturizer.git --recurse-submodules`
+
+14. ligaturize `SF Mono` and set as font everywhere
+
+15. ???
+
+16. profit!
 
 ![](screenshot.png)
