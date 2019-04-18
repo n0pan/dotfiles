@@ -73,6 +73,8 @@ plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlight
 
 source $ZSH/oh-my-zsh.sh
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -101,3 +103,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias lf="find ./ -type f | grep "
