@@ -36,10 +36,10 @@ let colors_name = "xoria256"
 "}}}
 " Colours {{{1
 "" General {{{2
-hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=234 guibg=#1c1c1c cterm=none gui=none
+hi Normal       ctermfg=252 guifg=#d0d0d0 ctermbg=17 guibg=none cterm=none gui=none
 hi Cursor                                 ctermbg=214 guibg=#ffaf00
 hi CursorColumn                           ctermbg=238 guibg=#444444
-hi CursorLine   ctermfg=211               ctermbg=none guibg=#3a3a3a cterm=none gui=none
+hi CursorLine   ctermfg=211               ctermbg=none guibg=none cterm=none gui=none
 hi CursorLineNr ctermfg=211 guifg=#f18aaa ctermbg=none guibg=none cterm=bold gui=none
 hi Error        ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
 hi ErrorMsg     ctermfg=15  guifg=#ffffff ctermbg=1   guibg=#800000
@@ -50,7 +50,7 @@ hi IncSearch    ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf cterm=none g
 hi MatchParen   ctermfg=188 guifg=#dfdfdf ctermbg=68  guibg=#5f87df cterm=bold gui=bold
 " TODO
 " hi MoreMsg
-hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=233 guibg=#121212 cterm=bold gui=bold
+hi NonText      ctermfg=247 guifg=#9e9e9e ctermbg=none guibg=none cterm=bold gui=bold
 hi Pmenu        ctermfg=0   guifg=#000000 ctermbg=250 guibg=#bcbcbc
 hi PmenuSel     ctermfg=255 guifg=#eeeeee ctermbg=243 guibg=#767676
 hi PmenuSbar                              ctermbg=252 guibg=#d0d0d0
@@ -117,7 +117,7 @@ hi link xmlTagName	Statement
 " hi link xmlEndTag	Statement
 hi link xmlTag		xmlTagName
 hi link xmlEndTag	xmlTag
-hi xmlAttrib guifg=#FFB86C 	
+hi xmlAttrib guifg=#FFB86C
 """ django {{{3
 hi djangoVarBlock ctermfg=180  guifg=#dfaf87
 hi djangoTagBlock ctermfg=150  guifg=#afdf87
@@ -126,13 +126,13 @@ hi djangoFilter ctermfg=174  guifg=#df8787
 """ python {{{3
 hi pythonExceptions ctermfg=174
 """ NERDTree {{{3
-hi Directory      ctermfg=110  guifg=#87afdf
-hi treeCWD        ctermfg=180  guifg=#dfaf87
-hi treeClosable   ctermfg=174  guifg=#df8787
-hi treeOpenable   ctermfg=150  guifg=#afdf87
-hi treePart       ctermfg=244  guifg=#808080
-hi treeDirSlash   ctermfg=244  guifg=#808080
-hi treeLink       ctermfg=174  guifg=#dfafdf
+hi Directory      ctermfg=110  guifg=#87afdf guibg=none
+hi treeCWD        ctermfg=180  guifg=#dfaf87 guibg=none
+hi treeClosable   ctermfg=174  guifg=#df8787 guibg=none
+hi treeOpenable   ctermfg=150  guifg=#afdf87 guibg=none
+hi treePart       ctermfg=244  guifg=#808080 guibg=none
+hi treeDirSlash   ctermfg=244  guifg=#808080 guibg=none
+hi treeLink       ctermfg=174  guifg=#dfafdf guibg=none
 """ rst #{{{3
 hi link rstEmphasis Number
 

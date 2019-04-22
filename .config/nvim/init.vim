@@ -134,4 +134,8 @@ nnoremap <Leader>sb :CtrlPBuffer<CR>
 nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
 nnoremap <leader>ss :Ag<CR>
 
+" FZF
+com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
+
+
 call plug#end()
