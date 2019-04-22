@@ -73,7 +73,7 @@ plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlight
 
 source $ZSH/oh-my-zsh.sh
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
 
 # User configuration
 
@@ -105,3 +105,11 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias lf="find ./ -type f | grep "
+alias st="sh start.sh"
+alias st-ip="sh start-ip.sh"
+
+hash -d ecom=~/DEV/cookit-ecom
+hash -d api=~/DEV/cookit-api
+hash -d admin=~/DEV/cookit-admin
+hash -d spotlyne=~/DEV/spotlyne
+hash -d dotfiles=~/dotfiles
