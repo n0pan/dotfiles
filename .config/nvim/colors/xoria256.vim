@@ -64,7 +64,7 @@ hi SpellCap     ctermfg=189 guifg=#dfdfff ctermbg=bg  guibg=bg      cterm=underl
 hi SpellRare    ctermfg=168 guifg=#df5f87 ctermbg=bg  guibg=bg      cterm=underline gui=underline
 hi SpellLocal   ctermfg=98  guifg=#875fdf ctermbg=bg  guibg=bg      cterm=underline gui=underline
 hi StatusLine   ctermfg=15  guifg=#ffffff ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
-hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+
 hi TabLine      ctermfg=fg  guifg=fg      ctermbg=242 guibg=#666666 cterm=none gui=none
 hi TabLineFill  ctermfg=fg  guifg=fg      ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 " FIXME
@@ -84,7 +84,7 @@ hi Comment      ctermfg=244 guifg=#808080
 hi Constant     ctermfg=229 guifg=#C5FFBF
 hi Identifier   ctermfg=174 guifg=#87afdf                           cterm=none
 hi Ignore       ctermfg=238 guifg=#444444
-hi Number       ctermfg=180 guifg=#f18aaa
+hi Number       ctermfg=180 guifg=#D0D0D0
 hi PreProc      ctermfg=150 guifg=#f18aaa
 hi Special      ctermfg=174 guifg=#f18aaa
 hi Statement    ctermfg=110 guifg=#f18aaa                           cterm=none gui=none

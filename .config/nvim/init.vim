@@ -53,6 +53,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinj/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 set termguicolors     " enable true colors support
 
