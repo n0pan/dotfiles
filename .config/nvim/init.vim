@@ -107,5 +107,31 @@ highlight Identifier cterm=bold
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_regexp = 0
 let g:ctrlp_use_caching = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v.(node_modules)',
+  \ 'file': '\v.(\.tests\.)',
+  \ }
+
+fun! g:CtrlP_set_general_ignore()
+  let general_ignore = '\v.(\.tests\.)'
+  if g:ctrlp_custom_ignore.file != general_ignore
+    let g:ctrlp_custom_ignore.file = general_ignore
+    call ctrlp#clr()
+  endif
+ endfun
+
+fun! g:CtrlP_set_test_ignore()
+  let general_ignore = '\v(\.tests\.ts)@<!$'
+  if g:ctrlp_custom_ignore.file != general_ignore
+    let g:ctrlp_custom_ignore.file = general_ignore
+    call ctrlp#clr()
+  endif
+ endfun
+
+" Search
+nnoremap <Leader>sf :call CtrlP_set_general_ignore()<CR>:CtrlP<CR>
+nnoremap <Leader>sb :CtrlPBuffer<CR>
+nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
+nnoremap <leader>ss :Ag<CR>
 
 call plug#end()
