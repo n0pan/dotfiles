@@ -107,7 +107,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias lf="find ./ -type f | grep "
 alias st="sh start.sh"
 alias st-ip="sh start-ip.sh"
-alias edit-init="nvim ~/.config/nvim/init.vim"
+alias nvimconfig="nvim ~/.config/nvim/init.vim"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
