@@ -32,6 +32,18 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-neco'
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-pyls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'kien/ctrlp.vim'
+
 "" Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
@@ -90,5 +102,10 @@ highlight CursorLine ctermfg=210 ctermbg=237
 highlight ColorColumn ctermbg=237
 highlight Identifier ctermfg=5
 highlight Identifier cterm=bold
+
+" CtrlP
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_regexp = 0
+let g:ctrlp_use_caching = 1
 
 call plug#end()

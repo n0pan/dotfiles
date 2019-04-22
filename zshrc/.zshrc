@@ -101,15 +101,18 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias lf="find ./ -type f | grep "
 alias st="sh start.sh"
 alias st-ip="sh start-ip.sh"
+alias edit-init="nvim ~/.config/nvim/init.vim"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
 hash -d admin=~/DEV/cookit-admin
 hash -d spotlyne=~/DEV/spotlyne
 hash -d dotfiles=~/dotfiles
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
