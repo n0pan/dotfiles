@@ -68,9 +68,9 @@ nnoremap <Leader>ll :NERDTreeFind<CR>
 nnoremap <Leader>pp :NERDTreeClose<CR>
 nnoremap <Leader>oo :NERDTreeToggle<CR>
 
-colorscheme xoria256 
+colorscheme xoria256
 
-let g:airline_theme='dracula'
+let g:airline_theme='base16'
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
