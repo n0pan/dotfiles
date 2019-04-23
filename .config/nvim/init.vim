@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim')
 
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'Yggdroot/indentLine'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

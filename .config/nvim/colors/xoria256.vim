@@ -72,7 +72,7 @@ hi Title        ctermfg=225 guifg=#ffdfff
 hi Todo         ctermfg=0   guifg=#000000 ctermbg=184 guibg=#dfdf00
 hi Underlined   ctermfg=39  guifg=#00afff                           cterm=underline gui=underline
 hi VertSplit    ctermfg=237 guifg=#3a3a3a ctermbg=237 guibg=#3a3a3a cterm=none gui=none
-" hi VIsualNOS    ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff cterm=none gui=none
+" hi VisualNOS    ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff cterm=none gui=none
 " hi Visual       ctermfg=24  guifg=#005f87 ctermbg=153 guibg=#afdfff
 hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=96  guibg=#875f87
 " hi Visual       ctermfg=255 guifg=#eeeeee ctermbg=24  guibg=#005f87
