@@ -16,8 +16,6 @@
 	<integer>0</integer>
 	<key>BadgeTopMargin</key>
 	<integer>0</integer>
-	<key>CGFontRenderingFontSmoothingDisabled</key>
-	<false/>
 	<key>CompactMinimalTabBarHeight</key>
 	<real>30</real>
 	<key>CopySelection</key>
@@ -3317,15 +3315,9 @@
 	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Downloads/mbadolato-iTerm2-Color-Schemes-08a728b/schemes</string>
-	<key>NSNavLastUserSetHideExtensionButtonState</key>
-	<true/>
+	<string>~/dotfiles/wallpapers</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -3358,25 +3350,14 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>-1126 223 445 77 -1920 0 1920 1057 </string>
+	<string>224 604 445 77 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-1270 498 620 392 -1920 0 1920 1057 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>-1651 194 609 401 -1920 0 1920 1057 </string>
+	<string>610 326 700 622 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1369 561 688 209 -1920 0 1920 1057 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>155 473 592 584 0 0 1920 1057 </string>
+	<string>524 336 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>260 28 1398 1004 0 0 1920 1057 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-958 40 932 992 -1920 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4182,13 +4163,13 @@
 			<key>Name</key>
 			<string></string>
 			<key>Non Ascii Font</key>
-			<string>LigaSrcPro-Regular 12</string>
+			<string>SFMonoLigaturizedNerdFont-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>LigaSrcPro-Regular 12</string>
+			<string>SFMonoLigaturizedNerdFont-Regular 11</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -4277,7 +4258,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.1000000000000001</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -4964,26 +4945,27 @@
 	<array>
 		<string>LigaSrc Pro</string>
 		<string>Source Code Pro for Powerline</string>
+		<string>SFMonoLigaturized Nerd Font</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{347, 924}</string>
+		<string>{448, 899}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>D390263B-7528-480C-89EB-C4C8340485EE</string>
+	<string>20259E74-CE3B-4F00-B9D4-1052940BAE22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>56</integer>
+	<integer>69</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>1</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>573158991.99270403</real>
+	<real>573192335.67354405</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -5567,7 +5549,7 @@
 		</array>
 	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>567638339.50655496</real>
+	<real>567754654.10642898</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -5620,11 +5602,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=61</string>
+	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=48</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-22T17:28:10Z</date>
+	<date>2019-04-27T04:30:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5655,8 +5637,6 @@
 	<integer>20</integer>
 	<key>TerminalVMargin</key>
 	<integer>15</integer>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1555121280</real>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
@@ -6492,7 +6472,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20190422-nightly</string>
+	<string>3.3.20190425-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
