@@ -105,6 +105,14 @@ highlight ColorColumn ctermbg=237
 highlight Identifier ctermfg=5
 highlight Identifier cterm=bold
 
+" indentLine
+let g:indentLine_setConceal = 0
+
+" Prettier
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 0
+autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_regexp = 0
