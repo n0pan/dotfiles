@@ -57,6 +57,9 @@ Plug 'justinj/vim-react-snippets'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'ianks/vim-tsx'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
 set termguicolors     " enable true colors support
 
