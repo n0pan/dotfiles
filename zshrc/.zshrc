@@ -1,4 +1,4 @@
-export TERM=xterm-256color
+export TERM=screen-256color
 
 if [ "$TMUX" = "" ]; then tmux; fi
 
