@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim')
 
 " Make sure you use single quotes
 
+Plug 'ajmwagar/vim-deus'
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
@@ -91,7 +92,7 @@ nnoremap <Leader>ll :NERDTreeFind<CR>
 nnoremap <Leader>pp :NERDTreeClose<CR>
 nnoremap <Leader>oo :NERDTreeToggle<CR>
 
-colorscheme xoria256
+colorscheme deus
 
 let g:airline_theme='base16'
 
