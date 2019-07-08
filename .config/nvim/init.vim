@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim')
 
 " Make sure you use single quotes
 
+Plug 'w0rp/ale'
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
@@ -46,6 +47,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'skywind3000/asyncrun.vim'
 
 "" Javascript
 Plug 'pangloss/vim-javascript'
@@ -154,6 +156,19 @@ nnoremap <leader>ss :Ag<CR>
 com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
 
 " EMMET
-let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+  \      'extends' : 'jsx',
+  \  },
+  \}
+
+" ALE
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
+" ASYNCRUN
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
 call plug#end()
