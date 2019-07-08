@@ -5,6 +5,7 @@ call plug#begin('~/.config/nvim')
 
 " Make sure you use single quotes
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'ajmwagar/vim-deus'
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'Yggdroot/indentLine'
@@ -92,7 +93,7 @@ nnoremap <Leader>ll :NERDTreeFind<CR>
 nnoremap <Leader>pp :NERDTreeClose<CR>
 nnoremap <Leader>oo :NERDTreeToggle<CR>
 
-colorscheme deus
+colorscheme nord
 
 let g:airline_theme='base16'
 
@@ -110,9 +111,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 highlight LineNr ctermbg=none ctermfg=237
 highlight CursorLine ctermfg=210 ctermbg=237
-highlight ColorColumn ctermbg=237
-highlight Identifier ctermfg=5
-highlight Identifier cterm=bold
+" highlight ColorColumn ctermbg=237
+" highlight Identifier ctermfg=5
+" highlight Identifier cterm=bold
 
 " indentLine
 let g:indentLine_setConceal = 0

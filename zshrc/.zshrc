@@ -73,7 +73,7 @@ plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlight
 
 source $ZSH/oh-my-zsh.sh
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
 
 # User configuration
 
@@ -109,6 +109,8 @@ alias st="sh start.sh"
 alias st-ip="sh start-ip.sh"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias colorconfig="nvim ~/.config/nvim/colors"
+alias tmuxconfig="nvim ~/.tmux.conf"
+alias vi="nvim"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
