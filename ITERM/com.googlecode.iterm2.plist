@@ -4624,7 +4624,7 @@
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
-			<false/>
+			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
@@ -5323,10 +5323,10 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.20190610-nightly</string>
 		<string>3.3.20190626-nightly</string>
-		<string>3.3.20190617-nightly</string>
 		<string>3.3.20190606-nightly</string>
+		<string>3.3.20190617-nightly</string>
+		<string>3.3.20190610-nightly</string>
 		<string>3.3.20190625-nightly</string>
 		<string>3.3.20190614-nightly</string>
 	</array>
@@ -5349,7 +5349,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D390263B-7528-480C-89EB-C4C8340485EE</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>107</integer>
+	<integer>109</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>

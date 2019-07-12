@@ -21,6 +21,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
@@ -51,6 +52,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
+Plug 'zxqfl/tabnine-vim'
 
 "" Javascript
 Plug 'pangloss/vim-javascript'
