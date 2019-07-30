@@ -20,6 +20,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
+Plug 'jparise/vim-graphql'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -79,7 +81,7 @@ set lazyredraw
 set clipboard=unnamedplus
 set undofile
 set undodir=~/.nvim/undo
-
+set noswapfile
 " 1 tab == 2 spaces.
 set shiftwidth=2
 set tabstop=2
