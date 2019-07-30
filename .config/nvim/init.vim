@@ -20,7 +20,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -46,13 +45,14 @@ Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-pyls', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
-Plug 'zxqfl/tabnine-vim'
+Plug 'jparise/vim-graphql'
 
 "" Javascript
 Plug 'pangloss/vim-javascript'
@@ -88,6 +88,7 @@ set smarttab " Be smart when using tabs.
 set rnu " Display relative line numbers.
 set nu
 set synmaxcol=128
+set noswapfile
 syntax sync minlines=256
 vnoremap < <gv
 vnoremap > >gv
@@ -203,5 +204,7 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
 call plug#end()
