@@ -119,3 +119,4 @@ hash -d spotlyne=~/DEV/spotlyne
 hash -d dotfiles=~/dotfiles
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

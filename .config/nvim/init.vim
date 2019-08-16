@@ -55,6 +55,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'jparise/vim-graphql'
+Plug 'drewtempelmeyer/palenight.vim'
 
 "" Javascript
 Plug 'pangloss/vim-javascript'
@@ -98,9 +99,6 @@ nnoremap <Leader>ll :NERDTreeFind<CR>
 nnoremap <Leader>pp :NERDTreeClose<CR>
 nnoremap <Leader>oo :NERDTreeToggle<CR>
 
-colorscheme nord
-
-let g:airline_theme='base16'
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
@@ -210,3 +208,7 @@ let g:coc_snippet_next = '<tab>'
 autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
 call plug#end()
+
+colorscheme ayu 
+
+let g:airline_theme='ayu'
