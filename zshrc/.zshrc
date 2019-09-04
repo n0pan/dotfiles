@@ -115,8 +115,8 @@ alias vi="nvim"
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
 hash -d admin=~/DEV/cookit-admin
-hash -d spotlyne=~/DEV/spotlyne
-hash -d dotfiles=~/dotfiles
+hash -d spt=~/DEV/spotlyne
+hash -d df=~/dotfiles
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
