@@ -34,6 +34,7 @@ brew cask install iterm2-nightly
 echo "Installing Media..."
 brew cask install spotify
 brew cask install transmission
+brew cask install iina
 
 # Tools
 echo "Installing Tools..."
@@ -51,4 +52,5 @@ mas Spark, id: 1176895641
 mas Fantastical 2, id: 975937182
 mas Things 3, id: 904280696
 mas Flycut, id: 442160987
+mas MindNode 6, id: 1289197285
 
