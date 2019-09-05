@@ -1,4 +1,0 @@
-brew install python3
-brew install neovim
-brew install tmux
-brew install khanhas/tap/spicetify-cli
