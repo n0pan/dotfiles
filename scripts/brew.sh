@@ -27,6 +27,9 @@ brew install python3
 brew install node
 brew install java
 
+brew tap prisma/prisma
+brew install prisma
+
 # Terminal
 echo "Installing terminal..."
 brew install neovim
