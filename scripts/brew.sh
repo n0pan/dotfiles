@@ -26,6 +26,7 @@ brew install python
 brew install python3
 brew install node
 brew install java
+brew install mongodb
 
 brew tap prisma/prisma
 brew install prisma
