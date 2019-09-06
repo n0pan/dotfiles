@@ -15,6 +15,7 @@ brew cask install webstorm
 brew cask install postman
 brew cask install ngrok
 brew cask install dash
+brew cask install robo-3t
 
 # Productivity
 echo "Installing Productivity..."
