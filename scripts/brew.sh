@@ -38,6 +38,7 @@ brew install prisma
 echo "Installing terminal..."
 brew install neovim
 brew install tmux
+brew install the_silver_searcher
 
 # Music
 echo "Installing Spicetify..."
