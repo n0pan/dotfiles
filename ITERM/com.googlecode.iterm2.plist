@@ -3721,7 +3721,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>524 336 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>25 27 1867 1005 0 0 1920 1057 </string>
+	<string>966 27 929 1005 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4449,7 +4449,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SFMonoLigaturizedNerdFont-Regular 11</string>
+			<string>LigaInputMonoCondensedNerdFont-Regular 12</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -5210,7 +5210,9 @@
 		<string>3.3.20190626-nightly</string>
 		<string>3.3.20190904-nightly</string>
 		<string>3.3.20190724-nightly</string>
+		<string>3.3.20190912-nightly</string>
 		<string>3.3.20190825-nightly</string>
+		<string>3.3.20190914-nightly</string>
 		<string>3.3.20190907-nightly</string>
 		<string>3.3.20190908-nightly</string>
 		<string>3.3.20190818-nightly</string>
@@ -5239,14 +5241,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{339, 902}</string>
+		<string>{103, 905}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>20259E74-CE3B-4F00-B9D4-1052940BAE22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>150</integer>
+	<integer>155</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6013,7 +6015,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-12T23:02:37Z</date>
+	<date>2019-09-15T04:25:46Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -6879,7 +6881,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20190909-nightly</string>
+	<string>3.3.20190914-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
