@@ -20,4 +20,8 @@ echo "Done!"
 # zshrc
 echo "zshrc..."
 ln -s ~/dotfiles/zshrc/.zshrc ~/.zshrc
+
+# p10k
+echo "powerlevel10k"
+ln -s ~/dotfiles/p10k/.p10k.zsh ~/.p10k.zsh
 echo "Done!"
