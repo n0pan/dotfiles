@@ -5717,7 +5717,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>20259E74-CE3B-4F00-B9D4-1052940BAE22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>185</integer>
+	<integer>186</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6528,9 +6528,9 @@
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>TerminalMargin</key>
-	<integer>25</integer>
+	<integer>35</integer>
 	<key>TerminalVMargin</key>
-	<integer>25</integer>
+	<integer>35</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
