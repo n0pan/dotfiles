@@ -4075,7 +4075,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>524 336 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>966 27 929 1005 0 0 1920 1057 </string>
+	<string>260 27 1398 1005 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4334,7 +4334,7 @@
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
 			<real>11.570822097081216</real>
 			<key>Bold Color</key>
@@ -4889,11 +4889,13 @@
 			<key>Normal Font</key>
 			<string>CascadiaCode 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
-			<true/>
+			<false/>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
+			<key>Prevent Opening in a Tab</key>
+			<true/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -4984,7 +4986,7 @@
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
-			<integer>13</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/jackharrison-sherlock</string>
 		</dict>
@@ -5680,6 +5682,7 @@
 		<string>3.3.20190825-nightly</string>
 		<string>3.3.20190909-nightly</string>
 		<string>3.3.20190606-nightly</string>
+		<string>3.3.20190920-nightly</string>
 		<string>3.3.20190829-nightly</string>
 		<string>3.3.20190912-nightly</string>
 		<string>3.3.20190802-nightly</string>
@@ -5705,14 +5708,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{103, 828}</string>
+		<string>{189, 939}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>20259E74-CE3B-4F00-B9D4-1052940BAE22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>163</integer>
+	<integer>175</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6234,6 +6237,22 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
@@ -6479,7 +6498,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-19T04:55:59Z</date>
+	<date>2019-09-20T18:11:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -7345,7 +7364,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20190917-nightly</string>
+	<string>3.3.20190920-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
