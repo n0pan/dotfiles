@@ -2,6 +2,7 @@
 
 brew tap caskroom/cask
 brew tap caskroom/versions
+brew tap homebrew/cask-fonts
 
 # Browsers
 echo "Installing Browsers..."
@@ -40,12 +41,13 @@ brew cask install iina
 # Tools
 echo "Installing Tools..."
 brew cask install bartender
-brew cask install divvy
+brew cask install amethyst
 brew cask install rocket
 
 # Etc
 echo "Installing fonts..."
 brew cask install font-hack-nerd-font
+brew cask install font-cascadia
 
 # App Store apps
 echo "Installing App Store apps"
