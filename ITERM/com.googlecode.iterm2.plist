@@ -4077,7 +4077,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>524 336 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>226 130 1230 705 0 0 1920 1057 </string>
+	<string>966 25 929 1007 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -5710,14 +5710,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{706, 730}</string>
+		<string>{575, 627}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>20259E74-CE3B-4F00-B9D4-1052940BAE22</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>186</integer>
+	<integer>189</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6528,9 +6528,9 @@
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>TerminalMargin</key>
-	<integer>35</integer>
+	<integer>30</integer>
 	<key>TerminalVMargin</key>
-	<integer>35</integer>
+	<integer>30</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
