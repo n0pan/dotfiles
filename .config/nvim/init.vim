@@ -5,8 +5,6 @@ call plug#begin('~/.config/nvim')
 
 " Make sure you use single quotes
 
-Plug 'arcticicestudio/nord-vim'
-Plug 'ajmwagar/vim-deus'
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-slash'
@@ -14,7 +12,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'liuchengxu/space-vim-dark'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
@@ -54,7 +51,6 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'jparise/vim-graphql'
-Plug 'drewtempelmeyer/palenight.vim'
 
 "" Javascript
 Plug 'pangloss/vim-javascript'
@@ -98,7 +94,6 @@ nnoremap <Leader>ll :NERDTreeFind<CR>
 nnoremap <Leader>pp :NERDTreeClose<CR>
 nnoremap <Leader>oo :NERDTreeToggle<CR>
 
-
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
@@ -110,12 +105,6 @@ au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-highlight LineNr ctermbg=none ctermfg=237
-highlight CursorLine ctermfg=210 ctermbg=237
-" highlight ColorColumn ctermbg=237
-" highlight Identifier ctermfg=5
-" highlight Identifier cterm=bold
 
 " indentLine
 let g:indentLine_setConceal = 0
