@@ -26,6 +26,7 @@ brew install python
 brew install python3
 brew install node
 brew install java
+brew install golang
 
 brew tap mongodb/brew
 
