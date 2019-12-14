@@ -17,6 +17,7 @@ brew cask install postman
 brew cask install ngrok
 brew cask install dash
 brew cask install robo-3t
+brew cask install docker
 
 # Productivity
 echo "Installing Productivity..."
@@ -56,4 +57,5 @@ mas Fantastical 2, id: 975937182
 mas Things 3, id: 904280696
 mas Flycut, id: 442160987
 mas MindNode 6, id: 1289197285
+mas Xcode, id: 497799835
 
