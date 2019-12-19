@@ -113,13 +113,13 @@ alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias colorconfig="nvim ~/.config/nvim/colors"
 alias tmuxconfig="nvim ~/.tmux.conf"
 alias vi="nvim"
+alias al="nvim ~/.config/alacritty/alacritty.yml"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
 hash -d admin=~/DEV/cookit-admin
 hash -d spt=~/DEV/spotlyne
 hash -d df=~/dotfiles
-hash -d alacritty=~/.config/alacritty/alacritty.yml
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
