@@ -119,6 +119,7 @@ hash -d api=~/DEV/cookit-api
 hash -d admin=~/DEV/cookit-admin
 hash -d spt=~/DEV/spotlyne
 hash -d df=~/dotfiles
+hash -d alacritty=~/.config/alacritty/alacritty.yml
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
