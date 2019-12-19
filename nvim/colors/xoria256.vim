@@ -1,0 +1,1 @@
+/Users/lq/dotfiles/.config/nvim/colors/xoria256.vim
