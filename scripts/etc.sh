@@ -16,6 +16,9 @@ git clone https://github.com/morpheusthewhite/spicetify-themes.git ~/spicetify-t
 # Install powerlevel10k
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
+# Clone TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 cd ~/spicetify-themes
 cp ./ ~/spicetify_data/Themes/
 

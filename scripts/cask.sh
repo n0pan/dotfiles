@@ -7,7 +7,7 @@ brew tap homebrew/cask-fonts
 # Browsers
 echo "Installing Browsers..."
 brew cask install google-chrome
-brew cask install firefox
+brew cask install firefox-developer-edition
 
 # Development
 echo "Installing Development..."
@@ -51,6 +51,9 @@ brew cask install rocket
 echo "Installing fonts..."
 brew cask install font-hack-nerd-font
 brew cask install font-cascadia
+
+echo "Cleanup..."
+brew cask cleanup
 
 # App Store apps
 echo "Installing App Store apps"

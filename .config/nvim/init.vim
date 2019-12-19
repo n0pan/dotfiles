@@ -52,6 +52,9 @@ Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'jparise/vim-graphql'
 
+" HTML
+Plug 'alvan/close-tag'
+
 "" Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
@@ -65,6 +68,9 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'build': './install.sh'}
+
+" Tools
+Plug 'matze/vim-move'
 
 set termguicolors     " enable true colors support
 
@@ -87,6 +93,8 @@ set rnu " Display relative line numbers.
 set nu
 set synmaxcol=128
 set noswapfile
+set mouse=a
+set autowrite
 syntax sync minlines=256
 vnoremap < <gv
 vnoremap > >gv
