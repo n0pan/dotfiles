@@ -44,6 +44,7 @@ brew install neovim
 brew install tmux
 brew install the_silver_searcher
 brew install docker-compose
+brew install tmuxinator
 
 # Music
 echo "Installing Spicetify..."
