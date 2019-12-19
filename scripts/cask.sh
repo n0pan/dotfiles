@@ -32,6 +32,8 @@ brew cask install teamviewer
 # Terminal
 echo "Installing iTerm2 Nightly"
 brew cask install iterm2-nightly
+echo "Installing alacritty"
+brew cask install alacritty
 
 # Media
 echo "Installing Media..."
