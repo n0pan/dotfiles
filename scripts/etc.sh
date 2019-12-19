@@ -22,5 +22,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cd ~/spicetify-themes
 cp ./ ~/spicetify_data/Themes/
 
+cp -R ~/dotfiles/.config/ ~/.config/
+cp -R ~/dotfiles/.bin/ ~/.bin/
+
 spicetify config current_theme Arc-Dark
 spicetify backup apply
