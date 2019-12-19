@@ -18,6 +18,7 @@ brew cask install ngrok
 brew cask install dash
 brew cask install robo-3t
 brew cask install docker
+brew cask install resilio-sync
 
 # Productivity
 echo "Installing Productivity..."
