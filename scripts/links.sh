@@ -20,8 +20,14 @@ echo "Done!"
 # zshrc
 echo "zshrc..."
 ln -s ~/dotfiles/zshrc/.zshrc ~/.zshrc
+echo "Done!"
 
 # p10k
 echo "powerlevel10k"
 ln -s ~/dotfiles/p10k/.p10k.zsh ~/.p10k.zsh
+echo "Done!"
+
+#alacritty
+echo "alacritty"
+ln -s ~/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 echo "Done!"
