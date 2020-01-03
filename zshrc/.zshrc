@@ -114,6 +114,7 @@ alias colorconfig="nvim ~/.config/nvim/colors"
 alias tmuxconfig="nvim ~/.tmux.conf"
 alias vi="nvim"
 alias al="nvim ~/.config/alacritty/alacritty.yml"
+alias top="vtop"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
