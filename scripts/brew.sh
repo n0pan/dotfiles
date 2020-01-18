@@ -50,6 +50,9 @@ brew install tmuxinator
 echo "Installing Spicetify..."
 brew install khanhas/tap/spicetify-cli
 
+echo "Installing Spotify TUI..."
+brew install Rigellute/tap/spotify-tui
+
 # Tools
 echo "Installing Tools..."
 brew install mas
