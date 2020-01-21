@@ -46,10 +46,6 @@ brew install the_silver_searcher
 brew install docker-compose
 brew install tmuxinator
 
-# Music
-echo "Installing Spicetify..."
-brew install khanhas/tap/spicetify-cli
-
 echo "Installing Spotify TUI..."
 brew install Rigellute/tap/spotify-tui
 
