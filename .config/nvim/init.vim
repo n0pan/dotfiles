@@ -4,7 +4,7 @@
 call plug#begin('~/.config/nvim')
 
 " Make sure you use single quotes
-
+"
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-slash'
@@ -22,7 +22,7 @@ Plug 'w0rp/ale'
 Plug 'jparise/vim-graphql'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'unblevable/quick-scope'
-Plug 'prettier/vim-prettier', {
+Plug 'prettier/vm-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
   \ 'for': [
@@ -53,7 +53,7 @@ Plug 'epilande/vim-react-snippets'
 Plug 'jparise/vim-graphql'
 
 " HTML
-Plug 'alvan/close-tag'
+Plug 'alvan/vim-closetag'
 
 "" Javascript
 Plug 'pangloss/vim-javascript'
@@ -101,13 +101,19 @@ vnoremap > >gv
 nnoremap <Leader>ll :NERDTreeFind<CR>
 nnoremap <Leader>pp :NERDTreeClose<CR>
 nnoremap <Leader>oo :NERDTreeToggle<CR>
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
 
-au ColorScheme * hi Normal ctermbg=none guibg=none
-au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+" au ColorScheme * hi Normal ctermbg=none guibg=none
+" au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " Airline
 set laststatus=2
@@ -214,3 +220,4 @@ call plug#end()
 colorscheme onedark
 
 let g:airline_theme='onedark'
+i
