@@ -22,7 +22,7 @@ Plug 'w0rp/ale'
 Plug 'jparise/vim-graphql'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'unblevable/quick-scope'
-Plug 'prettier/vm-prettier', {
+Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
   \ 'for': [
@@ -125,9 +125,7 @@ let g:indentLine_setConceal = 0
 
 " Prettier
 let g:prettier#quickfix_enabled = 0
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+nmap <Leader>pre <Plug>(Prettier)
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
