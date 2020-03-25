@@ -18,7 +18,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
 Plug 'jparise/vim-graphql'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'unblevable/quick-scope'
@@ -168,11 +167,6 @@ let g:user_emmet_settings = {
   \      'extends' : 'jsx',
   \  },
   \}
-
-" ALE
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
 " ASYNCRUN
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
