@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>currentthemeuid</key>
+	<string>theme.fileimport.76D35AF4-B5E8-493F-AC9A-5DF1754B6D29</string>
+	<key>darkthemeuid</key>
+	<string>theme.fileimport.0DB41FE4-BDE8-4BE9-AB1C-B572722B31EE</string>
+	<key>theme</key>
+	<string>alfred.theme.yosemitedark</string>
+</dict>
+</plist>

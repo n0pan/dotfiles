@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jonohunt.AddReminders</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>2850C9BF-DE7E-4EEF-89D7-03B7F1EEA9A0</key>
+		<array/>
+		<key>2C3EA1B0-E6FB-4812-B2CF-0C517E0D0782</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>02780032-E6C9-4C6D-B31F-5BC2E4BBA4B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>410140C4-C0B7-4DD2-AC40-B463B5661385</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6025F3E-2E12-4FBF-8247-926509B8CB51</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CEA1B7B5-C9B0-4A2D-B885-C4F561795E98</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>'{query}' (show Fantastical)</string>
+			</dict>
+		</array>
+		<key>57B84A3B-798E-4342-8FC0-88697BDAE54F</key>
+		<array/>
+		<key>68992A00-B587-4356-8E0F-37272E9A31FC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2850C9BF-DE7E-4EEF-89D7-03B7F1EEA9A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB27B983-49B1-4D84-ACB6-E43E5E4335A0</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>'{query}' (show Fantastical)</string>
+			</dict>
+		</array>
+		<key>6BEB7AEF-EC3F-4CB9-B052-4A3991A3E65A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6D8E41E-A5ED-4C42-8921-2868F48F1AD9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AB27B983-49B1-4D84-ACB6-E43E5E4335A0</key>
+		<array/>
+		<key>B5EF0952-C7D4-47E3-98DA-CE8E8A3148F4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C6D8E41E-A5ED-4C42-8921-2868F48F1AD9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>57B84A3B-798E-4342-8FC0-88697BDAE54F</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>'{query}' (show Fantastical)</string>
+			</dict>
+		</array>
+		<key>C64A89D5-5481-4CF8-AA91-13F24C5D24A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2850C9BF-DE7E-4EEF-89D7-03B7F1EEA9A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C6D8E41E-A5ED-4C42-8921-2868F48F1AD9</key>
+		<array/>
+		<key>DF125D3B-BF8F-469C-A621-B3092F26AE75</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B20E5810-912F-4D02-B021-F1194B8CEDE8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F4EB8050-ABC6-410E-A7AD-5CB917605318</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B20E5810-912F-4D02-B021-F1194B8CEDE8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>88899BF4-6D7E-45D6-B174-0C7739587561</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>'{query}' (show Fantastical)</string>
+			</dict>
+		</array>
+		<key>F8CBCE47-835C-45D4-B104-3B21976BC26D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>02780032-E6C9-4C6D-B31F-5BC2E4BBA4B8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D224BE6-7FD1-4089-BD61-6A39BFE807D9</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>'{query}' (show Fantastical)</string>
+			</dict>
+		</array>
+		<key>FF5AB509-C55D-41E1-BB39-E87D26B9305F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6025F3E-2E12-4FBF-8247-926509B8CB51</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jono Hunt</string>
+	<key>description</key>
+	<string>Add tasks &amp; reminders to Reminders.app via Fantastical</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Add Reminders</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	
+	-----------------------------
+	-----------------------------
+	-- Reminders list name
+	set RemindersListName to "Reminders"
+	
+	-- Reminders list colour
+	set RemindersListColour to "Purple"
+	-----------------------------
+	-----------------------------
+	
+	set theTask to q
+	set theTask to capFirstLetter(theTask)
+	set taskNotification to quote &amp; theTask &amp; quote
+	
+	tell application "Fantastical"
+		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName
+		parse sentence theReminder with add immediately
+	end tell
+	
+	set taskID to quoted form of "Reminders - " &amp; RemindersListName
+	set taskTitle to quoted form of "Reminder added"
+	set taskSubTitle to quoted form of ""
+	set taskMessage to quoted form of taskNotification
+	set taskIcon to POSIX path of (path to documents folder) &amp; quoted form of "Automation/Notification Centre Icons/RemindersList" &amp; RemindersListColour &amp; ".png"
+	try
+		do shell script "MountainNotifier" &amp; space &amp; taskID &amp; space &amp; taskTitle &amp; space &amp; taskSubTitle &amp; space &amp; taskMessage &amp; space &amp; taskIcon
+	end try
+	
+end alfred_script
+
+on capFirstLetter(theString)
+	set theLength to length of theString
+	set theResult to "" as string
+	try
+		if theLength &gt; 1 then
+			set endString to characters 2 thru theLength of theString as text
+			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text
+		else
+			set theResult to upperCaseChar(character 1 of theString) as text
+		end if
+	end try
+	return theResult
+end capFirstLetter
+
+on upperCaseChar(theChar)
+	set asciiChar to ASCII number of theChar
+	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)
+	return theChar
+end upperCaseChar</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>2850C9BF-DE7E-4EEF-89D7-03B7F1EEA9A0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>r</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Reminders list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>68992A00-B587-4356-8E0F-37272E9A31FC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>+r</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Reminders list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C64A89D5-5481-4CF8-AA91-13F24C5D24A5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		-----------------------------	-----------------------------	-- Reminders list name	set RemindersListName to "Reminders"		-- Reminders list colour	set RemindersListColour to "Purple"	-----------------------------	-----------------------------		set theTask to q	set theTask to capFirstLetter(theTask)		tell application "Fantastical"		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName		parse sentence theReminder	end tell	end alfred_scripton capFirstLetter(theString)	set theLength to length of theString	set theResult to "" as string	try		if theLength &gt; 1 then			set endString to characters 2 thru theLength of theString as text			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text		else			set theResult to upperCaseChar(character 1 of theString) as text		end if	end try	return theResultend capFirstLetteron upperCaseChar(theChar)	set asciiChar to ASCII number of theChar	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)	return theCharend upperCaseChar</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>AB27B983-49B1-4D84-ACB6-E43E5E4335A0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	
+	-----------------------------
+	-----------------------------
+	-- Reminders list name
+	set RemindersListName to "Home"
+	
+	-- Reminders list colour
+	set RemindersListColour to "Green"
+	-----------------------------
+	-----------------------------
+	
+	set theTask to q
+	set theTask to capFirstLetter(theTask)
+	set taskNotification to quote &amp; theTask &amp; quote
+	
+	tell application "Fantastical"
+		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName
+		parse sentence theReminder with add immediately
+	end tell
+	
+	set taskID to quoted form of "Reminders - " &amp; RemindersListName
+	set taskTitle to quoted form of "Task added"
+	set taskSubTitle to quoted form of ""
+	set taskMessage to quoted form of taskNotification
+	set taskIcon to POSIX path of (path to documents folder) &amp; quoted form of "Automation/Notification Centre Icons/RemindersList" &amp; RemindersListColour &amp; ".png"
+	try
+		do shell script "MountainNotifier" &amp; space &amp; taskID &amp; space &amp; taskTitle &amp; space &amp; taskSubTitle &amp; space &amp; taskMessage &amp; space &amp; taskIcon
+	end try
+	
+end alfred_script
+
+on capFirstLetter(theString)
+	set theLength to length of theString
+	set theResult to "" as string
+	try
+		if theLength &gt; 1 then
+			set endString to characters 2 thru theLength of theString as text
+			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text
+		else
+			set theResult to upperCaseChar(character 1 of theString) as text
+		end if
+	end try
+	return theResult
+end capFirstLetter
+
+on upperCaseChar(theChar)
+	set asciiChar to ASCII number of theChar
+	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)
+	return theChar
+end upperCaseChar</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>C6D8E41E-A5ED-4C42-8921-2868F48F1AD9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>h</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Home list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B5EF0952-C7D4-47E3-98DA-CE8E8A3148F4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>+r</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Home list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6BEB7AEF-EC3F-4CB9-B052-4A3991A3E65A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		-----------------------------	-----------------------------	-- Reminders list name	set RemindersListName to "Home"		-- Reminders list colour	set RemindersListColour to "Green"	-----------------------------	-----------------------------		set theTask to q	set theTask to capFirstLetter(theTask)		tell application "Fantastical"		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName		parse sentence theReminder	end tell	end alfred_scripton capFirstLetter(theString)	set theLength to length of theString	set theResult to "" as string	try		if theLength &gt; 1 then			set endString to characters 2 thru theLength of theString as text			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text		else			set theResult to upperCaseChar(character 1 of theString) as text		end if	end try	return theResultend capFirstLetteron upperCaseChar(theChar)	set asciiChar to ASCII number of theChar	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)	return theCharend upperCaseChar</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>57B84A3B-798E-4342-8FC0-88697BDAE54F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>w</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Work list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>410140C4-C0B7-4DD2-AC40-B463B5661385</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	
+	-----------------------------
+	-----------------------------
+	-- Reminders list name
+	set RemindersListName to "Work"
+	
+	-- Reminders list colour
+	set RemindersListColour to "Red"
+	-----------------------------
+	-----------------------------
+	
+	set theTask to q
+	set theTask to capFirstLetter(theTask)
+	set taskNotification to quote &amp; theTask &amp; quote
+	
+	tell application "Fantastical"
+		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName
+		parse sentence theReminder with add immediately
+	end tell
+	
+	set taskID to quoted form of "Reminders - " &amp; RemindersListName
+	set taskTitle to quoted form of "Task added"
+	set taskSubTitle to quoted form of ""
+	set taskMessage to quoted form of taskNotification
+	set taskIcon to POSIX path of (path to documents folder) &amp; quoted form of "Automation/Notification Centre Icons/RemindersList" &amp; RemindersListColour &amp; ".png"
+	try
+		do shell script "MountainNotifier" &amp; space &amp; taskID &amp; space &amp; taskTitle &amp; space &amp; taskSubTitle &amp; space &amp; taskMessage &amp; space &amp; taskIcon
+	end try
+	
+end alfred_script
+
+on capFirstLetter(theString)
+	set theLength to length of theString
+	set theResult to "" as string
+	try
+		if theLength &gt; 1 then
+			set endString to characters 2 thru theLength of theString as text
+			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text
+		else
+			set theResult to upperCaseChar(character 1 of theString) as text
+		end if
+	end try
+	return theResult
+end capFirstLetter
+
+on upperCaseChar(theChar)
+	set asciiChar to ASCII number of theChar
+	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)
+	return theChar
+end upperCaseChar</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F6025F3E-2E12-4FBF-8247-926509B8CB51</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	
+	-----------------------------
+	-----------------------------
+	-- Reminders list name
+	set RemindersListName to "Work"
+	
+	-- Reminders list colour
+	set RemindersListColour to "Red"
+	-----------------------------
+	-----------------------------
+	
+	set theTask to q
+	set theTask to capFirstLetter(theTask)
+	
+	tell application "Fantastical"
+		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName
+		parse sentence theReminder
+	end tell
+	
+end alfred_script
+
+on capFirstLetter(theString)
+	set theLength to length of theString
+	set theResult to "" as string
+	try
+		if theLength &gt; 1 then
+			set endString to characters 2 thru theLength of theString as text
+			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text
+		else
+			set theResult to upperCaseChar(character 1 of theString) as text
+		end if
+	end try
+	return theResult
+end capFirstLetter
+
+on upperCaseChar(theChar)
+	set asciiChar to ASCII number of theChar
+	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)
+	return theChar
+end upperCaseChar</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CEA1B7B5-C9B0-4A2D-B885-C4F561795E98</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>+r</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Work list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FF5AB509-C55D-41E1-BB39-E87D26B9305F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	
+	-----------------------------
+	-----------------------------
+	-- Reminders list name
+	set RemindersListName to "Groceries"
+	
+	-- Reminders list colour
+	set RemindersListColour to "Orange"
+	-----------------------------
+	-----------------------------
+	
+	set theTask to q
+	set theTask to capFirstLetter(theTask)
+	set taskNotification to quote &amp; theTask &amp; quote
+	
+	tell application "Fantastical"
+		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName
+		parse sentence theReminder with add immediately
+	end tell
+	
+	set taskID to quoted form of "Reminders - " &amp; RemindersListName
+	set taskTitle to quoted form of "Grocery item added"
+	set taskSubTitle to quoted form of ""
+	set taskMessage to quoted form of taskNotification
+	set taskIcon to POSIX path of (path to documents folder) &amp; quoted form of "Automation/Notification Centre Icons/RemindersList" &amp; RemindersListColour &amp; ".png"
+	try
+		do shell script "MountainNotifier" &amp; space &amp; taskID &amp; space &amp; taskTitle &amp; space &amp; taskSubTitle &amp; space &amp; taskMessage &amp; space &amp; taskIcon
+	end try
+	
+end alfred_script
+
+on capFirstLetter(theString)
+	set theLength to length of theString
+	set theResult to "" as string
+	try
+		if theLength &gt; 1 then
+			set endString to characters 2 thru theLength of theString as text
+			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text
+		else
+			set theResult to upperCaseChar(character 1 of theString) as text
+		end if
+	end try
+	return theResult
+end capFirstLetter
+
+on upperCaseChar(theChar)
+	set asciiChar to ASCII number of theChar
+	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)
+	return theChar
+end upperCaseChar</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>B20E5810-912F-4D02-B021-F1194B8CEDE8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>g</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Groceries list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F4EB8050-ABC6-410E-A7AD-5CB917605318</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>+r</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Groceries list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>DF125D3B-BF8F-469C-A621-B3092F26AE75</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	
+	-----------------------------
+	-----------------------------
+	-- Reminders list name
+	set RemindersListName to "Groceries"
+	
+	-- Reminders list colour
+	set RemindersListColour to "Orange"
+	-----------------------------
+	-----------------------------
+	
+	set theTask to q
+	set theTask to capFirstLetter(theTask)
+	
+	tell application "Fantastical"
+		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName
+		parse sentence theReminder
+	end tell
+	
+end alfred_script
+
+on capFirstLetter(theString)
+	set theLength to length of theString
+	set theResult to "" as string
+	try
+		if theLength &gt; 1 then
+			set endString to characters 2 thru theLength of theString as text
+			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text
+		else
+			set theResult to upperCaseChar(character 1 of theString) as text
+		end if
+	end try
+	return theResult
+end capFirstLetter
+
+on upperCaseChar(theChar)
+	set asciiChar to ASCII number of theChar
+	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)
+	return theChar
+end upperCaseChar</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>88899BF4-6D7E-45D6-B174-0C7739587561</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>s</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Study list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F8CBCE47-835C-45D4-B104-3B21976BC26D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	
+	-----------------------------
+	-----------------------------
+	-- Reminders list name
+	set RemindersListName to "Study"
+	
+	-- Reminders list colour
+	set RemindersListColour to "Blue"
+	-----------------------------
+	-----------------------------
+	
+	set theTask to q
+	set theTask to capFirstLetter(theTask)
+	set taskNotification to quote &amp; theTask &amp; quote
+	
+	tell application "Fantastical"
+		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName
+		parse sentence theReminder with add immediately
+	end tell
+	
+	set taskID to quoted form of "Reminders - " &amp; RemindersListName
+	set taskTitle to quoted form of "Task added"
+	set taskSubTitle to quoted form of ""
+	set taskMessage to quoted form of taskNotification
+	set taskIcon to POSIX path of (path to documents folder) &amp; quoted form of "Automation/Notification Centre Icons/RemindersList" &amp; RemindersListColour &amp; ".png"
+	try
+		do shell script "MountainNotifier" &amp; space &amp; taskID &amp; space &amp; taskTitle &amp; space &amp; taskSubTitle &amp; space &amp; taskMessage &amp; space &amp; taskIcon
+	end try
+	
+end alfred_script
+
+on capFirstLetter(theString)
+	set theLength to length of theString
+	set theResult to "" as string
+	try
+		if theLength &gt; 1 then
+			set endString to characters 2 thru theLength of theString as text
+			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text
+		else
+			set theResult to upperCaseChar(character 1 of theString) as text
+		end if
+	end try
+	return theResult
+end capFirstLetter
+
+on upperCaseChar(theChar)
+	set asciiChar to ASCII number of theChar
+	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)
+	return theChar
+end upperCaseChar</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>02780032-E6C9-4C6D-B31F-5BC2E4BBA4B8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)		-----------------------------	-----------------------------	-- Reminders list name	set RemindersListName to "Study"		-- Reminders list colour	set RemindersListColour to "Blue"	-----------------------------	-----------------------------		set theTask to q	set theTask to capFirstLetter(theTask)		tell application "Fantastical"		set theReminder to "reminder " &amp; theTask &amp; " /" &amp; RemindersListName		parse sentence theReminder	end tell	end alfred_scripton capFirstLetter(theString)	set theLength to length of theString	set theResult to "" as string	try		if theLength &gt; 1 then			set endString to characters 2 thru theLength of theString as text			set theResult to upperCaseChar(character 1 of theString) &amp; endString as text		else			set theResult to upperCaseChar(character 1 of theString) as text		end if	end try	return theResultend capFirstLetteron upperCaseChar(theChar)	set asciiChar to ASCII number of theChar	if asciiChar ≥ 97 and asciiChar ≤ 122 then set theChar to ASCII character of (asciiChar - 32)	return theCharend upperCaseChar</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4D224BE6-7FD1-4089-BD61-6A39BFE807D9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>+r</string>
+				<key>subtext</key>
+				<string>'{query}'</string>
+				<key>text</key>
+				<string>Add to the Study list</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>2C3EA1B0-E6FB-4812-B2CF-0C517E0D0782</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>For instructions see the information at http://jonohunt.tumblr.com/post/85815752538/alfred-workflow-to-add-tasks-to-reminders-app</string>
+	<key>uidata</key>
+	<dict>
+		<key>02780032-E6C9-4C6D-B31F-5BC2E4BBA4B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>890</real>
+		</dict>
+		<key>2850C9BF-DE7E-4EEF-89D7-03B7F1EEA9A0</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>2C3EA1B0-E6FB-4812-B2CF-0C517E0D0782</key>
+		<dict>
+			<key>ypos</key>
+			<real>990</real>
+		</dict>
+		<key>410140C4-C0B7-4DD2-AC40-B463B5661385</key>
+		<dict>
+			<key>ypos</key>
+			<real>450</real>
+		</dict>
+		<key>4D224BE6-7FD1-4089-BD61-6A39BFE807D9</key>
+		<dict>
+			<key>ypos</key>
+			<real>990</real>
+		</dict>
+		<key>57B84A3B-798E-4342-8FC0-88697BDAE54F</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>68992A00-B587-4356-8E0F-37272E9A31FC</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>6BEB7AEF-EC3F-4CB9-B052-4A3991A3E65A</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>88899BF4-6D7E-45D6-B174-0C7739587561</key>
+		<dict>
+			<key>ypos</key>
+			<real>770</real>
+		</dict>
+		<key>AB27B983-49B1-4D84-ACB6-E43E5E4335A0</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>B20E5810-912F-4D02-B021-F1194B8CEDE8</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
+		</dict>
+		<key>B5EF0952-C7D4-47E3-98DA-CE8E8A3148F4</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>C64A89D5-5481-4CF8-AA91-13F24C5D24A5</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>C6D8E41E-A5ED-4C42-8921-2868F48F1AD9</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
+		</dict>
+		<key>CEA1B7B5-C9B0-4A2D-B885-C4F561795E98</key>
+		<dict>
+			<key>ypos</key>
+			<real>550</real>
+		</dict>
+		<key>DF125D3B-BF8F-469C-A621-B3092F26AE75</key>
+		<dict>
+			<key>ypos</key>
+			<real>770</real>
+		</dict>
+		<key>F4EB8050-ABC6-410E-A7AD-5CB917605318</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
+		</dict>
+		<key>F6025F3E-2E12-4FBF-8247-926509B8CB51</key>
+		<dict>
+			<key>ypos</key>
+			<real>450</real>
+		</dict>
+		<key>F8CBCE47-835C-45D4-B104-3B21976BC26D</key>
+		<dict>
+			<key>ypos</key>
+			<real>890</real>
+		</dict>
+		<key>FF5AB509-C55D-41E1-BB39-E87D26B9305F</key>
+		<dict>
+			<key>ypos</key>
+			<real>550</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://iconaholic.com</string>
+</dict>
+</plist>

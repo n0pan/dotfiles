@@ -1,0 +1,1 @@
+<items><item arg="error" uid="error" valid="no"><icon>icon.png</icon><subtitle>convert `number` `base of original` `base to convert to`</subtitle><title>Make sure to pass 3 numbers</title></item></items>

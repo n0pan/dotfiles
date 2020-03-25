@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 6,
+      "subtext" : {
+        "size" : 9,
+        "colorSelected" : "#62667EFF",
+        "font" : "Pragmata Pro Ligaturized",
+        "color" : "#61657FFF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#8396FFFF",
+        "font" : "Pragmata Pro Ligaturized Bold",
+        "color" : "#8396FFFF"
+      },
+      "backgroundSelected" : "#20242BFF",
+      "text" : {
+        "size" : 13,
+        "colorSelected" : "#C774DFFF",
+        "font" : "Pragmata Pro Ligaturized Bold",
+        "color" : "#DDE1F7FF"
+      },
+      "iconPaddingHorizontal" : 6,
+      "paddingVertical" : 5,
+      "iconSize" : 38
+    },
+    "search" : {
+      "paddingVertical" : 2,
+      "background" : "#272B34FF",
+      "spacing" : 6,
+      "text" : {
+        "size" : 36,
+        "colorSelected" : "#000000FF",
+        "font" : "Pragmata Pro Ligaturized Bold",
+        "color" : "#DDE1F7FF"
+      },
+      "backgroundSelected" : "#0096FFFF"
+    },
+    "window" : {
+      "color" : "#272B34FF",
+      "paddingHorizontal" : 10,
+      "width" : 600,
+      "borderPadding" : 10,
+      "borderColor" : "#272B3400",
+      "blur" : 0,
+      "roundness" : 3,
+      "paddingVertical" : 8
+    },
+    "credit" : "Spencer Hamm",
+    "separator" : {
+      "color" : "#272B34FF",
+      "thickness" : 4
+    },
+    "scrollbar" : {
+      "color" : "#61657FFF",
+      "thickness" : 2
+    },
+    "name" : "One Dark"
+  }
+}
