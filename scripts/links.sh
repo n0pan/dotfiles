@@ -19,7 +19,7 @@ echo "Done!"
 
 # Nvim themes
 echo "Linking themes..."
-ln -s ~/dotfiles/.config/nvim/colors ~/.config/nvim/colors
+ln -s ~/dotfiles/.config/nvim/colors ~/.config/nvim
 echo "Done!"
 
 # zshrc
