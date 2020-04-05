@@ -209,7 +209,7 @@ autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
 call plug#end()
 
-colorscheme gruvbox
+colorscheme shellbox
 
 let g:airline_theme='gruvbox'
 i
