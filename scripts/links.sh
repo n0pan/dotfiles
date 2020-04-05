@@ -17,6 +17,11 @@ echo "Neovim config..."
 ln -s ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
 echo "Done!"
 
+# Nvim themes
+echo "Linking themes..."
+ln -s ~/dotfiles/.config/nvim/colors ~/.config/nvim/colors
+echo "Done!"
+
 # zshrc
 echo "zshrc..."
 ln -s ~/dotfiles/zshrc/.zshrc ~/.zshrc
