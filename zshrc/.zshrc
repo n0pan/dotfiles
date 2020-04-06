@@ -119,6 +119,7 @@ alias top="vtop"
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
 hash -d admin=~/DEV/cookit-admin
+hash -d ops=~/DEV/cookit-ops
 hash -d spt=~/DEV/spotlyne
 hash -d df=~/dotfiles
 
