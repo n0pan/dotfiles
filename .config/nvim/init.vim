@@ -205,8 +205,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Trigger a highlight only when pressing f and F.
 let g:qs_highlight_on_keys = ['f', 'F']
 
-alias discord 'sh ~/scripts/discord.sh'
-
 autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
 call plug#end()

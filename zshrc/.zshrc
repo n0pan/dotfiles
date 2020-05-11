@@ -115,6 +115,9 @@ alias tmuxconfig="nvim ~/.tmux.conf"
 alias vi="nvim"
 alias al="nvim ~/.config/alacritty/alacritty.yml"
 alias top="vtop"
+alias discord="sh ~/scripts/discord.sh"
+alias restore="sh ~/scripts/restore.sh"
+alias cookit="mux cookit"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
