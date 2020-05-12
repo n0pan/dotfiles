@@ -4687,7 +4687,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>15.5397168464467</real>
+			<real>12.607937420685278</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -5234,13 +5234,13 @@
 			<key>Name</key>
 			<string></string>
 			<key>Non Ascii Font</key>
-			<string>LigaInputMonoCondensedNerdFont-Regular 13</string>
+			<string>LigaInputMonoCondensedNerdFont-Regular 12.99</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>PragmataProLigaturized 13</string>
+			<string>PragmataProLigaturized 12.999</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -5415,7 +5415,7 @@
 			<key>Thin Strokes</key>
 			<integer>0</integer>
 			<key>Transparency</key>
-			<real>0.11337444479695433</real>
+			<real>0.056250000000000001</real>
 			<key>Unicode Version</key>
 			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
@@ -6120,11 +6120,14 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.20200505-nightly</string>
-		<string>3.3.20200403-nightly</string>
 		<string>3.3.20200326-nightly</string>
+		<string>3.3.20200505-nightly</string>
 		<string>3.3.20200325-nightly</string>
 		<string>3.3.20200503-nightly</string>
+		<string>3.3.20200403-nightly</string>
+		<string>3.3.20200511-nightly</string>
+		<string>3.3.20200508-nightly</string>
+		<string>3.3.20200507-nightly</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -6145,7 +6148,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>607114110.76157701</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>51</integer>
+	<integer>63</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6956,7 +6959,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-08T03:16:05Z</date>
+	<date>2020-05-12T03:17:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -7830,7 +7833,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20200505-nightly</string>
+	<string>3.3.20200511-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
