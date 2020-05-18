@@ -1,0 +1,60 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 6,
+      "subtext" : {
+        "size" : 9,
+        "colorSelected" : "#62667EFF",
+        "font" : "Pragmata Pro Ligaturized",
+        "color" : "#61657FFF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FFD028FF",
+        "font" : "Pragmata Pro Ligaturized Bold",
+        "color" : "#FFCC22FF"
+      },
+      "backgroundSelected" : "#20242BFF",
+      "text" : {
+        "size" : 13,
+        "colorSelected" : "#DFC91FFF",
+        "font" : "Pragmata Pro Ligaturized Bold",
+        "color" : "#DDE1F7FF"
+      },
+      "iconPaddingHorizontal" : 6,
+      "paddingVertical" : 5,
+      "iconSize" : 38
+    },
+    "separator" : {
+      "color" : "#272B34FF",
+      "thickness" : 4
+    },
+    "search" : {
+      "paddingVertical" : 2,
+      "background" : "#272B34FF",
+      "spacing" : 6,
+      "text" : {
+        "size" : 36,
+        "colorSelected" : "#000000FF",
+        "font" : "Pragmata Pro Ligaturized Bold",
+        "color" : "#DDE1F7FF"
+      },
+      "backgroundSelected" : "#0096FFFF"
+    },
+    "scrollbar" : {
+      "color" : "#61657FFF",
+      "thickness" : 2
+    },
+    "name" : "One Yellow",
+    "window" : {
+      "color" : "#272B34FF",
+      "paddingHorizontal" : 10,
+      "width" : 600,
+      "borderPadding" : 10,
+      "borderColor" : "#272B3400",
+      "blur" : 0,
+      "roundness" : 3,
+      "paddingVertical" : 8
+    }
+  }
+}
