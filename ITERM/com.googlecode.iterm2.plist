@@ -18,6 +18,8 @@
 	<integer>0</integer>
 	<key>BadgeTopMargin</key>
 	<integer>0</integer>
+	<key>CGFontRenderingFontSmoothingDisabled</key>
+	<false/>
 	<key>CompactMinimalTabBarHeight</key>
 	<real>30</real>
 	<key>CopySelection</key>
@@ -4369,7 +4371,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/ITERM</string>
+	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
@@ -4394,7 +4396,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAc7Gdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -4415,16 +4417,32 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSColorPanel</key>
-	<string>0 163 224 275 0 0 1920 1057 </string>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>542 360 445 77 0 0 1280 777 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>647 584 616 174 0 0 1280 777 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1154 908 400 129 0 0 1920 1057 </string>
+	<string>647 629 400 129 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 498 620 392 0 0 1920 1057 </string>
+	<string>330 288 620 392 0 0 1280 777 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>286 370 644 237 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>20 20 1880 1017 0 0 1920 1057 </string>
+	<string>19 19 1242 739 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1095 196 585 402 0 0 1920 1057 </string>
+	<string>724 29 693 828 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>197 52 616 448 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>218 29 616 448 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>239 6 616 448 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>260 467 616 448 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>281 444 616 448 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 7</key>
+	<string>302 421 616 448 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -5325,7 +5343,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>Transparency</key>
 			<real>0.018934406725888326</real>
 			<key>Unicode Version</key>
@@ -6032,54 +6050,78 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.20200503-nightly</string>
-		<string>3.3.20200513-nightly</string>
-		<string>3.3.20200514-nightly</string>
-		<string>3.3.20200505-nightly</string>
-		<string>3.3.20200515-nightly</string>
-		<string>3.3.20200325-nightly</string>
-		<string>3.3.20200516-nightly</string>
-		<string>3.3.20200326-nightly</string>
-		<string>3.3.20200507-nightly</string>
-		<string>3.3.20200508-nightly</string>
-		<string>3.3.20200518-nightly</string>
+		<string>3.3.20200425-nightly</string>
+		<string>3.3.20200122-nightly</string>
+		<string>3.3.20190626-nightly</string>
+		<string>3.3.20190617-nightly</string>
 		<string>3.3.20200403-nightly</string>
-		<string>3.3.20200511-nightly</string>
+		<string>3.3.20191111-nightly</string>
+		<string>3.3.20200129-nightly</string>
+		<string>3.3.20200221-nightly</string>
+		<string>3.3.20190724-nightly</string>
+		<string>3.3.20190908-nightly</string>
+		<string>3.3.20190725-nightly</string>
+		<string>3.3.20190909-nightly</string>
+		<string>3.3.20190604-nightly</string>
+		<string>3.3.20191015-nightly</string>
+		<string>3.3.20191124-nightly</string>
+		<string>3.3.20200223-nightly</string>
+		<string>3.3.20190920-nightly</string>
+		<string>3.3.20200529-nightly</string>
+		<string>3.3.20190829-nightly</string>
+		<string>3.3.20191118-nightly</string>
+		<string>3.3.20200218-nightly</string>
+		<string>3.3.20200201-nightly</string>
+		<string>3.3.20200323-nightly</string>
+		<string>3.3.20200423-nightly</string>
+		<string>3.3.20190731-nightly</string>
+		<string>3.3.20191020-nightly</string>
+		<string>3.3.20190816-nightly</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>LigaInputMonoCondensed Nerd Font</string>
-		<string>SF Mono</string>
 		<string>Pragmata Pro Ligaturized</string>
 		<string>Cascadia Code</string>
+		<string>LigaInputMonoCondensed Nerd Font</string>
+		<string>SFMonoLigaturized Nerd Font</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{0, 0}, {1280, 800}}</string>
 		<key>topLeft</key>
-		<string>{521, 846}</string>
+		<string>{224, 667}</string>
 	</dict>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>1E0238D9-1342-4E4D-90C8-FEDEE0BF3685</string>
-	<key>NoSyncLastTipTime</key>
-	<real>607114110.76157701</real>
+	<string>7ED0BECD-4EF0-4663-A3E2-4F72D75DCFCE</string>
+	<key>NoSyncLastOSVersion</key>
+	<string>Version 10.14.6 (Build 18G1012)</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>74</integer>
+	<integer>165</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>607200508.12775898</real>
+	<real>573161428.93290806</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
-	<true/>
+	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
 		<array>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>id</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
@@ -6128,6 +6170,14 @@
 				<true/>
 				<key>name</key>
 				<string>termid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindowTitle</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6199,6 +6249,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxWindowTitleEval</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>triggerName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -6245,19 +6303,19 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>iterm2</string>
-				<key>nonterminalContext</key>
-				<integer>4</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>name</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>iterm2</string>
+				<key>nonterminalContext</key>
+				<integer>4</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -6450,7 +6508,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.terminalWindowName</string>
+				<string>currentTab.currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6458,7 +6516,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.terminalIconName</string>
+				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6490,7 +6548,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>id</string>
+				<string>titleOverride</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6506,7 +6564,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>titleOverride</string>
+				<string>id</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6514,7 +6572,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>number</string>
+				<string>currentTab.currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6530,7 +6588,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.path</string>
+				<string>number</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6587,14 +6645,6 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.commandLine</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<false/>
 				<key>name</key>
 				<string>title</string>
@@ -6643,11 +6693,11 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
 				<string>window</string>
 				<key>nonterminalContext</key>
-				<integer>16</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -6675,11 +6725,11 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
 				<string>window</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>16</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -6709,7 +6759,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.termid</string>
+				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6742,14 +6792,6 @@
 				<true/>
 				<key>name</key>
 				<string>currentSession.pid</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -6808,14 +6850,12 @@
 	</dict>
 	<key>NoSyncRestoreWindowsCount</key>
 	<integer>0</integer>
-	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
-	<real>606816306.59426403</real>
-	<key>NoSyncTipsDisabled</key>
-	<true/>
-	<key>NoSyncTipsToNotShow</key>
+	<key>NoSyncSearchHistory</key>
 	<array>
-		<string>000</string>
+		<string>local:cjyl472y2002k0837wgl3i59k </string>
 	</array>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>550875077.43816996</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -6860,7 +6900,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/lq/dotfiles/ITERM</string>
+	<string>/Users/LQ/dotfiles/ITERM</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -6872,15 +6912,13 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=21</string>
+	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=92</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-18T16:47:47Z</date>
+	<date>2020-06-01T22:45:32Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
-	<key>SUUpdateGroupIdentifier</key>
-	<integer>3819842958</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -7750,7 +7788,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20200518-nightly</string>
+	<string>3.3.20200529-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -214,5 +214,4 @@ call plug#end()
 
 colorscheme ayu
 
-let g:airline_theme='ayu'
-i
+let g:airline_theme='ayu_dark'
