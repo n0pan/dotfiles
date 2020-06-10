@@ -6,7 +6,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/lq/.oh-my-zsh"
+export ZSH="/Users/n0pan/.oh-my-zsh"
 
 export EDITOR='nvim'
 
@@ -71,7 +71,7 @@ DEFAULT_USER=`whoami`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git colored-man-pages colorize pip python brew osx)
 
 source $ZSH/oh-my-zsh.sh
 
