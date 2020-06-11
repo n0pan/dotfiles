@@ -118,6 +118,9 @@ alias top="vtop"
 alias discord="sh ~/scripts/discord.sh"
 alias restore="sh ~/scripts/restore.sh"
 alias cookit="mux cookit"
+alias spt="mux spt"
+alias ci_restore="sh ~/scripts/restore.sh"
+alias spt_restore="sh ~/dev/spotlyne/.config/dumpprod.sh"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
