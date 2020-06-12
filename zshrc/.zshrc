@@ -6,7 +6,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/n0pan/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 export EDITOR='nvim'
 
