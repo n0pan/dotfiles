@@ -36,12 +36,6 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-neco'
-" Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-pyls', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -49,6 +43,10 @@ Plug 'kien/ctrlp.vim'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'jparise/vim-graphql'
+
+" Window panes
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
 
 " HTML
 Plug 'alvan/vim-closetag'
@@ -203,8 +201,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Trigger a highlight only when pressing f and F.
 let g:qs_highlight_on_keys = ['f', 'F']
-
-autocmd BufNewFile,BufRead *.prisma   set syntax=graphql
 
 call plug#end()
 
