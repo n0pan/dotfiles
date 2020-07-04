@@ -4422,7 +4422,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>586 546 620 392 0 0 1792 1120 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>13 13 879 1094 0 0 1792 1120 </string>
+	<string>13 13 1766 1094 0 0 1792 1120 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4619,9 +4619,9 @@
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>0.10000000000000001</real>
+			<real>7.4315236357868013</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -5158,7 +5158,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>PragmataProMonoLiga-Regular 14</string>
+			<string>PragmataProMonoLiga-Regular 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -5325,7 +5325,7 @@
 			<key>Thin Strokes</key>
 			<integer>0</integer>
 			<key>Transparency</key>
-			<real>0.001855964467005141</real>
+			<real>0.070740799492385792</real>
 			<key>Unicode Version</key>
 			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
@@ -6030,12 +6030,16 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.20200614-nightly</string>
-		<string>3.3.20200609-nightly</string>
+		<string>3.3.20200613-nightly</string>
 		<string>3.3.20200612-nightly</string>
 		<string>3.3.20200611-nightly</string>
+		<string>3.3.20200609-nightly</string>
 		<string>3.3.20200610-nightly</string>
-		<string>3.3.20200613-nightly</string>
+		<string>3.4.20200629-nightly</string>
+		<string>3.4.20200630-nightly</string>
+		<string>3.3.20200619-nightly</string>
+		<string>3.3.20200620-nightly</string>
+		<string>3.3.20200614-nightly</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -6058,7 +6062,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>613781189.55544996</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>32</integer>
+	<integer>37</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6895,7 +6899,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-15T02:20:42Z</date>
+	<date>2020-07-04T00:58:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -7769,7 +7773,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20200614-nightly</string>
+	<string>3.4.20200630-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -5,20 +5,20 @@
       "subtext" : {
         "size" : 9,
         "colorSelected" : "#62667EFF",
-        "font" : "Pragmata Pro Ligaturized",
+        "font" : "PragmataPro Mono Liga Regular",
         "color" : "#61657FFF"
       },
       "shortcut" : {
         "size" : 16,
         "colorSelected" : "#FFD028FF",
-        "font" : "Pragmata Pro Ligaturized Bold",
+        "font" : "PragmataPro Mono Liga Regular",
         "color" : "#FFCC22FF"
       },
       "backgroundSelected" : "#20242BFF",
       "text" : {
         "size" : 13,
         "colorSelected" : "#DFC91FFF",
-        "font" : "Pragmata Pro Ligaturized Bold",
+        "font" : "PragmataPro Mono Liga Regular",
         "color" : "#DDE1F7FF"
       },
       "iconPaddingHorizontal" : 6,
@@ -34,9 +34,9 @@
       "background" : "#272B34FF",
       "spacing" : 6,
       "text" : {
-        "size" : 36,
+        "size" : 46,
         "colorSelected" : "#000000FF",
-        "font" : "Pragmata Pro Ligaturized Bold",
+        "font" : "PragmataPro Mono Liga Regular",
         "color" : "#DDE1F7FF"
       },
       "backgroundSelected" : "#0096FFFF"

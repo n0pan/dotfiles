@@ -46,7 +46,6 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'skywind3000/asyncrun.vim'
 Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'jparise/vim-graphql'
@@ -114,7 +113,7 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
 
-" au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme * hi Normal ctermbg=none guibg=none
 " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " Airline
@@ -170,9 +169,6 @@ let g:user_emmet_settings = {
   \      'extends' : 'jsx',
   \  },
   \}
-
-" ASYNCRUN
-autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
 "" Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
