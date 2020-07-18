@@ -128,6 +128,7 @@ hash -d admin=~/DEV/cookit-admin
 hash -d ops=~/DEV/cookit-ops
 hash -d spt=~/DEV/spotlyne
 hash -d df=~/dotfiles
+hash -d cdc=~/DEV/CDC
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
