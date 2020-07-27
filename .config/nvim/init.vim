@@ -47,6 +47,9 @@ Plug 'jparise/vim-graphql'
 " HTML
 Plug 'alvan/vim-closetag'
 
+" Handlebars
+Plug 'mustache/vim-mustache-handlebars'
+
 "" Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
