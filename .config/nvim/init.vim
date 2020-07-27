@@ -44,10 +44,6 @@ Plug 'epilande/vim-es2015-snippets'
 Plug 'epilande/vim-react-snippets'
 Plug 'jparise/vim-graphql'
 
-" Window panes
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
-
 " HTML
 Plug 'alvan/vim-closetag'
 
