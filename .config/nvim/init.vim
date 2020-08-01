@@ -34,6 +34,9 @@ Plug 'epilande/vim-react-snippets'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'ianks/vim-tsx'
 
+"" HANDLEBARS
+Plug 'mustache/vim-mustache-handlebars'
+
 " LINTING
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
