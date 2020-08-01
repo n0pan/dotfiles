@@ -3,24 +3,38 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim')
 
-" Make sure you use single quotes
-"
-Plug 'ayu-theme/ayu-vim' " or other package manager
-Plug 'Yggdroot/indentLine'
-Plug 'junegunn/vim-slash'
-Plug 'terryma/vim-multiple-cursors'
+" EDITOR THEMES
+Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
+
+" AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'tomtom/tcomment_vim'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/nerdtree'
+
+" SYNTAX HIGHLIGHTING
 Plug 'jparise/vim-graphql'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'unblevable/quick-scope'
+"" HTML
+Plug 'alvan/vim-closetag'
+
+"" JAVASCRIPT
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'epilande/vim-es2015-snippets'
+
+"" REACT / JSX
+Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mattn/emmet-vim'
+Plug 'Valloric/MatchTagAlways'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'epilande/vim-react-snippets'
+
+"" TYPESCRIPT
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'ianks/vim-tsx'
+
+" LINTING
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
@@ -35,35 +49,24 @@ Plug 'prettier/vim-prettier', {
     \ 'markdown',
     \ 'python',
     \ 'html' ] }
+
+" TOOLS
+" vim-slash removes search highlighting after cursor moves
+Plug 'junegunn/vim-slash'
+" Use C-n to toggle vim-multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
+Plug 'jiangmiao/auto-pairs'
+" Use cs to change surround
+Plug 'tpope/vim-surround'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'unblevable/quick-scope'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'epilande/vim-es2015-snippets'
-Plug 'epilande/vim-react-snippets'
-Plug 'jparise/vim-graphql'
-
-" Window panes
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
-
-" HTML
-Plug 'alvan/vim-closetag'
-
-"" Javascript
-Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
-""" React / JSX
-Plug 'mxw/vim-jsx'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'justinj/vim-react-snippets'
-Plug 'mattn/emmet-vim'
-Plug 'Valloric/MatchTagAlways'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'ianks/vim-tsx'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " For async completion
 Plug 'Shougo/deoplete.nvim'
 " For Denite features
@@ -71,7 +74,7 @@ Plug 'Shougo/denite.nvim'
 " Tools
 Plug 'matze/vim-move'
 
-set termguicolors     " enable true colors support
+set termguicolors " enable true colors support
 
 set background=dark
 set ignorecase " Ignore case when searching.
@@ -111,22 +114,30 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=0
 let NERDTreeShowLineNumbers=1
 
+" SETS TRANSPARENT BACKGROUND FOR AYU THEME
 au ColorScheme * hi Normal ctermbg=none guibg=none
 " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
-" Airline
+" AIRLINE
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-" indentLine
-let g:indentLine_setConceal = 0
+" RAINBOW PARENTHESES ALWAYS ON
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
-" Prettier
+" NERDTREE // Automatically open NERDTree if no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" PRETTIER
 let g:prettier#quickfix_enabled = 0
 nmap <Leader>pre <Plug>(Prettier)
 
-" CtrlP
+" START CTRLP 
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_regexp = 0
 let g:ctrlp_use_caching = 1
@@ -151,11 +162,11 @@ fun! g:CtrlP_set_test_ignore()
   endif
  endfun
 
-" Search
 nnoremap <Leader>sf :call CtrlP_set_general_ignore()<CR>:CtrlP<CR>
 nnoremap <Leader>sb :CtrlPBuffer<CR>
 nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
 nnoremap <leader>ss :Ag<CR>
+" END CTRLP
 
 " FZF
 com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
