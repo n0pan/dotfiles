@@ -61,7 +61,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 " Use cs to change surround
 Plug 'tpope/vim-surround'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'unblevable/quick-scope'
@@ -113,9 +112,10 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=0
-let NERDTreeShowLineNumbers=1
+" NERDTREE
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden = 0
+let NERDTreeShowLineNumbers = 1
 
 " SETS TRANSPARENT BACKGROUND FOR AYU THEME
 au ColorScheme * hi Normal ctermbg=none guibg=none
@@ -125,12 +125,6 @@ au ColorScheme * hi Normal ctermbg=none guibg=none
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" RAINBOW PARENTHESES ALWAYS ON
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 " NERDTREE // Automatically open NERDTree if no file is specified
 autocmd StdinReadPre * let s:std_in=1
