@@ -126,10 +126,6 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-" NERDTREE // Automatically open NERDTree if no file is specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " PRETTIER
 let g:prettier#quickfix_enabled = 0
 nmap <Leader>pre <Plug>(Prettier)
