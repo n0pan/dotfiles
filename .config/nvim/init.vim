@@ -22,7 +22,6 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'epilande/vim-es2015-snippets'
 
 "" REACT / JSX
-Plug 'mxw/vim-jsx'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
@@ -53,6 +52,10 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 
+" NERDTREE
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+
 " TOOLS
 " vim-slash removes search highlighting after cursor moves
 Plug 'junegunn/vim-slash'
@@ -61,7 +64,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 " Use cs to change surround
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'unblevable/quick-scope'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
