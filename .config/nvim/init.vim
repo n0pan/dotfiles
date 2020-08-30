@@ -210,6 +210,6 @@ let g:qs_highlight_on_keys = ['f', 'F']
 
 call plug#end()
 
-colorscheme ayu
+colorscheme deus
 
-let g:airline_theme='ayu_dark'
+let g:airline_theme='deus'
