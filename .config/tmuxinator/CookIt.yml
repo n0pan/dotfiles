@@ -41,13 +41,16 @@ startup_window: ecom
 
 windows:
   - server: 
-      layout: tiles
+      layout: 6dd9,261x64,0,0{130x64,0,0,0,130x64,131,0[130x32,131,0,3,130x31,131,33,5]}
       panes:
         - start_api:
           - cd ~/DEV/cookit-api
           - st
         - start_ecom:
           - cd ~/DEV/cookit-ecom
+          - st
+        - start_admin:
+          - cd ~/DEV/cookit-admin
           - st
   - ecom:
       layout: main-vertical
