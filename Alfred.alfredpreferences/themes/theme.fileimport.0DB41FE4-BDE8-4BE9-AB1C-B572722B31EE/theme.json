@@ -11,14 +11,14 @@
       "shortcut" : {
         "size" : 16,
         "colorSelected" : "#8396FFFF",
-        "font" : "Pragmata Pro Ligaturized Bold",
+        "font" : "Pragmata Pro Ligaturized",
         "color" : "#8396FFFF"
       },
       "backgroundSelected" : "#20242BFF",
       "text" : {
         "size" : 13,
         "colorSelected" : "#C774DFFF",
-        "font" : "Pragmata Pro Ligaturized Bold",
+        "font" : "Pragmata Pro Ligaturized",
         "color" : "#DDE1F7FF"
       },
       "iconPaddingHorizontal" : 6,
@@ -30,9 +30,9 @@
       "background" : "#272B34FF",
       "spacing" : 6,
       "text" : {
-        "size" : 36,
+        "size" : 52,
         "colorSelected" : "#000000FF",
-        "font" : "Pragmata Pro Ligaturized Bold",
+        "font" : "Pragmata Pro Ligaturized",
         "color" : "#DDE1F7FF"
       },
       "backgroundSelected" : "#0096FFFF"
