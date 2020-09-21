@@ -1,0 +1,4 @@
+yabai -m config window_border on
+yabai -m config window_border_width 8
+yabai -m config active_window_border_color 0xffc678dd
+yabai -m config normal_window_border_color 0xff5c6370
