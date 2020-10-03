@@ -76,6 +76,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/denite.nvim'
 " Tools
 Plug 'matze/vim-move'
+Plug 'tomtom/tcomment_vim'
 
 set termguicolors " enable true colors support
 
