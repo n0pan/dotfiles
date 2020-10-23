@@ -1,38 +1,46 @@
 #!/bin/sh
 
-echo "Making links..."
+echo "making links..."
 
 # Snippets
-echo "Snippets..."
+echo "linking snippets..."
 ln -s ~/dotfiles/.config/coc/ultisnips/javascriptreact.snippets ~/.config/coc/ultisnips
-echo "Done!"
+echo "done!"
 
 # Tmux
-echo "Tmux..."
+echo "linking tmux conf..."
 ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-echo "Done!"
+echo "done!"
 
 # Nvim Config
-echo "Neovim config..."
+echo "linking nvim config..."
 ln -s ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
-echo "Done!"
+echo "done!"
 
 # Nvim themes
-echo "Linking themes..."
+echo "linking themes..."
 ln -s ~/dotfiles/.config/nvim/colors ~/.config/nvim
-echo "Done!"
+echo "done!"
 
 # zshrc
-echo "zshrc..."
+echo "linking zshrc..."
 ln -s ~/dotfiles/zshrc/.zshrc ~/.zshrc
-echo "Done!"
+echo "done!"
 
 # p10k
-echo "powerlevel10k"
+echo "linking powerlevel10k"
 ln -s ~/dotfiles/p10k/.p10k.zsh ~/.p10k.zsh
-echo "Done!"
+echo "done!"
 
 #alacritty
-echo "alacritty"
+echo "linking alacritty"
 ln -s ~/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-echo "Done!"
+echo "done!"
+
+echo "linking spotify-tui config"
+ln -s ~/dotfiles/.config/spotify-tui/client.yml ~/.config/spotify-tui/client.yml
+echo "done!"
+
+echo "linking spotifyd"
+ln -s ~/dotfiles/.config/spotifyd/spotifyd.conf ~/.config/spotifyd/spotifyd.conf
+echo "done!"

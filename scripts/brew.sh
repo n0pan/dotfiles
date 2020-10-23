@@ -32,9 +32,6 @@ brew tap mongodb/brew
 
 brew install mongodb
 
-brew tap prisma/prisma
-brew install prisma
-
 # Terminal
 echo "Installing terminal..."
 brew install cmake
@@ -46,8 +43,9 @@ brew install the_silver_searcher
 brew install docker-compose
 brew install tmuxinator
 
-echo "Installing Spotify TUI..."
+echo "Installing Spotify tool for terminal..."
 brew install Rigellute/tap/spotify-tui
+brew install spotifyd
 
 # Tools
 echo "Installing Tools..."
