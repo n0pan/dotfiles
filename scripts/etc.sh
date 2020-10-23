@@ -28,6 +28,6 @@ echo "copy .bin"
 cp -R ~/dotfiles/.bin/ ~/.bin/
 
 echo "create spotifyd daemon"
-cp ~/dotfiles/Library/LaunchDaemons/rustlang.spotifyd.plist /Library/LaunchDaemons/rustlang.spotifyd.plist
+sudo cp ~/dotfiles/Library/LaunchDaemons/rustlang.spotifyd.plist /Library/LaunchDaemons/rustlang.spotifyd.plist
 sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist
-sudo launchctl start -w /Library/LaunchDaemons/rustlang.spotifyd.plist
+sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist
