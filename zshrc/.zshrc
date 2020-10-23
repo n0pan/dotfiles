@@ -128,6 +128,7 @@ alias new-admin="tmux new-window -n admin -c ~/dev/cookit-admin"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
+alias reload-spt-service="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
