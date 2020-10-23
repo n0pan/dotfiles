@@ -42,5 +42,6 @@ ln -s ~/dotfiles/.config/spotify-tui/client.yml ~/.config/spotify-tui/client.yml
 echo "done!"
 
 echo "linking spotifyd"
+mkdir ~/.config/spotifyd
 ln -s ~/dotfiles/.config/spotifyd/spotifyd.conf ~/.config/spotifyd/spotifyd.conf
 echo "done!"
