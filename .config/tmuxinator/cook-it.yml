@@ -1,6 +1,6 @@
 # /Users/lq/.config/tmuxinator/CookIt.yml
 
-name: CookIt
+name: cook-it
 root: ~/
 
 # Optional tmux socket
@@ -57,12 +57,17 @@ windows:
       panes: 
         - start_editor:
           - cd ~/DEV/cookit-ecom
-          - nvim
+          - vi 
   - api:
       layout: main-vertical
       panes: 
         - start_editor:
           - cd ~/DEV/cookit-api
-          - nvim
-
+          - vi
+  - admin:
+      layout: main-vertical
+      panes: 
+        - start_editor:
+          - cd ~/DEV/cookit-admin
+          - vi
 

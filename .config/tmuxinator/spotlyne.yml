@@ -1,6 +1,6 @@
 # /Users/lq/.config/tmuxinator/CookIt.yml
 
-name: spt
+name: spotlyne
 root: ~/
 
 # Optional tmux socket
@@ -31,7 +31,7 @@ root: ~/
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: editor
+startup_window: spt
 
 # Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
 # startup_pane: 1
@@ -40,17 +40,15 @@ startup_window: editor
 # attach: false
 
 windows:
-  - server:
+  - server: 
       layout: main-vertical
-      panes: 
+      panes:
         - start_server:
-          - cd ~/dev/spotlyne
+          - cd ~/DEV/spotlyne
           - st
-  - editor:
+  - spt:
       layout: main-vertical
       panes: 
         - start_editor:
-          - cd ~/dev/spotlyne
+          - cd ~/DEV/spotlyne
           - nvim
-
-
