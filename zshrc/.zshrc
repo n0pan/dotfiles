@@ -126,6 +126,8 @@ alias new-ecom="tmux new-window -n ecom -c ~/dev/cookit-ecom"
 alias new-api="tmux new-window -n api -c ~/dev/cookit-api"
 alias new-admin="tmux new-window -n admin -c ~/dev/cookit-admin"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
+alias new-spt="tmux new-window -n spotify spt"
+alias new-top="tmux new-window -n top vtop"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d api=~/DEV/cookit-api
