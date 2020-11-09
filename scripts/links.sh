@@ -39,8 +39,8 @@ echo "done!"
 
 #alacritty
 echo "linking window manager"
-ln -s ~/dotfiles/.yabairc ~/.config/.yabairc
-ln -s ~/dotfiles/.skhdrc ~/.config/.skhdrc
+ln -s ~/dotfiles/.yabairc ~/.yabairc
+ln -s ~/dotfiles/.skhdrc ~/.skhdrc
 echo "done!"
 
 echo "linking spotify-tui config"
