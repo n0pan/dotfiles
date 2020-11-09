@@ -5,20 +5,20 @@
       "subtext" : {
         "size" : 9,
         "colorSelected" : "#62667EFF",
-        "font" : "Pragmata Pro Ligaturized",
+        "font" : "PragmataPro Liga",
         "color" : "#61657FFF"
       },
       "shortcut" : {
         "size" : 16,
         "colorSelected" : "#8396FFFF",
-        "font" : "Pragmata Pro Ligaturized",
+        "font" : "PragmataPro Liga Bold",
         "color" : "#8396FFFF"
       },
       "backgroundSelected" : "#20242BFF",
       "text" : {
-        "size" : 13,
+        "size" : 14,
         "colorSelected" : "#C774DFFF",
-        "font" : "Pragmata Pro Ligaturized",
+        "font" : "PragmataPro Liga",
         "color" : "#DDE1F7FF"
       },
       "iconPaddingHorizontal" : 6,
@@ -28,24 +28,24 @@
     "search" : {
       "paddingVertical" : 2,
       "background" : "#272B34FF",
-      "spacing" : 6,
+      "spacing" : 15,
       "text" : {
-        "size" : 52,
+        "size" : 59,
         "colorSelected" : "#000000FF",
-        "font" : "Pragmata Pro Ligaturized",
+        "font" : "PragmataPro Liga Bold",
         "color" : "#DDE1F7FF"
       },
       "backgroundSelected" : "#0096FFFF"
     },
     "window" : {
       "color" : "#272B34FF",
-      "paddingHorizontal" : 10,
+      "paddingHorizontal" : 24,
       "width" : 600,
       "borderPadding" : 10,
       "borderColor" : "#272B3400",
       "blur" : 0,
       "roundness" : 3,
-      "paddingVertical" : 8
+      "paddingVertical" : 19
     },
     "credit" : "Spencer Hamm",
     "separator" : {
