@@ -37,6 +37,12 @@ echo "linking alacritty"
 ln -s ~/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 echo "done!"
 
+#alacritty
+echo "linking window manager"
+ln -s ~/dotfiles/.yabairc ~/.config/.yabairc
+ln -s ~/dotfiles/.skhdrc ~/.config/.skhdrc
+echo "done!"
+
 echo "linking spotify-tui config"
 ln -s ~/dotfiles/.config/spotify-tui/client.yml ~/.config/spotify-tui/client.yml
 echo "done!"
