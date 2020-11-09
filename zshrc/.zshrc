@@ -140,6 +140,11 @@ hash -d cdc=~/DEV/cockit-drinking-club
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# functions
+create_docker () {
+ docker-machine create -d virtualbox --virtualbox-no-vtx-check "$1"
+}
+
 source ~/.bin/tmuxinator.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
