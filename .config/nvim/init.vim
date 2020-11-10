@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim')
 " EDITOR THEMES
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'cocopon/iceberg.vim'
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
@@ -120,7 +121,7 @@ let NERDTreeShowHidden = 0
 let NERDTreeShowLineNumbers = 1
 
 " SETS TRANSPARENT BACKGROUND FOR AYU THEME
-au ColorScheme * hi Normal ctermbg=none guibg=none
+ au ColorScheme * hi Normal ctermbg=none guibg=none
 " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " AIRLINE
