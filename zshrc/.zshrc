@@ -121,7 +121,7 @@ alias discord="sh ~/scripts/discord.sh"
 alias restore="sh ~/scripts/restore.sh"
 alias cook-it="mux cook-it"
 alias spotlyne="mux spotlyne"
-alias ci-restore-db="sh ~/scripts/restore.sh"
+alias ci-restore-db="docker start -a restore-test"
 alias spt-restore-db="sh ~/dev/spotlyne/.config/dumpprod.sh"
 alias new-ecom="tmux new-window -n ecom -c ~/dev/cookit-ecom"
 alias new-api="tmux new-window -n api -c ~/dev/cookit-api"
@@ -152,3 +152,5 @@ source ~/.bin/tmuxinator.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+export PATH="/bin:$PATH"
+export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"
