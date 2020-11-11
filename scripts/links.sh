@@ -45,6 +45,7 @@ echo "done!"
 
 echo "linking spotify-tui config"
 ln -s ~/dotfiles/.config/spotify-tui/client.yml ~/.config/spotify-tui/client.yml
+ln -s ~/dotfiles/.config/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
 echo "done!"
 
 echo "linking spotifyd"
