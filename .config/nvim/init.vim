@@ -213,4 +213,4 @@ call plug#end()
 
 colorscheme onedark
 
-let g:airline_theme='onedark'
+let g:airline_theme='transparent'
