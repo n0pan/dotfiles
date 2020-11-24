@@ -64,7 +64,7 @@
       # vpn_ip                # virtual private network indicator
       ram                   # free RAM
       # load                  # CPU load
-      time                    # current time
+      # time                    # current time
       # public_ip             # public IP address
       # proxy                 # system-wide http/https/ftp proxy
       # battery               # internal battery
