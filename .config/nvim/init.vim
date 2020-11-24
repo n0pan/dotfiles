@@ -60,9 +60,11 @@ Plug 'ryanoasis/vim-devicons'
 " TOOLS
 " vim-slash removes search highlighting after cursor moves
 Plug 'junegunn/vim-slash'
+
 " Use C-n to toggle vim-multiple-cursors
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
+
 " Use cs to change surround
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -71,13 +73,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
+
 " For async completion
 Plug 'Shougo/deoplete.nvim'
+
 " For Denite features
 Plug 'Shougo/denite.nvim'
+
 " Tools
 Plug 'matze/vim-move'
 Plug 'tomtom/tcomment_vim'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
 set termguicolors " enable true colors support
 
