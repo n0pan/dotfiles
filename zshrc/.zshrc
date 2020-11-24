@@ -141,6 +141,7 @@ hash -d ops=~/DEV/cookit-ops
 hash -d spt=~/DEV/spotlyne
 hash -d df=~/dotfiles
 hash -d cdc=~/DEV/cockit-drinking-club
+hash -d sprint-planner=~/DEV/sprint-planner
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
