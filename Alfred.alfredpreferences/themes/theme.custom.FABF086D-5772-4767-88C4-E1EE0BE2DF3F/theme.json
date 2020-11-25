@@ -1,0 +1,60 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 6,
+      "subtext" : {
+        "size" : 9,
+        "colorSelected" : "#62667EFF",
+        "font" : "PragmataPro Liga",
+        "color" : "#61657FFF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FF505CFF",
+        "font" : "PragmataPro Liga Bold",
+        "color" : "#FF505CFF"
+      },
+      "backgroundSelected" : "#000000FF",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#FF505CFF",
+        "font" : "PragmataPro Liga",
+        "color" : "#DDE1F7FF"
+      },
+      "iconPaddingHorizontal" : 6,
+      "paddingVertical" : 5,
+      "iconSize" : 38
+    },
+    "separator" : {
+      "color" : "#08090BFF",
+      "thickness" : 4
+    },
+    "search" : {
+      "paddingVertical" : 2,
+      "background" : "#08090BFF",
+      "spacing" : 15,
+      "text" : {
+        "size" : 59,
+        "colorSelected" : "#000000FF",
+        "font" : "PragmataPro Liga Bold",
+        "color" : "#DDE1F7FF"
+      },
+      "backgroundSelected" : "#0096FFFF"
+    },
+    "scrollbar" : {
+      "color" : "#61657FFF",
+      "thickness" : 2
+    },
+    "name" : "One Red",
+    "window" : {
+      "color" : "#08090BFF",
+      "paddingHorizontal" : 24,
+      "width" : 600,
+      "borderPadding" : 10,
+      "borderColor" : "#272B3400",
+      "blur" : 0,
+      "roundness" : 3,
+      "paddingVertical" : 19
+    }
+  }
+}
