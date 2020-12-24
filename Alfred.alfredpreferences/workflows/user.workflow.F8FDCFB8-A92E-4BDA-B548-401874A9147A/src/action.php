@@ -1,6 +1,8 @@
 <?php
 
-require './src/functions.php';
+require_once './src/functions.php';
+require_once './src/createLibrary.php';
+require_once './src/refreshLibrary.php';
 require_once './src/workflows.php';
 $w = new Workflows('com.vdesabou.spotify.mini.player');
 
@@ -49,7 +51,7 @@ $always_display_lyrics_in_browser = $settings->always_display_lyrics_in_browser;
 $output_application = $settings->output_application;
 $theme_color = $settings->theme_color;
 
-if ($other_action != 'reset_settings' && $other_action != 'spot_mini_debug' && !startswith($other_settings,'SWITCH_USER▹')) {
+if ($other_action != 'reset_settings' && $other_action != 'spot_mini_debug' && $other_action != 'kill_update' && !startswith($other_settings,'SWITCH_USER▹')) {
     if ($oauth_client_id == '' || $oauth_client_secret == '' || $oauth_access_token == '') {
         if ($other_settings != '' && (startsWith($other_settings, 'Oauth_Client') === false && startsWith($other_settings, 'Open') === false)) {
             exec("osascript -e 'tell application id \"".getAlfredName()."\" to search \"".getenv('c_spot_mini')." \"'");
@@ -67,6 +69,10 @@ if ($other_action != 'reset_settings' && $other_action != 'spot_mini_debug' && !
 }
 
 if (!startsWith($other_action, 'current')) {
+    $pid = exec("ps -efx | grep \"mpg123\" | grep -v grep | awk '{print $2}'");
+    if($pid != '') {
+        exec("kill -9 $(ps -efx | grep \"mpg123\" | grep -v grep | awk '{print $2}')");
+    }
     stathat_ez_count('AlfredSpotifyMiniPlayer', 'workflow used', 1);
 }
 
@@ -115,14 +121,17 @@ if ($spotify_command != '' && $type == 'TRACK' && $add_to_option == '') {
     }
     return;
 }
-
 if ($type == 'TRACK' && $other_settings == '' &&
     (startsWith($other_action, 'set_playlist_privacy_to_') || $other_action == 'play_track_from_play_queue' || $other_action == ''
         || ($other_action == 'play_track_in_album_context' && $add_to_option != '')
         || ($other_action == 'play' && $add_to_option != '')
+        || ($other_action == 'play_episode' && $add_to_option != '')
+        || ($other_action == 'playshow')
         || ($other_action == 'playpause' && $add_to_option != '')
         || ($other_action == 'pause' && $add_to_option != ''))) {
+
     if ($track_uri != '') {
+
         if ($add_to_option != '') {
             $tmp = explode(':', $track_uri);
             if ($tmp[1] == 'local') {
@@ -130,7 +139,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
                 $query = 'track:'.$track_name.' artist:'.$artist_name;
                 $results = searchWebApi($w, $country_code, $query, 'track', 1);
 
-                if (count($results) > 0) {
+                if (is_array($results) && count($results) > 0) {
                     // only one track returned
                     $track = $results[0];
                     $artists = $track->artists;
@@ -172,7 +181,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
 
             return;
         } else {
-            if ($other_action == '' || $other_action == 'play_track_from_play_queue') {
+            if ($other_action == '' || $other_action == 'play_track_from_play_queue' || $other_action == 'playshow') {
                 if ($output_application == 'MOPIDY') {
                     playUriWithMopidyWithoutClearing($w, $track_uri);
                 } else if($output_application == 'APPLESCRIPT') {
@@ -191,24 +200,8 @@ if ($type == 'TRACK' && $other_settings == '' &&
 
                 stathat_ez_count('AlfredSpotifyMiniPlayer', 'play', 1);
                 if ($other_action == '') {
-                    if ($output_application == 'MOPIDY') {
-                        $retArr = array(getCurrentTrackInfoWithMopidy($w));
-                    } else if($output_application == 'APPLESCRIPT') {
-                        // get info on current song
-                        exec('./src/track_info.ksh 2>&1', $retArr, $retVal);
-                        if ($retVal != 0) {
-                            displayNotificationWithArtwork($w, 'AppleScript Exception: '.htmlspecialchars($retArr[0]).' use spot_mini_debug command', './images/warning.png', 'Error!');
-                            exec("osascript -e 'tell application id \"".getAlfredName()."\" to search \"".getenv('c_spot_mini_debug').' AppleScript Exception: '.htmlspecialchars($retArr[0])."\"'");
-
-                            return;
-                        }
-                    } else {
-                        $retArr = array(getCurrentTrackInfoWithSpotifyConnect($w));
-                    }
-                    if (substr_count($retArr[count($retArr) - 1], '▹') > 0) {
-                        $results = explode('▹', $retArr[count($retArr) - 1]);
-                        addTrackToPlayQueue($w, $track_uri, escapeQuery($results[0]), escapeQuery($results[1]), escapeQuery($results[2]), $results[5], $country_code);
-                    }
+                    $results = getCurrentTrackinfo($w, $output_application);
+                    addTrackToPlayQueue($w, $track_uri, escapeQuery($results[0]), escapeQuery($results[1]), escapeQuery($results[2]), $results[5], $country_code);
                 }
 
                 return;
@@ -285,6 +278,32 @@ if ($type == 'TRACK' && $other_settings == '' &&
     }
     exec("osascript -e 'tell application id \"".getAlfredName()."\" to search \"".getenv('c_spot_mini').' Online▹'.$artist_uri.'@'.escapeQuery($artist_name).'▹'."\"'");
     stathat_ez_count('AlfredSpotifyMiniPlayer', 'lookup online', 1);
+
+    return;
+} elseif ($type == 'ADDTOQUEUE') {
+    if ($track_uri != '') {
+
+        if ($output_application == 'CONNECT') {
+            $device_id = getSpotifyConnectCurrentDeviceId($w);
+            addToQueueSpotifyConnect($w, $track_uri, $device_id);
+            if(getenv('reduce_notifications') == 0) {
+                $track_artwork_path = getTrackOrAlbumArtwork($w, $track_uri, true, false, false, $use_artworks);
+                displayNotificationWithArtwork($w, ''.$track_name.' added to queue', $track_artwork_path, 'Add Track or Episode to Queue');
+            }
+        } else {
+
+            displayNotificationWithArtwork($w, 'Add to queue is only available with Spotify Connect', './images/warning.png', 'Error!');
+            return;
+        }
+
+    } else {
+        displayNotificationWithArtwork($w, 'Missing Track URI when trying to add to queue', './images/warning.png', 'Error!');
+        return;
+    }
+
+    return;
+} elseif ($type == 'PREVIEW') {
+    exec("osascript -e 'tell application id \"".getAlfredName()."\" to search \"".getenv('c_spot_mini').' Preview▹'.$track_uri.'▹'."\"'");
 
     return;
 } elseif ($type == 'ALBUM_OR_PLAYLIST') {
@@ -499,7 +518,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
                     $query = 'track:'.$track_name.' artist:'.$artist_name;
                     $results = searchWebApi($w, $country_code, $query, 'track', 1);
 
-                    if (count($results) > 0) {
+                    if (is_array($results) && count($results) > 0) {
                         // only one track returned
                         $track = $results[0];
                         $artists = $track->artists;
@@ -598,7 +617,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
                     $query = 'track:'.$track_name.' artist:'.$artist_name;
                     $results = searchWebApi($w, $country_code, $query, 'track', 1);
 
-                    if (count($results) > 0) {
+                    if (is_array($results) && count($results) > 0) {
                         // only one track returned
                         $track = $results[0];
                         $artists = $track->artists;
@@ -767,7 +786,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
         $ret = updateSetting($w, 'use_artworks', 1);
         if ($ret == true) {
             displayNotificationWithArtwork($w, 'Artworks are now enabled, library update is started', './images/enable_artworks.png', 'Settings');
-            updateLibrary($w);
+            createLibrary($w);
         } else {
             displayNotificationWithArtwork($w, 'Error while updating settings', './images/settings.png', 'Error!');
         }
@@ -779,7 +798,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
             if (file_exists($w->data().'/artwork')):
                     exec("rm -rf '".$w->data()."/artwork'");
             displayNotificationWithArtwork($w, 'All artworks have been erased', './images/warning.png', 'Warning!');
-            updateLibrary($w);
+            createLibrary($w);
             endif;
             displayNotificationWithArtwork($w, 'Artworks are now disabled', './images/disable_artworks.png', 'Settings');
         } else {
@@ -989,6 +1008,50 @@ if ($type == 'TRACK' && $other_settings == '' &&
         addAlbumToPlayQueue($w, $album_uri, $album_name);
 
         return;
+    } elseif ($other_action == 'play_episode') {
+        if ($output_application == 'MOPIDY') {
+            playTrackInContextWithMopidy($w, $track_uri, $album_uri);
+        } else if($output_application == 'APPLESCRIPT') {
+            exec("osascript -e 'tell application \"Spotify\" to play track \"$track_uri\"'");
+        } else {
+            $device_id = getSpotifyConnectCurrentDeviceId($w);
+            if($device_id != '') {
+                playTrackSpotifyConnect($w, $device_id, $track_uri, $album_uri);
+            } else {
+                displayNotificationWithArtwork($w, 'No Spotify Connect device is available', './images/warning.png', 'Error!');
+                return;
+            }
+        }
+        if ($now_playing_notifications == false) {
+            displayNotificationWithArtwork($w, '🔈 '.$track_name.' in show '.$album_name, $track_artwork_path, 'Play Episode from Show');
+        }
+
+        stathat_ez_count('AlfredSpotifyMiniPlayer', 'play', 1);
+        //addAlbumToPlayQueue($w, $album_uri, $album_name);
+
+        return;
+    } elseif ($other_action == 'play_episode_simplified') {
+        if ($output_application == 'MOPIDY') {
+            playUriWithMopidy($w, $track_uri);
+        } else if($output_application == 'APPLESCRIPT') {
+            exec("osascript -e 'tell application \"Spotify\" to play track \"$track_uri\"");
+        } else {
+            $device_id = getSpotifyConnectCurrentDeviceId($w);
+            if($device_id != '') {
+                playTrackSpotifyConnect($w, $device_id, $track_uri, '');
+            } else {
+                displayNotificationWithArtwork($w, 'No Spotify Connect device is available', './images/warning.png', 'Error!');
+                return;
+            }
+        }
+        if ($now_playing_notifications == false) {
+            displayNotificationWithArtwork($w, '🔈 '.$track_name, $track_artwork_path, 'Play Episode');
+        }
+
+        stathat_ez_count('AlfredSpotifyMiniPlayer', 'play', 1);
+        //addAlbumToPlayQueue($w, $album_uri, $album_name);
+
+        return;
     } elseif ($other_action == 'play') {
 
         if($type == '' || $type == 'TRACK') {
@@ -1099,6 +1162,13 @@ if ($type == 'TRACK' && $other_settings == '' &&
 
         stathat_ez_count('AlfredSpotifyMiniPlayer', 'kill update', 1);
         return;
+    } elseif ($other_action == 'kill_preview') {
+        $pid = exec("ps -efx | grep \"mpg123\" | grep -v grep | awk '{print $2}'");
+        if($pid != '') {
+            exec("kill -9 $(ps -efx | grep \"mpg123\" | grep -v grep | awk '{print $2}')");
+        }
+
+        return;
     } elseif ($other_action == 'lookup_current_artist') {
         lookupCurrentArtist($w);
 
@@ -1113,6 +1183,14 @@ if ($type == 'TRACK' && $other_settings == '' &&
         return;
     } elseif ($other_action == 'follow_playlist') {
         followThePlaylist($w, $playlist_uri);
+
+        return;
+    }  elseif ($other_action == 'unfollow_show') {
+        unfollowTheShow($w, $playlist_uri);
+
+        return;
+    } elseif ($other_action == 'follow_show') {
+        followTheShow($w, $playlist_uri);
 
         return;
     } elseif ($other_action == 'lyrics') {
@@ -1139,21 +1217,23 @@ if ($type == 'TRACK' && $other_settings == '' &&
         stathat_ez_count('AlfredSpotifyMiniPlayer', 'radio', 1);
 
         return;
-    } elseif ($other_action == 'play_current_artist') {
-        playCurrentArtist($w);
-        stathat_ez_count('AlfredSpotifyMiniPlayer', 'play', 1);
-
+    } elseif ($other_action == 'output_audio') {
+        exec("osascript -e 'tell application id \"".getAlfredName()."\" to run trigger \"choose_output\" in workflow \"com.vdesabou.spotify.mini.player\" with argument \"\"'");
         return;
     } elseif ($other_action == 'play_current_album') {
         playCurrentAlbum($w);
         stathat_ez_count('AlfredSpotifyMiniPlayer', 'play', 1);
 
         return;
+    } elseif ($other_action == 'create_similar_playlist') {
+        createSimilarPlaylist($w, $playlist_name, $playlist_uri);
+
+        return;
     } elseif ($other_action == 'delete_artwork_folder') {
         if (file_exists($w->data().'/artwork')):
                 exec("rm -rf '".$w->data()."/artwork'");
         displayNotificationWithArtwork($w, 'All artworks have been erased', './images/warning.png', 'Warning!');
-        updateLibrary($w);
+        createLibrary($w);
         endif;
 
         return;
@@ -1171,7 +1251,17 @@ if ($type == 'TRACK' && $other_settings == '' &&
         $cache_log = $w->cache().'/spotify_mini_player_web_server.log';
         exec("php -S 127.0.0.1:15298 > \"$cache_log\" 2>&1 &");
         sleep(2);
-        exec('open http://127.0.0.1:15298');
+        # https://github.com/vdesabou/alfred-spotify-mini-player/issues/341
+        exec('open -a "Google Chrome" http://127.0.0.1:15298', $retArr, $retVal);
+        if($retVal != 0) {
+            exec('open -a "Firefox" http://127.0.0.1:15298', $retArr, $retVal);
+            if($retVal != 0) {
+                displayNotificationWithArtwork($w, 'Could not open either Google Chrome or Firefox for authentication', './images/warning.png', 'Error!');
+                exec('open http://alfred-spotify-mini-player.com/setup/');
+
+                return;
+            }
+        }
 
         return;
     } elseif ($other_action == 'current') {
@@ -1222,7 +1312,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
         $check_results = checkForUpdate($w, 0, true);
         if ($check_results != null && is_array($check_results)) {
             exec("open \"$check_results[1]\"");
-            displayNotificationWithArtwork($w, 'Please install the new version with Alfred', './images/check_update.png', 'Update available');
+            displayNotificationWithArtwork($w, 'Please install the new version in your Downloads folder', './images/check_update.png', 'Update available');
 
             return;
         }
@@ -1696,20 +1786,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
 
         return;
     } elseif ($other_action == 'share') {
-        if ($output_application == 'MOPIDY') {
-            $ret = getCurrentTrackInfoWithMopidy($w, false);
-            $results = explode('▹', $ret);
-        } else if($output_application == 'APPLESCRIPT') {
-            // get info on current song
-            exec('./src/track_info.ksh 2>&1', $retArr, $retVal);
-
-            if (substr_count($retArr[count($retArr) - 1], '▹') > 0) {
-                $results = explode('▹', $retArr[count($retArr) - 1]);
-            }
-        } else {
-            $ret = getCurrentTrackInfoWithSpotifyConnect($w, false);
-            $results = explode('▹', $ret);
-        }
+        $results = getCurrentTrackinfo($w, $output_application);
 
         if (!isset($results[0])) {
             displayNotificationWithArtwork($w, 'Cannot get current track', './images/warning.png', 'Error!');
@@ -1721,6 +1798,13 @@ if ($type == 'TRACK' && $other_settings == '' &&
         } else {
            $service = 'twitter';
         }
+
+        $osx_version = exec('sw_vers -productVersion');
+        if(version_compare($osx_version, '10,14', '>=')) {
+            displayNotificationWithArtwork($w, 'Sharing using '.$service.' is no more supported by Mac Os', './images/warning.png', 'Error!');
+            return;
+        }
+
         $text = getenv('sharing_hashtag1');
         $text .= ' ';
         $text .= escapeQuery($results[0]);
@@ -1834,7 +1918,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
 
             return;
         }
-        updateLibrary($w);
+        createLibrary($w);
         stathat_ez_count('AlfredSpotifyMiniPlayer', 'update library', 1);
 
         return;
