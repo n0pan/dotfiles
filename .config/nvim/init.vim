@@ -156,6 +156,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:prettier#quickfix_enabled = 0
 nmap <Leader>pre <Plug>(Prettier)
 
+" Black
+nmap <Leader>bla :Black<CR>
+
 " START CTRLP 
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_regexp = 0
