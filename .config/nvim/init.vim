@@ -34,8 +34,14 @@ Plug 'epilande/vim-react-snippets'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'ianks/vim-tsx'
 
-"" HANDLEBARS
+" BLACK
+Plug 'ambv/black'
+
+" HANDLEBARS
 Plug 'mustache/vim-mustache-handlebars'
+
+" MARKDOWN
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " LINTING
 Plug 'prettier/vim-prettier', {
@@ -87,6 +93,8 @@ Plug 'tomtom/tcomment_vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+
+let mapleader="\<Space>"
 
 set termguicolors " enable true colors support
 
