@@ -69,6 +69,8 @@ Plug 'junegunn/vim-slash'
 
 " Use C-n to toggle vim-multiple-cursors
 Plug 'terryma/vim-multiple-cursors'
+
+" Automatically creates pairs of parentheses, etc.
 Plug 'jiangmiao/auto-pairs'
 
 " Use cs to change surround
@@ -89,6 +91,10 @@ Plug 'Shougo/denite.nvim'
 " Tools
 Plug 'matze/vim-move'
 Plug 'tomtom/tcomment_vim'
+
+" Markdown
+" If you have nodejs and yarn
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -138,7 +144,7 @@ let NERDTreeShowHidden = 0
 let NERDTreeShowLineNumbers = 1
 
 " SETS TRANSPARENT BACKGROUND FOR AYU THEME
- au ColorScheme * hi Normal ctermbg=none guibg=none
+  au ColorScheme * hi Normal ctermbg=none guibg=none
 " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " AIRLINE
@@ -149,6 +155,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " PRETTIER
 let g:prettier#quickfix_enabled = 0
 nmap <Leader>pre <Plug>(Prettier)
+
+" Black
+nmap <Leader>bla :Black<CR>
 
 " START CTRLP 
 let g:ctrlp_working_path_mode = 'r'
