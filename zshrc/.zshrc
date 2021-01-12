@@ -75,7 +75,7 @@ plugins=(git colored-man-pages colorize pip python brew osx zsh-autosuggestions 
 
 source $ZSH/oh-my-zsh.sh
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=magenta"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=204"
 
 # User configuration
 
