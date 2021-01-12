@@ -31,3 +31,7 @@ echo "create spotifyd daemon"
 sudo cp ~/dotfiles/Library/LaunchDaemons/rustlang.spotifyd.plist /Library/LaunchDaemons/rustlang.spotifyd.plist
 sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist
 sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist
+
+echo "beautifuldiscord"
+python3 -m pip install -U https://github.com/leovoel/BeautifulDiscord/archive/master.zip
+beautifuldiscord --css ~/.config/discord/theme./css
