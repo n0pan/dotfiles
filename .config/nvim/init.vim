@@ -6,7 +6,6 @@ call plug#begin('~/.config/nvim')
 " EDITOR THEMES
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'cocopon/iceberg.vim'
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
@@ -73,6 +72,9 @@ Plug 'terryma/vim-multiple-cursors'
 " Automatically creates pairs of parentheses, etc.
 Plug 'jiangmiao/auto-pairs'
 
+" DEBUGGER
+Plug 'puremourning/vimspector'
+
 " Use cs to change surround
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -114,7 +116,6 @@ set clipboard=unnamedplus
 set undofile
 set undodir=~/.nvim/undo
 set noswapfile
-" 1 tab == 2 spaces.
 set shiftwidth=2
 set tabstop=2
 set expandtab " Use spaces instead of tabs.
@@ -196,8 +197,14 @@ com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '-
 " EMMET
 let g:user_emmet_leader_key=','
 let g:user_emmet_settings = {
+  \  'javascript': {
+  \      'extends' : 'jsx',
+  \  },
   \  'javascript.jsx' : {
   \      'extends' : 'jsx',
+  \      'html' : {
+  \          'quote_char': ""
+  \      },
   \  },
   \}
 
@@ -235,8 +242,11 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Trigger a highlight only when pressing f and F.
 let g:qs_highlight_on_keys = ['f', 'F']
 
+" Vimspector config
+let g:vimspector_enable_mappings = 'HUMAN'
+
 call plug#end()
 
-colorscheme onedark
+colorscheme gruvbox
 
 let g:airline_theme='transparent'
