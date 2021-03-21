@@ -105,7 +105,7 @@ Plug 'junegunn/gv.vim'
 let mapleader="\<Space>"
 
 set termguicolors " enable true colors support
-
+set guicursor=
 set background=dark
 set ignorecase " Ignore case when searching.
 set hlsearch " Highlight search results.
