@@ -145,7 +145,7 @@ let NERDTreeShowHidden = 0
 let NERDTreeShowLineNumbers = 1
 
 " SETS TRANSPARENT BACKGROUND FOR AYU THEME
-  au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme * hi Normal ctermbg=none guibg=none
 " au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " AIRLINE
@@ -247,6 +247,6 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 call plug#end()
 
-colorscheme gruvbox
+colorscheme onedark
 
 let g:airline_theme='transparent'
