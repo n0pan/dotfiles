@@ -19,7 +19,7 @@
 
 *,
 #app-mount {
-  font-family: "PragmataPro Liga", monospace;
+  font-family: "PragmataPro Mono", monospace;
 }
 
 .markup-2BOw-j {
@@ -464,7 +464,7 @@ section .da-scroller::-webkit-scrollbar-thumb {
   background-color: #1e1e1e;
 }
 .timestampCozy-2hLAPV {
-  font-size: 0.68rem;
+  font-size: 0.58rem;
 }
 /* Channels */
 .theme-dark .channelNotices-41mJbj .channelNotice-1-XFjC.quickswitcher-35bYg4,

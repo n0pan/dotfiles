@@ -234,6 +234,11 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+nmap <silent> <Leader>jd :call CocActionAsync('jumpDefinition')<CR>
+nmap <silent> <Leader>ji :call CocActionAsync('jumpImplementation', v:false)<CR>
+nmap <silent> <Leader>jr :call CocActionAsync('jumpReferences', v:false)<CR>
+nmap <silent> <Leader>jt :call CocActionAsync('jumpTypeDefinition', v:false)<CR>
+
 let g:coc_snippet_next = '<tab>'
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
