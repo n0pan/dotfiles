@@ -125,6 +125,7 @@ alias spotlyne="mux spotlyne"
 alias ci-restore-db="docker start -a restore-test"
 alias spt-restore-db="sh ~/dev/spotlyne/.config/dumpprod.sh"
 alias new-ecom="tmux new-window -n ecom -c ~/dev/cookit-ecom"
+alias new-ui="tmux new-window -n ui -c ~/dev/cookit-ui"
 alias new-api="tmux new-window -n api -c ~/dev/cookit-api"
 alias new-admin="tmux new-window -n admin -c ~/dev/cookit-admin"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
@@ -135,6 +136,7 @@ alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.p
 alias reload-zsh="source ~/.zshrc"
 
 hash -d ecom=~/DEV/cookit-ecom
+hash -d ui=~/DEV/cookit-ui
 hash -d api=~/DEV/cookit-api
 hash -d admin=~/DEV/cookit-admin
 hash -d ops=~/DEV/cookit-ops
