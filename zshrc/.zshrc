@@ -152,6 +152,76 @@ create_docker () {
  docker-machine create -d virtualbox --virtualbox-no-vtx-check "$1"
 }
 
+lc() {
+  # install controller packages, build controllers & create link
+  echo "LINKING COOKIT-ECOM-CONTROLLERS"
+  echo "-------------------------------"
+  echo "1) Re-installing controller dependencies"
+  rm -rf ~/dev/cookit-ecom/packages/controllers/node_modules
+  cd ~/dev/cookit-ecom/packages/controllers
+  yarn install
+  echo "2) Generating queries"
+  yarn gen
+  echo "3) Building controllers"
+  yarn build
+  echo "4) Creating @chefcookit/cookit-ecom-controllers link..."
+  yarn link
+  cd ~/dev/cookit-ecom
+  echo "5) Linking..."
+  yarn link @chefcookit/cookit-ecom-controllers
+  echo "Done!"
+}
+
+lutils() {
+  echo "LINKING COOKIT-UTILS"
+  echo "-------------------"
+  echo "1) creating link"
+  cd ~/dev/utils/
+  npm link
+  echo "2) linking ecom"
+  cd ~/dev/cookit-ecom/
+  npm link @chefcookit/utils
+  echo "3) linking api"
+  cd ~/dev/cookit-api/
+  npm link @chefcookit/utils
+  echo "4) linking admin"
+  cd ~/dev/cookit-admin/
+  npm link @chefcookit/utils
+}
+
+lr() {
+  # delete react node_modules && create link
+  echo "LINKING REACT BETWEEN COOKIT-UI AND COOKIT-ECOM"
+  echo "-----------------------------------------------"
+  echo "1) Removing @cookit-ui/node_modules/react"
+  rm -rf ~/dev/cookit-ui/node_modules/react
+  cd ~/dev/cookit-ecom/node_modules/react
+  echo "2) Creating React link"
+  yarn link
+  cd ~/dev/cookit-ui
+  echo "3) Linking..."
+  yarn link react
+  echo "Done!"
+}
+
+lui() {
+  echo "LINKING COOKIT-UI AND COOKIT-ECOM"
+  echo "---------------------------------"
+  echo "1) Creating @chefcookit/cookit-ui link"
+  cd ~/dev/cookit-ui
+  yarn link
+  cd ~/dev/cookit-ecom
+  yarn link @chefcookit/cookit-ui
+  echo "Done!"
+}
+
+rebuild-ctrl() {
+  cd ~ecom
+  cd packages/controllers
+  yarn gen && yarn build
+  cd ~ecom
+}
+
 # TMATE Functions
 
 TMATE_PAIR_NAME="$(whoami)-pair"
