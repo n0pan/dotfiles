@@ -14,7 +14,7 @@ brew update
 
 # Install ZSH
 echo "Installing ZSH..."
-brew install zsh
+brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
 
 # Git
 echo "Installing Git..."
@@ -27,10 +27,10 @@ brew install python3
 brew install node
 brew install java
 brew install golang
-
 brew tap mongodb/brew
-
 brew install mongodb
+brew install awscli
+brew cask install virtualbox
 
 # Terminal
 echo "Installing terminal..."

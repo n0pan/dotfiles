@@ -31,10 +31,8 @@ brew cask install slack
 brew cask install teamviewer
 
 # Terminal
-echo "Installing iTerm2 Nightly"
-brew cask install iterm2-nightly
-echo "Installing alacritty"
-brew cask install alacritty
+echo "Installing Terminal"
+brew cask install kitty
 
 # Media
 echo "Installing Media..."
@@ -45,23 +43,32 @@ brew cask install iina
 # Tools
 echo "Installing Tools..."
 brew cask install bartender
-brew cask install amethyst
 brew cask install rocket
+brew cask install authy
 
 # Etc
 echo "Installing fonts..."
 brew cask install font-hack-nerd-font
 brew cask install font-cascadia
+brew cask install font-jetbrains-mono
+
+cd /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/
+cp *.otf ~/Library/Fonts/ 
 
 echo "Cleanup..."
 brew cask cleanup
 
-# App Store apps
 echo "Installing App Store apps"
-mas Spark, id: 1176895641
-mas Fantastical 2, id: 975937182
-mas Things 3, id: 904280696
-mas Flycut, id: 442160987
-mas MindNode 6, id: 1289197285
-mas Xcode, id: 497799835
+# Spark
+mas install 1176895641
+# Fantastical
+mas install 975937182
+# Things
+mas install 904280696
+# Flycut
+mas install 442160987
+# MindNode
+mas install 1289197285
+# Xcode
+mas install 497799835
 
