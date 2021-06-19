@@ -51,9 +51,13 @@ echo "Installing fonts..."
 brew cask install font-hack-nerd-font
 brew cask install font-cascadia
 brew cask install font-jetbrains-mono
+brew cask install font-fira-code-nerd-font
 
 cd /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/
 cp *.otf ~/Library/Fonts/ 
+
+cd ~/dotfiles/fonts/Pragamata Pro
+cp *.ttf ~/Library.Fonts
 
 echo "Cleanup..."
 brew cask cleanup
