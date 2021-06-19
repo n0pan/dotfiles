@@ -6,52 +6,60 @@ brew tap homebrew/cask-fonts
 
 # Browsers
 echo "Installing Browsers..."
-brew cask install google-chrome
-brew cask install firefox-developer-edition
+brew install --cask google-chrome
+brew install --cask firefox-developer-edition
+
+# VM
+echo "Installing VM..."
+brew install --cask virtualbox
+
+# VPN
+echo "Installing VPN..."
+brew install --cask private-internet-access
 
 # Development
 echo "Installing Development..."
-brew cask install visual-studio-code
-brew cask install webstorm
-brew cask install postman
-brew cask install ngrok
-brew cask install dash
-brew cask install robo-3t
-brew cask install docker
-brew cask install resilio-sync
+brew install --cask visual-studio-code
+brew install --cask webstorm
+brew install --cask postman
+brew install --cask ngrok
+brew install --cask dash
+brew install --cask robo-3t
+brew install --cask docker
+brew install --cask resilio-sync
 
 # Productivity
 echo "Installing Productivity..."
-brew cask install alfred
-brew cask install contexts
+brew install --cask alfred
+brew install --cask contexts
 
 # Communication
 echo "Installing Communication..."
-brew cask install slack
-brew cask install teamviewer
+brew install --cask slack
+brew install --cask teamviewer
 
 # Terminal
-echo "Installing Terminal"
-brew cask install kitty
+echo "Installing Terminal..."
+brew install --cask kitty
 
 # Media
 echo "Installing Media..."
-brew cask install spotify
-brew cask install transmission
-brew cask install iina
+brew install --cask spotify
+brew install --cask transmission
+brew install --cask iina
 
 # Tools
 echo "Installing Tools..."
-brew cask install bartender
-brew cask install rocket
-brew cask install authy
+brew install --cask bartender
+brew install --cask rocket
+brew install --cask authy
 
-# Etc
+# Fonts
 echo "Installing fonts..."
-brew cask install font-hack-nerd-font
-brew cask install font-cascadia
-brew cask install font-jetbrains-mono
-brew cask install font-fira-code-nerd-font
+brew install --cask font-hack-nerd-font
+brew install --cask font-cascadia
+brew install --cask font-jetbrains-mono
+brew install --cask font-fira-code-nerd-font
 
 cd /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/
 cp *.otf ~/Library/Fonts/ 
