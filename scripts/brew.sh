@@ -30,7 +30,6 @@ brew install golang
 brew tap mongodb/brew
 brew install mongodb
 brew install awscli
-brew cask install virtualbox
 
 # Terminal
 echo "Installing terminal..."

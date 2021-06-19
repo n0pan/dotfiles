@@ -17,6 +17,10 @@ echo "linking nvim config..."
 ln -s ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
 echo "done!"
 
+# Copying transparent theme
+echo "Copying transparent theme"
+cp ~/dotfiles/transparent.vim ~/.config/nvim/vim-airline-themes/autoload/airline/themes/transparent.vim
+
 # Nvim themes
 echo "linking themes..."
 ln -s ~/dotfiles/.config/nvim/colors ~/.config/nvim
