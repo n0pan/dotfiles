@@ -134,6 +134,8 @@ alias new-top="tmux new-window -n top vtop"
 alias new-utils="tmux new-window -n utils -c ~/dev/utils"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
+alias restart-yabai="brew services restart yabai"
+alias restart-skhd="brew services restart skhd"
 
 hash -d ecom=~/DEV/cookit-ecom
 hash -d ui=~/DEV/cookit-ui
