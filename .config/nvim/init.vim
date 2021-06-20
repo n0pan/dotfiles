@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim')
 " EDITOR THEMES
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'wojciechkepka/vim-github-dark'
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
@@ -252,6 +253,6 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 call plug#end()
 
-colorscheme onedark
+colorscheme ghdark
 
 let g:airline_theme='transparent'
