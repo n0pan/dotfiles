@@ -125,10 +125,10 @@ alias cook-it="mux cook-it"
 alias spotlyne="mux spotlyne"
 alias ci-restore-db="docker start -a restore-test"
 alias spt-restore-db="sh ~/dev/spotlyne/.config/dumpprod.sh"
-alias new-ecom="tmux new-window -n ecom -c ~/dev/cookit-ecom"
-alias new-ui="tmux new-window -n ui -c ~/dev/cookit-ui"
-alias new-api="tmux new-window -n api -c ~/dev/cookit-api"
-alias new-admin="tmux new-window -n admin -c ~/dev/cookit-admin"
+alias new-ecom="tmux new-window -n ecom -c ~/dev/cookit/cookit-ecom"
+alias new-ui="tmux new-window -n ui -c ~/dev/cookit/cookit-ui"
+alias new-api="tmux new-window -n api -c ~/dev/cookit/cookit-api"
+alias new-admin="tmux new-window -n admin -c ~/dev/cookit/cookit-admin"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
@@ -138,15 +138,15 @@ alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
 
-hash -d ecom=~/DEV/cookit-ecom
-hash -d ui=~/DEV/cookit-ui
-hash -d api=~/DEV/cookit-api
-hash -d admin=~/DEV/cookit-admin
-hash -d ops=~/DEV/cookit-ops
-hash -d spt=~/DEV/spotlyne
+hash -d ecom=~/dev/cookit/cookit-ecom
+hash -d ui=~/dev/cookit/cookit-ui
+hash -d api=~/dev/cookit/cookit-api
+hash -d admin=~/dev/cookit/cookit-admin
+hash -d ops=~/dev/cookit/cookit-ops
+hash -d spt=~/dev/spotlyne
 hash -d df=~/dotfiles
-hash -d cdc=~/DEV/cockit-drinking-club
-hash -d sprint-planner=~/DEV/sprint-planner
+hash -d cdc=~/dev/cockit-drinking-club
+hash -d sprint-planner=~/dev/sprint-planner
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -160,8 +160,8 @@ lc() {
   echo "LINKING COOKIT-ECOM-CONTROLLERS"
   echo "-------------------------------"
   echo "1) Re-installing controller dependencies"
-  rm -rf ~/dev/cookit-ecom/packages/controllers/node_modules
-  cd ~/dev/cookit-ecom/packages/controllers
+  rm -rf ~/dev/cookit/cookit-ecom/packages/controllers/node_modules
+  cd ~/dev/cookit/cookit-ecom/packages/controllers
   yarn install
   echo "2) Generating queries"
   yarn gen
@@ -169,7 +169,7 @@ lc() {
   yarn build
   echo "4) Creating @chefcookit/cookit-ecom-controllers link..."
   yarn link
-  cd ~/dev/cookit-ecom
+  cd ~/dev/cookit/cookit-ecom
   echo "5) Linking..."
   yarn link @chefcookit/cookit-ecom-controllers
   echo "Done!"
@@ -179,16 +179,16 @@ lutils() {
   echo "LINKING COOKIT-UTILS"
   echo "-------------------"
   echo "1) creating link"
-  cd ~/dev/utils/
+  cd ~/dev/cookit/utils/
   npm link
   echo "2) linking ecom"
-  cd ~/dev/cookit-ecom/
+  cd ~/dev/cookit/cookit-ecom/
   npm link @chefcookit/utils
   echo "3) linking api"
-  cd ~/dev/cookit-api/
+  cd ~/dev/cookit/cookit-api/
   npm link @chefcookit/utils
   echo "4) linking admin"
-  cd ~/dev/cookit-admin/
+  cd ~/dev/cookit/cookit-admin/
   npm link @chefcookit/utils
 }
 
@@ -197,11 +197,11 @@ lr() {
   echo "LINKING REACT BETWEEN COOKIT-UI AND COOKIT-ECOM"
   echo "-----------------------------------------------"
   echo "1) Removing @cookit-ui/node_modules/react"
-  rm -rf ~/dev/cookit-ui/node_modules/react
-  cd ~/dev/cookit-ecom/node_modules/react
+  rm -rf ~/dev/cookit/cookit-ui/node_modules/react
+  cd ~/dev/cookit/cookit-ecom/node_modules/react
   echo "2) Creating React link"
   yarn link
-  cd ~/dev/cookit-ui
+  cd ~/dev/cookit/cookit-ui
   echo "3) Linking..."
   yarn link react
   echo "Done!"
@@ -211,9 +211,9 @@ lui() {
   echo "LINKING COOKIT-UI AND COOKIT-ECOM"
   echo "---------------------------------"
   echo "1) Creating @chefcookit/cookit-ui link"
-  cd ~/dev/cookit-ui
+  cd ~/dev/cookit/cookit-ui
   yarn link
-  cd ~/dev/cookit-ecom
+  cd ~/dev/cookit/cookit-ecom
   yarn link @chefcookit/cookit-ui
   echo "Done!"
 }
