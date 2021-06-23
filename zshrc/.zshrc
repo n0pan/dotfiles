@@ -132,7 +132,8 @@ alias new-admin="tmux new-window -n admin -c ~/dev/cookit/cookit-admin"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
-alias new-utils="tmux new-window -n utils -c ~/dev/utils"
+alias new-utils="tmux new-window -n utils -c ~/dev/cookit/utils"
+alias new-jura="tmux new-window -n jura -c ~/dev/cookit/cookit-jura"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
@@ -145,6 +146,7 @@ hash -d admin=~/dev/cookit/cookit-admin
 hash -d ops=~/dev/cookit/cookit-ops
 hash -d spt=~/dev/spotlyne
 hash -d df=~/dotfiles
+hash -d jura=~/dev/cookit/cookit-jura
 hash -d cdc=~/dev/cockit-drinking-club
 hash -d sprint-planner=~/dev/sprint-planner
 
