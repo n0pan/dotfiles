@@ -253,6 +253,6 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 call plug#end()
 
-colorscheme ghdark
+colorscheme onedark
 
 let g:airline_theme='transparent'
