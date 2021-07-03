@@ -1,7 +1,6 @@
-#!/bin/sh
+!#/bin/sh
 
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
 
 # Browsers
@@ -53,6 +52,8 @@ echo "Installing Tools..."
 brew install --cask bartender
 brew install --cask rocket
 brew install --cask authy
+brew install --cask fantastical
+brew install --cask flycut
 
 # Fonts
 echo "Installing fonts..."
@@ -66,9 +67,6 @@ cp *.otf ~/Library/Fonts/
 
 cd ~/dotfiles/fonts/Pragamata Pro
 cp *.ttf ~/Library.Fonts
-
-echo "Cleanup..."
-brew cask cleanup
 
 echo "Installing App Store apps"
 # Spark
