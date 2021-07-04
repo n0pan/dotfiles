@@ -140,6 +140,9 @@ inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
+" GITHUB THEME
+let g:gh_color = "soft"
+
 " NERDTREE
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowHidden = 0
@@ -253,6 +256,6 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 call plug#end()
 
-colorscheme onedark
+colorscheme ghdark
 
 let g:airline_theme='transparent'
