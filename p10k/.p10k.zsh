@@ -269,11 +269,12 @@
   #
   # Example:
   #
-  typeset -g POWERLEVEL9K_DIR_CLASSES=(
-      '~/dev/cookit(/*)#'  WORK     '📦'
-      '~/dev(/*)#'   DEV     '💻'
-      '~(/*)#'       HOME     '🏠'
-      '*'            DEFAULT  '')
+  # typeset -g POWERLEVEL9K_DIR_CLASSES=(
+  #     '~/dev/cookit(/*)#'  WORK     ''
+  #     '~/dotfiles(/*)#'  DOTFILES     '⚙️'
+  #     '~/dev(/*)#'   DEV     '💻'
+  #     '~(/*)#'       HOME     '🏠'
+  #     '*'            DEFAULT  '')
   #
   # With these settings, the current directory in the prompt may look like this:
   #
@@ -287,9 +288,9 @@
   # FOREGROUND, SHORTENED_FOREGROUND and ANCHOR_FOREGROUND for every directory class that you wish
   # to have its own color.
   #
-  typeset -g POWERLEVEL9K_DIR_WORK_FOREGROUND=31
-  typeset -g POWERLEVEL9K_DIR_WORK_SHORTENED_FOREGROUND=103
-  typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=39
+  # typeset -g POWERLEVEL9K_DIR_WORK_FOREGROUND=31
+  # typeset -g POWERLEVEL9K_DIR_WORK_SHORTENED_FOREGROUND=103
+  # typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=39
   #
   # typeset -g POWERLEVEL9K_DIR_CLASSES=()
 
