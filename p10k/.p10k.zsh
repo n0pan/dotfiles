@@ -270,8 +270,9 @@
   # Example:
   #
   typeset -g POWERLEVEL9K_DIR_CLASSES=(
-      '~/dev/cookit(/*)#'  WORK     '(╯°□°）╯︵ ┻━┻'
-      '~(/*)#'       HOME     '⌂'
+      '~/dev/cookit(/*)#'  WORK     '📦'
+      '~/dev(/*)#'   DEV     '💻'
+      '~(/*)#'       HOME     '🏠'
       '*'            DEFAULT  '')
   #
   # With these settings, the current directory in the prompt may look like this:
@@ -290,7 +291,7 @@
   typeset -g POWERLEVEL9K_DIR_WORK_SHORTENED_FOREGROUND=103
   typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=39
   #
-  typeset -g POWERLEVEL9K_DIR_CLASSES=()
+  # typeset -g POWERLEVEL9K_DIR_CLASSES=()
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
@@ -513,7 +514,7 @@
   # Nodenv color.
   typeset -g POWERLEVEL9K_NODENV_FOREGROUND=70
   # Don't show node version if it's the same as global: $(nodenv version-name) == $(nodenv global).
-  typeset -g POWERLEVEL9K_NODENV_PROMPT_ALWAYS_SHOW=false
+  typeset -g POWERLEVEL9K_NODENV_PROMPT_ALWAYS_SHOW=true
   # Custom icon.
   # typeset -g POWERLEVEL9K_NODENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
