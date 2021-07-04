@@ -228,6 +228,18 @@ rebuild-ctrl() {
   cd ~ecom
 }
 
+reset-v4() {
+  cd ~ecom
+  echo "Removing node_modules"
+  rm -rf ~/dev/cookit/cookit-ecom/node_modules
+  rm -rf ~/dev/cookit/cookit-ecom/packages/controllers/node_modules
+  meteor npm i
+  lc
+  lui
+  lr
+  cd ~ecom
+}
+
 # TMATE Functions
 
 TMATE_PAIR_NAME="$(whoami)-pair"
