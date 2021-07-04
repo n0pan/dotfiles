@@ -103,16 +103,17 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=204"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias lf="find ./ -type f | grep "
 alias st="sh start.sh"
 alias st-ip="sh start-ip.sh"
-alias nvimconfig="nvim ~/.config/nvim/init.vim"
-alias colorconfig="nvim ~/.config/nvim/colors"
-alias tmuxconfig="nvim ~/.tmux.conf"
-alias kittyconfig="nvim ~/.config/kitty/kitty.conf"
+alias dotfiles="cd ~/dotfiles"
+alias zshconf="nvim ~/.zshrc"
+alias viconf="nvim ~/.config/nvim/init.vim"
+alias colorconf="nvim ~/.config/nvim/colors"
+alias tmuxconf="nvim ~/.tmux.conf"
+alias kittyconf="nvim ~/.config/kitty/kitty.conf"
 alias yabairc="nvim ~/.yabairc"
 alias skhdrc="nvim ~/.skhdrc"
 alias vi="nvim"
