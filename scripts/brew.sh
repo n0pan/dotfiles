@@ -15,6 +15,8 @@ brew update
 echo "Installing ZSH..."
 brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
 
+ln -s ~/dotfiles/.
+
 # Git
 echo "Installing Git..."
 brew install git
