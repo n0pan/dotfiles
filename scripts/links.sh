@@ -19,7 +19,7 @@ echo "done!"
 
 # Copying transparent theme
 echo "Copying transparent theme"
-cp ~/dotfiles/transparent.vim ~/.config/nvim/vim-airline-themes/autoload/airline/themes/transparent.vim
+cp ~/dotfiles/terminal/transparent.vim ~/.config/nvim/vim-airline-themes/autoload/airline/themes/transparent.vim
 
 # zshrc
 echo "linking zshrc..."

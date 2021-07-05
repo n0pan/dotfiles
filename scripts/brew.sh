@@ -20,6 +20,7 @@ ln -s ~/dotfiles/.
 # Git
 echo "Installing Git..."
 brew install git
+brew install gh
 
 # Development
 echo "Installing Development..."
