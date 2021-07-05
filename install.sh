@@ -4,8 +4,12 @@ source ./scripts/brew.sh
 source ./scripts/cask.sh
 source ./scripts/links.sh
 source ./scripts/etc.sh
+source ./tmuxinator/install.sh
+source ./fonts/install.sh
+source ./wallpapers/install.sh
 
 echo "Sourcing zshrc"
-source .zshrc
+source terminal/.zshrc
+tmux source terminal/.tmux.conf
 
 echo "Installation complete!"

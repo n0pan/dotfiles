@@ -41,7 +41,7 @@ Plug 'ambv/black'
 Plug 'mustache/vim-mustache-handlebars'
 
 " MARKDOWN
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " LINTING
 Plug 'prettier/vim-prettier', {

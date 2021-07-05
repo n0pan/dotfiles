@@ -1,1 +1,0 @@
-/Users/lq/dotfiles/.config/nvim/init.vim
