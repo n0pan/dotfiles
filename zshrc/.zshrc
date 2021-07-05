@@ -140,6 +140,7 @@ alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
 
+hash -d lq=~/dev/long-quan
 hash -d ci=~/dev/cookit
 hash -d ecom=~/dev/cookit/cookit-ecom
 hash -d ui=~/dev/cookit/cookit-ui

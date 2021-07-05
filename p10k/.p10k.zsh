@@ -31,7 +31,8 @@
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-      # os_icon               # os identifier
+      # os_icon                 # os identifier
+      root_indicator
       dir                     # current directory
       vcs                     # git status
       prompt_char             # prompt symbol
@@ -42,7 +43,7 @@
   # automatically hidden when the input line reaches it. Right prompt above the
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-      context                 # user@host
+      # context                 # user@host
       status                  # exit code of the last command
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
@@ -52,12 +53,15 @@
       nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
       nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
       nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
-      # node_version          # node.js version
-      # go_version            # go version (https://golang.org)
-      # rust_version          # rustc version (https://www.rust-lang.org)
+      node_version          # node.js version
+      go_version            # go version (https://golang.org)
+      rust_version          # rustc version (https://www.rust-lang.org)
+      # java_version          # java version
+      # aws
+      # docker_machine
       # rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
       # rvm                     # ruby version from rvm (https://rvm.io)
-      # kubecontext             # current kubernetes context (https://kubernetes.io/)
+      kubecontext             # current kubernetes context (https://kubernetes.io/)
       # terraform               # terraform workspace (https://www.terraform.io)
       # nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       # ranger                  # ranger shell (https://github.com/ranger/ranger)
@@ -181,7 +185,7 @@
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=196
   # Default prompt symbol.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION="->"
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION="/>"
   # Prompt symbol in command vi mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
   # Prompt symbol in visual vi mode.
@@ -265,10 +269,12 @@
   #
   # Example:
   #
-  #   typeset -g POWERLEVEL9K_DIR_CLASSES=(
-  #       '~/work(/*)#'  WORK     '(╯°□°）╯︵ ┻━┻'
-  #       '~(/*)#'       HOME     '⌂'
-  #       '*'            DEFAULT  '')
+  # typeset -g POWERLEVEL9K_DIR_CLASSES=(
+  #     '~/dev/cookit(/*)#'  WORK     ''
+  #     '~/dotfiles(/*)#'  DOTFILES     '⚙️'
+  #     '~/dev(/*)#'   DEV     '💻'
+  #     '~(/*)#'       HOME     '🏠'
+  #     '*'            DEFAULT  '')
   #
   # With these settings, the current directory in the prompt may look like this:
   #
@@ -282,11 +288,11 @@
   # FOREGROUND, SHORTENED_FOREGROUND and ANCHOR_FOREGROUND for every directory class that you wish
   # to have its own color.
   #
-  #   typeset -g POWERLEVEL9K_DIR_WORK_FOREGROUND=31
-  #   typeset -g POWERLEVEL9K_DIR_WORK_SHORTENED_FOREGROUND=103
-  #   typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=39
+  # typeset -g POWERLEVEL9K_DIR_WORK_FOREGROUND=31
+  # typeset -g POWERLEVEL9K_DIR_WORK_SHORTENED_FOREGROUND=103
+  # typeset -g POWERLEVEL9K_DIR_WORK_ANCHOR_FOREGROUND=39
   #
-  typeset -g POWERLEVEL9K_DIR_CLASSES=()
+  # typeset -g POWERLEVEL9K_DIR_CLASSES=()
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
@@ -509,7 +515,7 @@
   # Nodenv color.
   typeset -g POWERLEVEL9K_NODENV_FOREGROUND=70
   # Don't show node version if it's the same as global: $(nodenv version-name) == $(nodenv global).
-  typeset -g POWERLEVEL9K_NODENV_PROMPT_ALWAYS_SHOW=false
+  typeset -g POWERLEVEL9K_NODENV_PROMPT_ALWAYS_SHOW=true
   # Custom icon.
   # typeset -g POWERLEVEL9K_NODENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
