@@ -14,13 +14,13 @@ Plug 'vim-airline/vim-airline-themes'
 
 " SYNTAX HIGHLIGHTING
 Plug 'jparise/vim-graphql'
+
 "" HTML
 Plug 'alvan/vim-closetag'
 
 "" JAVASCRIPT
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'epilande/vim-es2015-snippets'
 
 "" REACT / JSX
 Plug 'maxmellon/vim-jsx-pretty'
@@ -34,7 +34,7 @@ Plug 'epilande/vim-react-snippets'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'ianks/vim-tsx'
 
-" BLACK
+" PYTHON LINTER
 Plug 'ambv/black'
 
 " HANDLEBARS
