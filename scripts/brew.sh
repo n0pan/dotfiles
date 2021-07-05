@@ -30,7 +30,9 @@ brew install node
 brew install java
 brew install golang
 brew tap mongodb/brew
-brew install mongodb
+brew install mongodb/brew/mongocli
+brew install mongodb/brew/mongocommunity
+brew install mongodb/brew/mongo-database-tools
 brew install awscli
 
 # Terminal

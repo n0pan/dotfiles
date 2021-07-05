@@ -1,4 +1,4 @@
-!#/bin/sh
+#!/bin/sh
 
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
@@ -54,19 +54,6 @@ brew install --cask rocket
 brew install --cask authy
 brew install --cask fantastical
 brew install --cask flycut
-
-# Fonts
-echo "Installing fonts..."
-brew install --cask font-hack-nerd-font
-brew install --cask font-cascadia
-brew install --cask font-jetbrains-mono
-brew install --cask font-fira-code-nerd-font
-
-cd /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/
-cp *.otf ~/Library/Fonts/ 
-
-cd ~/dotfiles/fonts/Pragamata Pro
-cp *.ttf ~/Library.Fonts
 
 echo "Installing App Store apps"
 # Spark
