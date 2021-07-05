@@ -20,9 +20,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "copy .config"
 cp -R ~/dotfiles/.config/ ~/.config/
 
-echo "copy .bin"
-cp -R ~/dotfiles/.bin/ ~/.bin/
-
 echo "create spotifyd daemon"
 sudo cp ~/dotfiles/spotifyd/rustlang.spotifyd.plist /Library/LaunchDaemons/rustlang.spotifyd.plist
 sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist
