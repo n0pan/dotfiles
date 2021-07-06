@@ -4,10 +4,10 @@
 	name = LQ Hoang
 	email = longquanhp@gmail.com
 [alias]
-  ci = commit
+  c = commit
   cam = commit -a -m
   cm = commit -m
   co = checkout
+  nb = checkout -b
   b = branch
-  nb = branch -b
   s = status
