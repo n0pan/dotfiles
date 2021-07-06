@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = LQ Hoang
+	email = longquanhp@gmail.com
+[alias]
+  ci = commit
+  cam = commit -a -m
+  cm = commit -m
+  co = checkout
+  b = branch
+  nb = branch -b
+  s = status
