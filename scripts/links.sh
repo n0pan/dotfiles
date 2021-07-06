@@ -5,6 +5,7 @@ echo "making links..."
 # Snippets
 echo "linking snippets..."
 ln -s -f ~/dotfiles/snippets/javascriptreact.snippets ~/.config/coc/ultisnips
+ln -s -f ~/dotfiles/snippets/typescriptreact.snippets ~/.config/coc/ultisnips
 echo "done!"
 
 # Tmux
