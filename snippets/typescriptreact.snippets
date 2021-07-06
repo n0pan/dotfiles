@@ -1,0 +1,36 @@
+# React snippets
+snippet < "React component basics"
+<${1:Tag}>
+	${2:content}
+</$1>
+endsnippet
+
+snippet <s "React component basics with style"
+<${1:Tag} style={styles.${2:styleName}}>
+	${3:content}
+</$1>
+endsnippet
+
+snippet </ "React component self closing"
+<${1:Tag}
+	${2:content}
+/>
+endsnippet
+
+snippet </s "React component self closing with style"
+<${1:Tag} style={styles.${2:styleName}}
+	${3:content}
+/>
+endsnippet
+
+snippet cl "Console log"
+console.log(${1:log})
+endsnippet
+
+snippet ce "Console error"
+console.error(${1:error})
+endsnippet
+
+snippet ci "Console info"
+console.info(${1:info})
+endsnippet
