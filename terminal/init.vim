@@ -7,6 +7,8 @@ call plug#begin('~/.config/nvim')
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'wojciechkepka/vim-github-dark'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'drewtempelmeyer/palenight.vim'
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
