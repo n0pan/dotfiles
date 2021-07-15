@@ -23,7 +23,7 @@ brew install --cask webstorm
 brew install --cask postman
 brew install --cask ngrok
 brew install --cask dash
-brew install --cask robo-3t
+brew install --cask nosqlbooster-for-mongodb
 brew install --cask docker
 brew install --cask resilio-sync
 
