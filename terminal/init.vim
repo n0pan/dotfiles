@@ -59,6 +59,9 @@ Plug 'prettier/vim-prettier', {
     \ 'python',
     \ 'html' ] }
 
+" TREESITTER
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " NERDTREE
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -256,6 +259,18 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 call plug#end()
 
-colorscheme onedark
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = { "javascript" }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+  },
+}
+EOF
+
+colorscheme ghdark
 
 let g:airline_theme='transparent'
