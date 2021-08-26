@@ -31,7 +31,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'epilande/vim-react-snippets'
 
 "" TYPESCRIPT
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 Plug 'ianks/vim-tsx'
 
 " BLACK
