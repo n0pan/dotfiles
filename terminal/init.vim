@@ -7,6 +7,8 @@ call plug#begin('~/.config/nvim')
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'wojciechkepka/vim-github-dark'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'rktjmp/lush.nvim'
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
@@ -17,13 +19,7 @@ Plug 'jparise/vim-graphql'
 "" HTML
 Plug 'alvan/vim-closetag'
 
-"" JAVASCRIPT
-Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'epilande/vim-es2015-snippets'
-
 "" REACT / JSX
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -33,7 +29,7 @@ Plug 'epilande/vim-react-snippets'
 "" TYPESCRIPT
 Plug 'ianks/vim-tsx'
 
-" BLACK
+" PYTHON LINTER
 Plug 'ambv/black'
 
 " HANDLEBARS
@@ -60,6 +56,7 @@ Plug 'prettier/vim-prettier', {
 
 " TREESITTER
 Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat','do': ':TSUpdate' }
+Plug 'nvim-treesitter/playground'
 
 " NERDTREE
 Plug 'scrooloose/nerdtree'
@@ -270,6 +267,6 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-colorscheme gruvbox
+colorscheme ghdark
 
 let g:airline_theme='transparent'

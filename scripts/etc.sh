@@ -12,7 +12,7 @@ echo "install meteor..."
 curl https://install.meteor.com/ | sh
 
 echo "install powerlevel10k..."
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/themes/powerlevel10k
 
 echo "install tpm..."
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
