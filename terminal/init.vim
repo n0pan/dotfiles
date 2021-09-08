@@ -26,9 +26,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'epilande/vim-react-snippets'
 
-"" TYPESCRIPT
-Plug 'ianks/vim-tsx'
-
 " PYTHON LINTER
 Plug 'ambv/black'
 
