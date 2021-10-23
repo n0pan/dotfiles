@@ -9,6 +9,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'wojciechkepka/vim-github-dark'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'rktjmp/lush.nvim'
+Plug 'projekt0n/github-nvim-theme'
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
@@ -255,15 +256,41 @@ call plug#end()
 " treesitter
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+ensure_installed = { 
+    "tsx", 
+    "json", 
+    "yaml",
+    "html",
+    "scss",
+    "css",
+    "typescript",
+    "javascript",
+    "regex", 
+    "vim", 
+    "dockerfile", 
+    "graphql" 
+  }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = { }, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
     disable = { },  -- list of language that will be disabled
   },
+  indent = {
+    disable = { },
+    enable = false,
+  }
 }
 EOF
 
-colorscheme ghdark
+lua <<EOF
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
+EOF
+
+" GITHUB THEME
+let g:github_transparent = "true"
+let g:github_dark_sidebar = "true"
+
+colorscheme github_dark
 
 let g:airline_theme='transparent'
