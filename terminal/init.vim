@@ -268,7 +268,10 @@ ensure_installed = {
     "regex", 
     "vim", 
     "dockerfile", 
-    "graphql" 
+    "bash",
+    "graphql",
+    "html",
+    "regex"
   }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = { }, -- List of parsers to ignore installing
   highlight = {
@@ -276,8 +279,8 @@ ensure_installed = {
     disable = { },  -- list of language that will be disabled
   },
   indent = {
-    disable = { },
     enable = false,
+    disable = { },
   }
 }
 EOF
