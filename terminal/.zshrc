@@ -147,6 +147,7 @@ hash -d ui=~/dev/cookit/cookit-ui
 hash -d api=~/dev/cookit/cookit-api
 hash -d admin=~/dev/cookit/cookit-admin
 hash -d ops=~/dev/cookit/cookit-ops
+hash -d utils=~/dev/cookit/utils
 hash -d spt=~/dev/spotlyne
 hash -d df=~/dotfiles
 hash -d jura=~/dev/cookit/cookit-jura
