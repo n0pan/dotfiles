@@ -293,6 +293,8 @@ EOF
 " GITHUB THEME
 let g:github_transparent = "true"
 let g:github_dark_sidebar = "true"
+let g:github_keyword_style = "NONE"
+let g:github_comment_style = "NONE"
 
 colorscheme github_dark
 
