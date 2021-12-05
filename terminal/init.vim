@@ -3,6 +3,9 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim')
 
+" TERMINAL CONFIG SYNTAX HIGHLIGHTING
+Plug 'fladson/vim-kitty'
+
 " EDITOR THEMES
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
