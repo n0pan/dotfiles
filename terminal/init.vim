@@ -60,7 +60,6 @@ Plug 'ryanoasis/vim-devicons'
 " TOOLS
 " vim-slash removes search highlighting after cursor moves
 Plug 'junegunn/vim-slash'
-Plug 'nathanaelkane/vim-indent-guides'
 
 " Use C-n to toggle vim-multiple-cursors
 Plug 'terryma/vim-multiple-cursors'
