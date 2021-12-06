@@ -7,11 +7,8 @@ call plug#begin('~/.config/nvim')
 Plug 'fladson/vim-kitty'
 
 " EDITOR THEMES
-Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'wojciechkepka/vim-github-dark'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'rktjmp/lush.nvim'
 Plug 'projekt0n/github-nvim-theme'
 
 " AIRLINE THEMES
@@ -31,10 +28,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'epilande/vim-react-snippets'
 
 " PYTHON LINTER
-Plug 'ambv/black'
-
-" HANDLEBARS
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'psf/black', { 'branch': 'stable' }
 
 " MARKDOWN
 Plug 'iamco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -56,7 +50,7 @@ Plug 'prettier/vim-prettier', {
     \ 'html' ] }
 
 " TREESITTER
-Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat','do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
 
 " NERDTREE
@@ -66,6 +60,7 @@ Plug 'ryanoasis/vim-devicons'
 " TOOLS
 " vim-slash removes search highlighting after cursor moves
 Plug 'junegunn/vim-slash'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Use C-n to toggle vim-multiple-cursors
 Plug 'terryma/vim-multiple-cursors'
@@ -73,14 +68,14 @@ Plug 'terryma/vim-multiple-cursors'
 " Automatically creates pairs of parentheses, etc.
 Plug 'jiangmiao/auto-pairs'
 
-" DEBUGGER
-Plug 'puremourning/vimspector'
-
 " Use cs to change surround
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+" Quick-scope: Highlights unique characters when pressing `f`/`F`/`t`/`T`
 Plug 'unblevable/quick-scope'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
@@ -93,6 +88,7 @@ Plug 'Shougo/denite.nvim'
 
 " Tools
 Plug 'matze/vim-move'
+" Allows quick (un)commenting using `gc`
 Plug 'tomtom/tcomment_vim'
 
 " Markdown
@@ -268,6 +264,7 @@ ensure_installed = {
     "css",
     "typescript",
     "javascript",
+    "python",
     "regex", 
     "vim", 
     "dockerfile", 
