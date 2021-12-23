@@ -28,7 +28,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'epilande/vim-react-snippets'
 
 " PYTHON LINTER
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'EgZvor/vim-black'
 
 " MARKDOWN
 Plug 'iamco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -294,6 +294,9 @@ let g:github_transparent = "true"
 let g:github_dark_sidebar = "true"
 let g:github_keyword_style = "NONE"
 let g:github_comment_style = "NONE"
+
+" Black
+let g:black_virtualenv = "~/.env/bin/black"
 
 colorscheme github_dark
 
