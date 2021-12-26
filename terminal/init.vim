@@ -238,6 +238,7 @@ ensure_installed = {
     "python",
     "regex", 
     "vim", 
+    "lua",
     "dockerfile", 
     "bash",
     "graphql",
@@ -284,7 +285,6 @@ let g:github_comment_style = "NONE"
 " Black
 let g:black_virtualenv = "~/.env/bin/black"
 
-colorscheme github_dark
-" colorscheme ayu
+colorscheme ayu
 
 let g:airline_theme='transparent'
