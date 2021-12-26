@@ -45,6 +45,8 @@ brew install tmux
 brew install the_silver_searcher
 brew install docker-compose
 brew install tmuxinator
+brew install fd
+brew install ripgrep
 
 echo "Installing Spotify tool for terminal..."
 brew install Rigellute/tap/spotify-tui

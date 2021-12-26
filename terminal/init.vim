@@ -75,9 +75,8 @@ Plug 'unblevable/quick-scope'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " For async completion
 Plug 'Shougo/deoplete.nvim'
@@ -159,39 +158,13 @@ nmap <Leader>pre <Plug>(Prettier)
 " Black
 nmap <Leader>bla :Black<CR>
 
-" START CTRLP 
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_regexp = 0
-let g:ctrlp_use_caching = 1
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v.(node_modules)',
-  \ 'file': '\v.(\.tests\.)',
-  \ }
-
-fun! g:CtrlP_set_general_ignore()
-  let general_ignore = '\v.(\.tests\.)'
-  if g:ctrlp_custom_ignore.file != general_ignore
-    let g:ctrlp_custom_ignore.file = general_ignore
-    call ctrlp#clr()
-  endif
- endfun
-
-fun! g:CtrlP_set_test_ignore()
-  let general_ignore = '\v(\.tests\.ts)@<!$'
-  if g:ctrlp_custom_ignore.file != general_ignore
-    let g:ctrlp_custom_ignore.file = general_ignore
-    call ctrlp#clr()
-  endif
- endfun
-
-nnoremap <Leader>sf :call CtrlP_set_general_ignore()<CR>:CtrlP<CR>
-nnoremap <Leader>sb :CtrlPBuffer<CR>
-nnoremap <Leader>st :call CtrlP_set_test_ignore()<CR>:CtrlP<CR>
-nnoremap <leader>ss :Ag<CR>
-" END CTRLP
-
-" FZF
-com! -bar -bang Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter=: --nth=4..'}, 'right'), <bang>0)
+" Find files using Telescope command-line sugar.
+nnoremap <leader>sf <cmd>Telescope find_files<cr>
+nnoremap <leader>sfa <cmd>Telescope find_files<cr>
+nnoremap <leader>ss <cmd>Telescope live_grep<cr>
+nnoremap <leader>ssa <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " EMMET
 let g:user_emmet_leader_key=','
@@ -287,6 +260,14 @@ EOF
 lua <<EOF
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
+EOF
+
+lua <<EOF
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = { "node_modules" }
+  },
+}
 EOF
 
 " GITHUB THEME
