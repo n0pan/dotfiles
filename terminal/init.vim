@@ -7,9 +7,8 @@ call plug#begin('~/.config/nvim')
 Plug 'fladson/vim-kitty'
 
 " EDITOR THEMES
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'wojciechkepka/vim-github-dark'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'Shatur/neovim-ayu'
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
@@ -263,11 +262,17 @@ parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
 EOF
 
 lua <<EOF
-require('telescope').setup{
+require('telescope').setup({
   defaults = {
     file_ignore_patterns = { "node_modules" }
   },
-}
+})
+EOF
+
+lua <<EOF
+require('ayu').setup({
+  mirage = false,
+})
 EOF
 
 " GITHUB THEME
@@ -280,5 +285,6 @@ let g:github_comment_style = "NONE"
 let g:black_virtualenv = "~/.env/bin/black"
 
 colorscheme github_dark
+" colorscheme ayu
 
 let g:airline_theme='transparent'
