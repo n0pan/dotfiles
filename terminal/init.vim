@@ -238,12 +238,12 @@ ensure_installed = {
     "python",
     "regex", 
     "vim", 
-    "lua",
     "dockerfile", 
     "bash",
     "graphql",
     "html",
-    "regex"
+    "regex",
+    "lua",
   }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = { }, -- List of parsers to ignore installing
   highlight = {
@@ -270,11 +270,11 @@ require('telescope').setup({
 })
 EOF
 
-lua <<EOF
-require('ayu').setup({
-  mirage = false,
-})
-EOF
+" lua <<EOF
+" require('ayu').setup({
+"   mirage = false,
+" })
+" EOF
 
 " GITHUB THEME
 let g:github_transparent = "true"
@@ -285,6 +285,6 @@ let g:github_comment_style = "NONE"
 " Black
 let g:black_virtualenv = "~/.env/bin/black"
 
-colorscheme ayu
+colorscheme github_dark
 
 let g:airline_theme='transparent'
