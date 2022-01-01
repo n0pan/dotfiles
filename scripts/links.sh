@@ -4,8 +4,8 @@ echo "making links..."
 
 # Snippets
 echo "linking snippets..."
-ln -s -f ~/dotfiles/snippets/javascriptreact.snippets ~/.config/coc/ultisnips
-ln -s -f ~/dotfiles/snippets/typescriptreact.snippets ~/.config/coc/ultisnips
+ln -s -f ~/dotfiles/snippets/javascriptreact.snippets ~/.config/nvim/vim-react-snippets/UltiSnips
+ln -s -f ~/dotfiles/snippets/typescriptreact.snippets ~/.config/nvim/vim-react-snippets/UltiSnips
 echo "done!"
 
 # Tmux
