@@ -14408,7 +14408,7 @@ Example: https://open.spotify.com/track/6hxgHNJjadmCHAJPXw6AYL</string>
 		<key>__always_display_lyrics_in_browser</key>
 		<string>0</string>
 		<key>__artwork_folder_size</key>
-		<string>162M</string>
+		<string></string>
 		<key>__automatic_refresh_library_interval</key>
 		<string></string>
 		<key>__country_code</key>
@@ -14416,7 +14416,7 @@ Example: https://open.spotify.com/track/6hxgHNJjadmCHAJPXw6AYL</string>
 		<key>__debug</key>
 		<string></string>
 		<key>__display_name</key>
-		<string>LQ Hoang</string>
+		<string>LQ</string>
 		<key>__fuzzy_search</key>
 		<string></string>
 		<key>__is_alfred_playlist_active</key>
@@ -14428,7 +14428,7 @@ Example: https://open.spotify.com/track/6hxgHNJjadmCHAJPXw6AYL</string>
 		<key>__is_public_playlists</key>
 		<string>0</string>
 		<key>__last_check_update_time</key>
-		<string>1639894193</string>
+		<string>1626360418</string>
 		<key>__max_results</key>
 		<string>50</string>
 		<key>__mopidy_port</key>
@@ -14438,7 +14438,7 @@ Example: https://open.spotify.com/track/6hxgHNJjadmCHAJPXw6AYL</string>
 		<key>__now_playing_notifications</key>
 		<string>1</string>
 		<key>__oauth_access_token</key>
-		<string>BQDxWo61WRwRCo599kFF_Y0IQdqg6XPQVgGDrvDH1iEnz5szVTYgGE0PEC1GwnvA1H44AZkSY1T80dXynkUpa_5gOuqpCFvZNMAA28Lb2mjjJTMxEsoZHBpr4tvBBF1QUp1hnAmHInAszTOmLrr95TIvXLkw6jmbTYLWJcnKHf6fm9zcJsEyXQVmHh6mpiV9CIqTkxfkuOtB4OVtHjUM0lpkhDE1vKot7hsmHvFI1KvSk_DEPuJnSoZi47T_CEks1095yz8cvPi68mjSkA</string>
+		<string>BQB6yLo7nIW88aTxkCIO_23azfcKBj_ImmapKxhmifrWpUD29wGu6C_g7On-Eu7wtG2Tp9jEZAYiDRp7QUlyvTZUbbJ_gmvUDl7THl5T3Q-kx264nO2ktbCrG-D3WrMXnFzZyXFo2ItK5scDK6sJAhuoVqrjzMi80KOB-1xkaLr_UEUgQKOhtw-WY2Ks75Cqq5gTvdP97aAgcVYl_rS22QmW7zoundS6GBNUOqe-M6GukpC1KEHq45EjkmVEXyLuzwBGpvcaR4oG1kMauA</string>
 		<key>__oauth_client_id</key>
 		<string>455af34107be4bfb9fd92ae216a249e7</string>
 		<key>__oauth_client_secret</key>
@@ -14446,7 +14446,7 @@ Example: https://open.spotify.com/track/6hxgHNJjadmCHAJPXw6AYL</string>
 		<key>__oauth_redirect_uri</key>
 		<string>http://localhost:15298/callback.php</string>
 		<key>__oauth_refresh_token</key>
-		<string>AQBS2BckirT1mLleTUkleb73CwpNsO4XWLNEoRKhJL75NHrHB82mEb2lkQLv-m2k2zC9lsQ1oL0DcLrbiAhHm_Hsx2AySehQ8ct3PouZS6wvQFmP3U7HacQR-kzLpbNmxZs</string>
+		<string>AQDNKbWaDHqG7mDqWI6T3Ly4R14U7hg3-z9Yp5bb5rqFk-NBuMZ2r6rZ9dTVx5-aD7O4aLBKPOYW3qQxla5LDAbJAjw37SVn6DWwfk9uTTcGlj_MySfbLzuIRItsgRht_-g</string>
 		<key>__output_application</key>
 		<string>APPLESCRIPT</string>
 		<key>__podcasts_enabled</key>
@@ -14476,7 +14476,7 @@ Example: https://open.spotify.com/track/6hxgHNJjadmCHAJPXw6AYL</string>
 		<key>__volume_percent</key>
 		<string>20</string>
 		<key>__workflow_version</key>
-		<string>11.7</string>
+		<string>9.6</string>
 		<key>add_all_tracks_from_album_when_adding_to_yourmusic</key>
 		<string>0</string>
 		<key>add_created_radio_playlist_to_library</key>
