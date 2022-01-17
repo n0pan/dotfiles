@@ -1,12 +1,12 @@
 ## Installation
 
-```
-$ git clone git@github.com:n0pan/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles
-$ chmod +x install.sh
-$ ./install.sh
+This repo contains configuration files that can be used to setup a new computer running macOS. 
+
+```bash
+git clone git@github.com:n0pan/dotfiles.git ~/dotfiles
+sh ~/dotfiles/install.sh
 ```
 
-then,
+1. Install vim plugins using `:PlugInstall`
+2. `:UpdateRemotePlugins`
 
-run :PlugInstall, set iTerm2 settings to ~/dotfiles/ITERM, install fonts
