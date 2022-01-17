@@ -1,4 +1,4 @@
-## dotfiles
+# dotfiles
 ![image](https://user-images.githubusercontent.com/5914327/149684327-88fe91df-0027-402d-9839-5af7dd399aed.png)
 
 ## Installation
