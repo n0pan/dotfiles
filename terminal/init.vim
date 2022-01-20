@@ -291,9 +291,9 @@ catppuccin.setup({
   styles = {
     comments = "italic",
     functions = "italic",
-    keywords = "italic",
+    keywords = "NONE",
     strings = "NONE",
-    variables = "italic",
+    variables = "NONE",
   },
   integrations = {
     treesitter = true,
