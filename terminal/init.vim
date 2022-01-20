@@ -9,6 +9,7 @@ Plug 'fladson/vim-kitty'
 " EDITOR THEMES
 Plug 'projekt0n/github-nvim-theme'
 Plug 'Shatur/neovim-ayu'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 " AIRLINE THEMES
 Plug 'vim-airline/vim-airline'
@@ -279,6 +280,69 @@ let g:github_comment_style = "NONE"
 " Black
 let g:black_virtualenv = "~/.env/bin/black"
 
-colorscheme github_dark
+" catppuccin
+lua << EOF
+local catppuccin = require("catppuccin")
+
+-- configure it
+catppuccin.setup({
+  transparent_background = true,
+  term_colors = false,
+  styles = {
+    comments = "italic",
+    functions = "italic",
+    keywords = "italic",
+    strings = "NONE",
+    variables = "italic",
+  },
+  integrations = {
+    treesitter = true,
+    native_lsp = {
+      enabled = true,
+      virtual_text = {
+        errors = "italic",
+        hints = "italic",
+        warnings = "italic",
+        information = "italic",
+      },
+      underlines = {
+        errors = "underline",
+        hints = "underline",
+        warnings = "underline",
+        information = "underline",
+      },
+    },
+    lsp_trouble = false,
+    cmp = true,
+    lsp_saga = false,
+    gitgutter = false,
+    gitsigns = true,
+    telescope = true,
+    nvimtree = {
+      enabled = true,
+      show_root = false,
+    },
+    which_key = false,
+    indent_blankline = {
+      enabled = true,
+      colored_indent_levels = false,
+    },
+    dashboard = true,
+    neogit = false,
+    vim_sneak = false,
+    fern = false,
+    barbar = false,
+    bufferline = true,
+    markdown = true,
+    lightspeed = false,
+    ts_rainbow = false,
+    hop = false,
+    notify = true,
+    telekasten = true,
+  }
+})
+EOF
+
+colorscheme catppuccin
 
 let g:airline_theme='transparent'

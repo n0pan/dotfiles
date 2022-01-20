@@ -177,8 +177,8 @@ lc() {
   echo "LINKING COOKIT-ECOM-CONTROLLERS"
   echo "-------------------------------"
   echo "1) Re-installing controller dependencies"
-  rm -rf ~/dev/cookit/cookit-ecom/packages/controllers/node_modules
-  cd ~/dev/cookit/cookit-ecom/packages/controllers
+  rm -rf ~/dev/cookit/cookit-ecom-controllers/node_modules
+  cd ~/dev/cookit/cookit-ecom-controllers
   yarn install
   echo "2) Generating queries"
   yarn gen
@@ -211,8 +211,8 @@ lutils() {
 
 lr() {
   # delete react node_modules && create link
-  echo "LINKING REACT BETWEEN COOKIT-UI AND COOKIT-ECOM"
-  echo "-----------------------------------------------"
+  echo "LINKING REACT BETWEEN COOKIT-UI, COOKIT-ECOM-CONTROLLERS AND COOKIT-ECOM"
+  echo "------------------------------------------------------------------------"
   echo "1) Removing @cookit-ui/node_modules/react"
   rm -rf ~/dev/cookit/cookit-ui/node_modules/react
   cd ~/dev/cookit/cookit-ecom/node_modules/react
@@ -220,6 +220,11 @@ lr() {
   yarn link
   cd ~/dev/cookit/cookit-ui
   echo "3) Linking..."
+  yarn link react
+  echo "4) Removing @cookit-ecom-controllers/node_modules/react"
+  rm -rf ~/dev/cookit/cookit-ecom-controllers/node_modules/react
+  cd ~/dev/cookit/cookit-ecom-controllers
+  echo "5) Linking..."
   yarn link react
   echo "Done!"
 }
@@ -236,8 +241,7 @@ lui() {
 }
 
 rebuild-ctrl() {
-  cd ~ecom
-  cd packages/controllers
+  cd ~controllers
   yarn gen && yarn build
   cd ~ecom
 }
@@ -246,7 +250,7 @@ reset-v4() {
   cd ~ecom
   echo "Removing node_modules"
   rm -rf ~/dev/cookit/cookit-ecom/node_modules
-  rm -rf ~/dev/cookit/cookit-ecom/packages/controllers/node_modules
+  rm -rf ~/dev/cookit/cookit-ecom-controllers/node_modules
   meteor npm i
   lc
   lui
