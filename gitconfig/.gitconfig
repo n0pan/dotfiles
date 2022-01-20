@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = LQ Hoang
+	name = LQ Hoang-Pham
 	email = longquanhp@gmail.com
 [alias]
   c = commit
