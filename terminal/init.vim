@@ -219,9 +219,6 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Trigger a highlight only when pressing f and F.
 let g:qs_highlight_on_keys = ['f', 'F']
 
-" Vimspector config
-let g:vimspector_enable_mappings = 'HUMAN'
-
 call plug#end()
 
 " treesitter
@@ -243,7 +240,7 @@ ensure_installed = {
     "bash",
     "graphql",
     "html",
-    "regex",
+    "regex"
   }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
