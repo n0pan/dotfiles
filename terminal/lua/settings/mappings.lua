@@ -53,9 +53,9 @@ nmap("<leader>pre", "<cmd>Prettier<cr>")
 nmap("<leader>bla", "<cmd>Black<cr>")
 
 -- Telescope --
-nmap("<leader>sf", "<cmd>Telescope find_files<cr>")
-nmap("<leader>ss", "<cmd>Telescope live_grep<cr>")
-nmap("<leader>fb", "<cmd>Telescope buffers<cr>")
-nmap("<leader>fh", "<cmd>Telescope help_tags<cr>")
+nmap("<leader>sf", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+nmap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+nmap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+nmap("<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
 
 -- LSP --
