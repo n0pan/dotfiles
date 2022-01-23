@@ -3,7 +3,7 @@ HOME = os.getenv("HOME")
 vim.g.mapleader = " "
 
 -- options --
-vim.o.guicursor = "" -- always block
+vim.o.guicursor = "" -- set cursor to always be a block
 vim.o.ignorecase = true
 vim.o.hlsearch = true
 vim.o.undolevels = 1000
