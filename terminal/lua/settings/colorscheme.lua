@@ -67,4 +67,4 @@ require"catppuccin".setup({
 })
 
 vim.cmd("colorscheme catppuccin")
-vim.cmd("let g:airline_theme='transparent")
+vim.cmd([[let g:airline_theme="transparent"]])
