@@ -10,6 +10,7 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.airline")
 require("plugins.black")
+require("plugins.cmp")
 
 vim.cmd([[
   augroup packer_user_config
