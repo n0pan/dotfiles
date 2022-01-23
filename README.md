@@ -1,5 +1,5 @@
 # dotfiles
-![image](https://user-images.githubusercontent.com/5914327/149684327-88fe91df-0027-402d-9839-5af7dd399aed.png)
+![image](https://user-images.githubusercontent.com/5914327/150694722-87004143-bd93-4858-b6b3-afbe9960d41b.png)
 
 ## Installation
 
