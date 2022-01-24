@@ -5,12 +5,12 @@ require("settings.lsp")
 require("settings.colorscheme")
 require("settings.mappings")
 
-require("plugins.cmp")
+require("plugins.completion")
 require("plugins.telescope")
 require("plugins.treesitter")
-require("plugins.lualine")
+require("plugins.status_bar")
 require("plugins.black")
-require("plugins.quick-scope")
+require("plugins.quick_scope")
 
 vim.cmd([[
   augroup packer_user_config
