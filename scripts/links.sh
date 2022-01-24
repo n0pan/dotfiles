@@ -13,20 +13,11 @@ echo "linking tmux conf..."
 ln -sf ~/dotfiles/terminal/.tmux.conf ~/.tmux.conf
 echo "done!"
 
-# Nvim Config
-# echo "linking nvim config..."
-# ln -s -f ~/dotfiles/terminal/init.vim ~/.config/nvim/init.vim
-# echo "done!"
-
 # Neovim config
 echo "Linking neovim configuration"
 ln -sf ~/dotfiles/terminal/init.lua ~/.config/nvim/init.lua
 ln -sf ~/dotfiles/terminal/lua ~/.config/nvim/lua
 echo "done!"
-
-# Copying transparent theme
-echo "Copying transparent theme"
-cp -f ~/dotfiles/terminal/transparent.vim ~/.config/nvim/vim-airline-themes/autoload/airline/themes/transparent.vim
 
 # zshrc
 echo "linking zshrc..."
