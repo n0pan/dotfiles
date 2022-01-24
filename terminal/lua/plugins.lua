@@ -15,12 +15,16 @@ return require("packer").startup(function ()
   use { "Shatur/neovim-ayu" }
   use { "catppuccin/nvim", as = "catppuccin" }
 
+  -- LSP --
+  use { "neovim/nvim-lspconfig" }
+  use { "williamboman/nvim-lsp-installer" }
+  use { "hrsh7th/nvim-cmp" }
+  use { "hrsh7th/cmp-nvim-lsp" }
+  use { "saadparwaiz1/cmp_luasnip" }
+  use { "L3MON4D3/LuaSnip" }
+
   -- kitty config syntax highlighting
   use { "fladson/vim-kitty" }
-
-  -- airline --
-  -- use { "vim-airline/vim-airline" }
-  -- use { "vim-airline/vim-airline-themes" }
 
   -- lualine --
   use {
@@ -99,12 +103,4 @@ return require("packer").startup(function ()
     "scrooloose/nerdtree",
     requires = { "ryanoasis/vim-devicons" }
   }
-
-  -- LSP --
-  use { "neovim/nvim-lspconfig" }
-  use { "williamboman/nvim-lsp-installer" }
-  use { "hrsh7th/cmp-nvim-lsp" }
-  use { "hrsh7th/nvim-cmp" }
-  use { "hrsh7th/cmp-vsnip" }
-  use { "hrsh7th/vim-vsnip" }
 end)
