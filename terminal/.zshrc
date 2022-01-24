@@ -7,7 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export TERM=xterm-256color
+export TERM=screen-256color
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
@@ -38,7 +38,7 @@ alias st="sh start.sh"
 alias st-ip="sh start-ip.sh"
 alias dotfiles="cd ~/dotfiles"
 alias zshconf="nvim ~/.zshrc"
-alias viconf="nvim ~/.config/nvim/init.vim"
+alias viconf="nvim ~/.config/nvim/init.lua"
 alias colorconf="nvim ~/.config/nvim/colors"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias kittyconf="nvim ~/.config/kitty/kitty.conf"

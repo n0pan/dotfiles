@@ -1,3 +1,4 @@
+-- install packer if not installed already
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -8,7 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function ()
   use { "wbthomason/packer.nvim", opt = true }
-  
+
   -- themes --
   use { "projekt0n/github-nvim-theme" }
   use { "Shatur/neovim-ayu" }
@@ -18,17 +19,26 @@ return require("packer").startup(function ()
   use { "fladson/vim-kitty" }
 
   -- airline --
-  use { "vim-airline/vim-airline" }
-  use { "vim-airline/vim-airline-themes" }
+  -- use { "vim-airline/vim-airline" }
+  -- use { "vim-airline/vim-airline-themes" }
+
+  -- lualine --
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+      opt = true
+    }
+  }
 
   -- react / jsx --
-  use { 
+  use {
     "mattn/emmet-vim",
     setup = function ()
       vim.g.user_emmet_leader_key = ","
       vim.g.user_emmet_settings = {
-        javascript = { 
-          extends = "jsx" 
+        javascript = {
+          extends = "jsx"
         },
         ["javascript.jsx"] = {
           extends = "jsx",
@@ -44,17 +54,17 @@ return require("packer").startup(function ()
   use { "alvan/vim-closetag" }
 
   -- markdown --
-  use { 
+  use {
     "iamcco/markdown-preview.nvim",
     opt = true,
-    run = "cd app && yarn install" 
+    run = "cd app && yarn install"
   }
 
   -- linters --
   use { "EgZvor/vim-black" }
-  use { 
-    "prettier/vim-prettier", 
-    run = "yarn install --frozen-lockfile --production"  
+  use {
+    "prettier/vim-prettier",
+    run = "yarn install --frozen-lockfile --production"
   }
 
   -- treesitter --
@@ -62,7 +72,7 @@ return require("packer").startup(function ()
   use { "nvim-treesitter/playground" }
 
   -- telescope --
-  use { 
+  use {
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } }
   }
@@ -76,20 +86,25 @@ return require("packer").startup(function ()
   use { "tmux-plugins/vim-tmux-focus-events" }
   use { "tpope/vim-surround" }
   use { "jiangmiao/auto-pairs" }
-  
+
   -- use C-n to toggle vim-multiple-cursors
   use { "terryma/vim-multiple-cursors" }
   use { "tomtom/tcomment_vim" }
- 
+
   -- removes search highlighting after cursor moves --
   use { "junegunn/vim-slash" }
 
   -- file explorer --
-  use { 
-    "scrooloose/nerdtree", 
-    requires = { "ryanoasis/vim-devicons" } 
+  use {
+    "scrooloose/nerdtree",
+    requires = { "ryanoasis/vim-devicons" }
   }
 
-  -- lsp --
-
+  -- LSP --
+  use { "neovim/nvim-lspconfig" }
+  use { "williamboman/nvim-lsp-installer" }
+  use { "hrsh7th/cmp-nvim-lsp" }
+  use { "hrsh7th/nvim-cmp" }
+  use { "hrsh7th/cmp-vsnip" }
+  use { "hrsh7th/vim-vsnip" }
 end)
