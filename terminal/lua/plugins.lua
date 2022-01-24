@@ -19,8 +19,17 @@ return require("packer").startup(function ()
   use { "fladson/vim-kitty" }
 
   -- airline --
-  use { "vim-airline/vim-airline" }
-  use { "vim-airline/vim-airline-themes" }
+  -- use { "vim-airline/vim-airline" }
+  -- use { "vim-airline/vim-airline-themes" }
+
+  -- lualine --
+  use {
+    "nvim-lualine/lualine.nvim",
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+      opt = true
+    }
+  }
 
   -- react / jsx --
   use {

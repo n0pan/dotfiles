@@ -1,7 +1,9 @@
 vim.cmd("noremap <C-b> :noh<cr>:call clearmatches()<cr>") -- clear matches Ctrl+b
 
+local options = { noremap = true, silent = true }
+
 local function map(mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
+  vim.api.nvim_set_keymap(mode, shortcut, command, options)
 end
 
 local function nmap(shortcut, command)
@@ -57,6 +59,3 @@ nmap("<leader>sf", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nmap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
 nmap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 nmap("<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
-
--- LSP --
-
