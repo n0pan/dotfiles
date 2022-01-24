@@ -1,7 +1,7 @@
 require("nvim-treesitter.configs").setup {
-ensure_installed = { 
-    "tsx", 
-    "json", 
+ensure_installed = {
+    "tsx",
+    "json",
     "yaml",
     "html",
     "scss",
@@ -9,16 +9,16 @@ ensure_installed = {
     "typescript",
     "javascript",
     "python",
-    "regex", 
-    "vim", 
-    "dockerfile", 
+    "regex",
+    "vim",
+    "dockerfile",
     "bash",
     "graphql",
     "html",
     "regex"
-  }, 
+  },
   highlight = {
-    enable = true, 
+    enable = true,
   },
   indent = {
     enable = true,

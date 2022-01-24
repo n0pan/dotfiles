@@ -44,7 +44,7 @@ nmap("<leader>pp", "<cmd>NERDTreeClose<CR>")
 nmap("<leader>oo", "<cmd>NERDTreeToggle<CR>")
 vim.cmd([[
   let NERDTreeQuitOnOpen = 1
-  let NERDTreeShowHidden = 0
+  let NERDTreeShowHidden = 1
   let NERDTreeShowLineNumbers = 1
 ]])
 
@@ -57,5 +57,12 @@ nmap("<leader>bla", "<cmd>Black<cr>")
 -- Telescope --
 nmap("<leader>sf", "<cmd>lua require('telescope.builtin').find_files()<cr>")
 nmap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-nmap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-nmap("<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
+nmap("<leader>bf", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+
+-- LSP --
+nmap("<leader>f", "<cmd>lua vim.lsp.buf.formatting()<cr>")
+nmap("<leader>gd", "<cmd>lua vim.lsp.buf.declaration()<cr>")
+nmap("<leader>jd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+nmap("<leader>td", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
+nmap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
+nmap("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")

@@ -26,15 +26,6 @@ lsp_installer.on_server_ready(function(server)
   vim.cmd([[ do User LspAttach Buffers ]])
 end)
 
-local attach_options = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", attach_options)
-vim.api.nvim_set_keymap('n', '<leader>gd', '<cmd>lua vim.lsp.buf.declaration()<CR>', attach_options)
-vim.api.nvim_set_keymap("n", "<leader>jd", "<cmd>lua vim.lsp.buf.definition()<CR>", attach_options)
-vim.api.nvim_set_keymap("n", "<leader>td", "<cmd>lua vim.lsp.buf.type_definition()<CR>", attach_options)
-vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", attach_options)
-vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", attach_options)
-
 -- check and automatically install servers
 for _, lsp_name in pairs(servers) do
   local server_is_found, server = lsp_installer.get_server(lsp_name)
