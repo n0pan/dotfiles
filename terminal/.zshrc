@@ -33,11 +33,8 @@ source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=204"
 
 # aliases
-alias lf="find ./ -type f | grep "
 alias st="sh start.sh"
-alias st-ip="sh start-ip.sh"
-alias dotfiles="cd ~/dotfiles"
-alias zshconf="nvim ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
 alias viconf="nvim ~/.config/nvim/init.lua"
 alias colorconf="nvim ~/.config/nvim/colors"
 alias tmuxconf="nvim ~/.tmux.conf"
@@ -46,12 +43,8 @@ alias yabairc="nvim ~/.yabairc"
 alias skhdrc="nvim ~/.skhdrc"
 alias vi="nvim"
 alias vim="nvim"
-alias al="nvim ~/.config/alacritty/alacritty.yml"
 alias top="vtop"
 alias discord="sh ~/scripts/discord.sh"
-alias restore="sh ~/scripts/restore.sh"
-alias cook-it="mux cook-it"
-alias spotlyne="mux spotlyne"
 alias ci-restore-db="docker start -a restore-test"
 alias spt-restore-db="sh ~/dev/spotlyne/.config/dumpprod.sh"
 alias new-ecom="tmux new-window -n ecom -c ~/dev/cookit/cookit-ecom"
@@ -63,7 +56,6 @@ alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
 alias new-utils="tmux new-window -n utils -c ~/dev/cookit/utils"
-alias new-jura="tmux new-window -n jura -c ~/dev/cookit/cookit-jura"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
@@ -80,9 +72,7 @@ hash -d ops=~/dev/cookit/cookit-ops
 hash -d utils=~/dev/cookit/utils
 hash -d spt=~/dev/spotlyne
 hash -d df=~/dotfiles
-hash -d jura=~/dev/cookit/cookit-jura
 hash -d cdc=~/dev/cockit-drinking-club
-hash -d sprint-planner=~/dev/sprint-planner
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
