@@ -58,14 +58,9 @@ brew install --cask flycut
 echo "Installing App Store apps"
 # Spark
 mas install 1176895641
-# Fantastical
-mas install 975937182
 # Things
 mas install 904280696
-# Flycut
-mas install 442160987
 # MindNode
 mas install 1289197285
 # Xcode
 mas install 497799835
-

@@ -3,6 +3,10 @@
 # Please adapt and uncomment the following lines:
 	name = LQ Hoang-Pham
 	email = longquanhp@gmail.com
+[push]
+  default = current
+[core]
+  editor = vim
 [alias]
   c = commit
   cam = commit -a -m
@@ -11,3 +15,6 @@
   nb = checkout -b
   b = branch
   s = status
+  up = pull --rebase --autostash
+[branch]
+  autosetuprebase = always

@@ -8,6 +8,7 @@ source ./tmuxinator/install.sh
 source ./fonts/install.sh
 source ./wallpapers/install.sh
 source ./gitconfig/install.sh
+source ./mac/macos.sh
 
 echo "Sourcing zshrc"
 source zsh/.zshrc
