@@ -10,18 +10,20 @@ vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function ()
   use { "wbthomason/packer.nvim", opt = true }
 
+  -- LSP --
+  use {
+    "neovim/nvim-lspconfig",
+    "williamboman/nvim-lsp-installer",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "saadparwaiz1/cmp_luasnip",
+    "L3MON4D3/LuaSnip",
+  }
+
   -- themes --
   use { "projekt0n/github-nvim-theme" }
   use { "Shatur/neovim-ayu" }
   use { "catppuccin/nvim", as = "catppuccin" }
-
-  -- LSP --
-  use { "neovim/nvim-lspconfig" }
-  use { "williamboman/nvim-lsp-installer" }
-  use { "hrsh7th/nvim-cmp" }
-  use { "hrsh7th/cmp-nvim-lsp" }
-  use { "saadparwaiz1/cmp_luasnip" }
-  use { "L3MON4D3/LuaSnip" }
 
   -- kitty config syntax highlighting
   use { "fladson/vim-kitty" }

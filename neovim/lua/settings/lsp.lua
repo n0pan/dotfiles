@@ -17,7 +17,7 @@ lsp_installer.on_server_ready(function(server)
     options.settings = {
       Lua = {
         diagnostics = {
-          globals = { "vim", "use" }
+          globals = { "vim", "use", "require", "pairs", "print" }
         }
       }
     }

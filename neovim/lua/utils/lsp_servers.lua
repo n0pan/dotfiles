@@ -4,14 +4,15 @@ local lsp_servers = {
   "dockerls",
   "emmet_ls",
   "eslint",
+  "grammarly",
   "graphql",
   "html",
   "pyright",
+  "remark_ls",
   "jsonls",
   "sumneko_lua",
   "tsserver",
-  "vimls",
-  "zk"
+  "vimls"
 }
 
 return lsp_servers
