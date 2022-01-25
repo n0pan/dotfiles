@@ -10,7 +10,7 @@ source ./wallpapers/install.sh
 source ./gitconfig/install.sh
 
 echo "Sourcing zshrc"
-source terminal/.zshrc
-tmux source terminal/.tmux.conf
+source zsh/.zshrc
+tmux source tmux/.tmux.conf
 
 echo "Installation complete!"
