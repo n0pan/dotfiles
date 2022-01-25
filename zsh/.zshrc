@@ -11,7 +11,6 @@ export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
-export NPM_TOKEN=507ec72962febbc34db630042b282e145a538bbe
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -44,33 +43,15 @@ alias skhdrc="nvim ~/.skhdrc"
 alias vi="nvim"
 alias vim="nvim"
 alias top="vtop"
-alias discord="sh ~/scripts/discord.sh"
-alias ci-restore-db="docker start -a restore-test"
-alias spt-restore-db="sh ~/dev/spotlyne/.config/dumpprod.sh"
-alias new-ecom="tmux new-window -n ecom -c ~/dev/cookit/cookit-ecom"
-alias new-controllers="tmux new-window -n controllers -c ~/dev/cookit/cookit-ecom-controllers"
-alias new-ui="tmux new-window -n ui -c ~/dev/cookit/cookit-ui"
-alias new-api="tmux new-window -n api -c ~/dev/cookit/cookit-api"
-alias new-admin="tmux new-window -n admin -c ~/dev/cookit/cookit-admin"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
-alias new-utils="tmux new-window -n utils -c ~/dev/cookit/utils"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
 
 hash -d lq=~/dev/long-quan
-hash -d ci=~/dev/cookit
-hash -d ecom=~/dev/cookit/cookit-ecom
-hash -d ui=~/dev/cookit/cookit-ui
-hash -d api=~/dev/cookit/cookit-api
-hash -d admin=~/dev/cookit/cookit-admin
-hash -d controllers=~/dev/cookit/cookit-ecom-controllers
-hash -d ops=~/dev/cookit/cookit-ops
-hash -d utils=~/dev/cookit/utils
-hash -d spt=~/dev/spotlyne
 hash -d df=~/dotfiles
 hash -d cdc=~/dev/cockit-drinking-club
 
@@ -79,93 +60,6 @@ hash -d cdc=~/dev/cockit-drinking-club
 # functions
 create_docker () {
  docker-machine create -d virtualbox --virtualbox-no-vtx-check "$1"
-}
-
-# cook it utility functions
-lc() {
-  # install controller packages, build controllers & create link
-  echo "LINKING COOKIT-ECOM-CONTROLLERS"
-  echo "-------------------------------"
-  echo "1) Re-installing controller dependencies"
-  rm -rf ~/dev/cookit/cookit-ecom-controllers/node_modules
-  cd ~/dev/cookit/cookit-ecom-controllers
-  yarn install
-  echo "2) Generating queries"
-  yarn gen
-  echo "3) Building controllers"
-  yarn build
-  echo "4) Creating @chefcookit/cookit-ecom-controllers link..."
-  yarn link
-  cd ~/dev/cookit/cookit-ecom
-  echo "5) Linking..."
-  yarn link @chefcookit/cookit-ecom-controllers
-  echo "Done!"
-}
-
-lutils() {
-  echo "LINKING COOKIT-UTILS"
-  echo "-------------------"
-  echo "1) creating link"
-  cd ~/dev/cookit/utils/
-  npm link
-  echo "2) linking ecom"
-  cd ~/dev/cookit/cookit-ecom/
-  npm link @chefcookit/utils
-  echo "3) linking api"
-  cd ~/dev/cookit/cookit-api/
-  npm link @chefcookit/utils
-  echo "4) linking admin"
-  cd ~/dev/cookit/cookit-admin/
-  npm link @chefcookit/utils
-}
-
-lr() {
-  # delete react node_modules && create link
-  echo "LINKING REACT BETWEEN COOKIT-UI, COOKIT-ECOM-CONTROLLERS AND COOKIT-ECOM"
-  echo "------------------------------------------------------------------------"
-  echo "1) Removing @cookit-ui/node_modules/react"
-  rm -rf ~/dev/cookit/cookit-ui/node_modules/react
-  cd ~/dev/cookit/cookit-ecom/node_modules/react
-  echo "2) Creating React link"
-  yarn link
-  cd ~/dev/cookit/cookit-ui
-  echo "3) Linking..."
-  yarn link react
-  echo "4) Removing @cookit-ecom-controllers/node_modules/react"
-  rm -rf ~/dev/cookit/cookit-ecom-controllers/node_modules/react
-  cd ~/dev/cookit/cookit-ecom-controllers
-  echo "5) Linking..."
-  yarn link react
-  echo "Done!"
-}
-
-lui() {
-  echo "LINKING COOKIT-UI AND COOKIT-ECOM"
-  echo "---------------------------------"
-  echo "1) Creating @chefcookit/cookit-ui link"
-  cd ~/dev/cookit/cookit-ui
-  yarn link
-  cd ~/dev/cookit/cookit-ecom
-  yarn link @chefcookit/cookit-ui
-  echo "Done!"
-}
-
-rebuild-ctrl() {
-  cd ~controllers
-  yarn gen && yarn build
-  cd ~ecom
-}
-
-reset-v4() {
-  cd ~ecom
-  echo "Removing node_modules"
-  rm -rf ~/dev/cookit/cookit-ecom/node_modules
-  rm -rf ~/dev/cookit/cookit-ecom-controllers/node_modules
-  meteor npm i
-  lc
-  lui
-  lr
-  cd ~ecom
 }
 
 # TMATE Functions
