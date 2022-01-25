@@ -13,5 +13,15 @@ require("lualine").setup({
     lualine_y = { "progress" },
     lualine_z = { "location" }
   },
+  tabline = {
+    lualine_a = {
+      {
+        "buffers",
+        show_filename_only = true,
+        show_modified_status = true,
+        mode = 2 -- shows buffer name + buffer index
+      }
+    },
+  },
   always_divide_middle = true
 })
