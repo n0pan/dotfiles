@@ -25,6 +25,9 @@ return require("packer").startup(function ()
   use { "Shatur/neovim-ayu" }
   use { "catppuccin/nvim", as = "catppuccin" }
 
+  -- indent lines --
+  use { "lukas-reineke/indent-blankline.nvim" }
+
   -- kitty config syntax highlighting
   use { "fladson/vim-kitty" }
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 source ./scripts/brew.sh
 source ./scripts/cask.sh
@@ -11,7 +11,7 @@ source ./gitconfig/install.sh
 source ./mac/macos.sh
 
 echo "Sourcing zshrc"
-source zsh/.zshrc
-tmux source tmux/.tmux.conf
+source ./zsh/.zshrc
+tmux source ./tmux/.tmux.conf
 
 echo "Installation complete!"

@@ -1,4 +1,6 @@
-echo "INSTALLING FONTS"
+#!/bin/bash
+
+echo "Installing fonts"
 echo "----------------"
 echo "1) Installing SF Mono"
 cp /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/*.otf ~/Library/Fonts/ 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "linking yabai and skhd"
 ln -sf ~/dotfiles/yabai/.skhdrc ~/.skhdrc
