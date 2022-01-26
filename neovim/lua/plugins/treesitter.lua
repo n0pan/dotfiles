@@ -1,5 +1,5 @@
-require("nvim-treesitter.configs").setup {
-ensure_installed = {
+require("nvim-treesitter.configs").setup({
+  ensure_installed = {
     "tsx",
     "json",
     "yaml",
@@ -15,15 +15,17 @@ ensure_installed = {
     "bash",
     "graphql",
     "html",
-    "regex"
+    "regex",
+    "lua",
   },
   highlight = {
     enable = true,
+    use_languagetree = true,
   },
   indent = {
     enable = true,
   },
-}
+})
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
