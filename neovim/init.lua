@@ -12,6 +12,7 @@ require("plugins.status_bar")
 require("plugins.black")
 require("plugins.quick_scope")
 require("plugins.indent_lines")
+require("plugins.git")
 
 vim.cmd([[
   augroup packer_user_config
