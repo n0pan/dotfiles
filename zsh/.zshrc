@@ -54,7 +54,7 @@ alias restart-skhd="brew services restart skhd"
 
 hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
-hash -d cdc=~/dev/cockit-drinking-club
+hash -d cdc=~/dev/cdc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
