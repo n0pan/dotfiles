@@ -1,3 +1,3 @@
 #!/bin/bash
 
-osascript -e 'tell application "System Events" to tell every desktop to set picture to "/Users/n0pan/dotfiles/wallpapers/main.jpg"'
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "/Users/lq/dotfiles/wallpapers/main.jpg"'
