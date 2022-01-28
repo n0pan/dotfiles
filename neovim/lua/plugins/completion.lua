@@ -1,18 +1,7 @@
-local servers = require("utils.lsp_servers")
-
 vim.o.completeopt = "menuone,noselect"
 
 local cmp = require("cmp")
-local lspconfig = require("lspconfig")
-
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-for _, lsp in pairs(servers) do
-  lspconfig[lsp].setup {
-    capabilities = capabilities
-  }
-end
-
-local luasnip = require "luasnip"
+local luasnip = require("luasnip")
 
 cmp.setup({
   snippet = {

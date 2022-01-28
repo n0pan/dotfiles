@@ -18,6 +18,7 @@ return require("packer").startup(function ()
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
+    "jose-elias-alvarez/nvim-lsp-ts-utils",
   }
 
   -- themes --
@@ -83,7 +84,7 @@ return require("packer").startup(function ()
   -- telescope --
   use {
     "nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" } }
+    requires = { "nvim-lua/plenary.nvim" }
   }
 
   -- git --
@@ -111,6 +112,6 @@ return require("packer").startup(function ()
   -- file explorer --
   use {
     "scrooloose/nerdtree",
-    requires = { "ryanoasis/vim-devicons" }
+    requires = { "ryanoasis/vim-devicons", opt = true }
   }
 end)

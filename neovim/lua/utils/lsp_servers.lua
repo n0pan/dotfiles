@@ -3,14 +3,14 @@ local lsp_servers = {
   "cssls",
   "dockerls",
   "emmet_ls",
-  "eslint",
   "grammarly",
-  "graphql",
   "html",
   "pyright",
   "remark_ls",
   "jsonls",
   "sumneko_lua",
+  "svelte",
+  "tailwindcss",
   "tsserver",
   "vimls"
 }

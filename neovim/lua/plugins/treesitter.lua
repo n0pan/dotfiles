@@ -17,6 +17,7 @@ require("nvim-treesitter.configs").setup({
     "html",
     "regex",
     "lua",
+    "svelte",
   },
   highlight = {
     enable = true,
