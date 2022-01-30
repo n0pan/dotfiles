@@ -1,4 +1,10 @@
-require("telescope").setup({
+local telescope_present, telescope = pcall(require, "telescope")
+
+if not telescope_present then
+  return
+end
+
+telescope.setup({
   defaults = {
     vimgrep_arguments = {
        "rg",

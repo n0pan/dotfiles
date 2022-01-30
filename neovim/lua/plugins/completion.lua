@@ -1,7 +1,11 @@
 vim.o.completeopt = "menuone,noselect"
 
-local cmp = require("cmp")
-local luasnip = require("luasnip")
+local cmp_present, cmp = pcall(require, "cmp")
+local luasnip_present, luasnip = pcall(require, "luasnip")
+
+if not cmp_present or luasnip_present then
+  return
+end
 
 cmp.setup({
   snippet = {

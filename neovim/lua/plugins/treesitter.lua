@@ -1,4 +1,11 @@
-require("nvim-treesitter.configs").setup({
+local treesitter_configs_present, treesitter_configs = pcall(require, "nvim-treesitter.configs")
+local treesitter_parsers_present, treesitter_parsers = pcall(require, "nvim-treesitter.parsers")
+
+if not treesitter_configs_present or treesitter_parsers_present then
+  return
+end
+
+treesitter_configs.setup({
   ensure_installed = {
     "tsx",
     "json",
@@ -28,5 +35,5 @@ require("nvim-treesitter.configs").setup({
   },
 })
 
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+local parser_config = treesitter_parsers.get_parser_configs()
 parser_config.tsx.used_by = { "javascript", "typescript.tsx" }

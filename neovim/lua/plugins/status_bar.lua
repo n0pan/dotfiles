@@ -1,4 +1,10 @@
-require("lualine").setup({
+local lualine_present, lualine = pcall(require, "lualine")
+
+if not lualine_present then
+  return
+end
+
+lualine.setup({
   options = {
     icons_enabled = false,
     theme = "catppuccin",
