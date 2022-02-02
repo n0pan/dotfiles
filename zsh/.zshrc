@@ -57,6 +57,7 @@ hash -d df=~/dotfiles
 hash -d cdc=~/dev/cdc
 hash -d husky=~/dev/taiga/husky
 hash -d taiga=~/dev/taiga
+hash -d bluetooth=~/dev/taiga/bluetooth-interface
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
