@@ -55,6 +55,8 @@ alias restart-skhd="brew services restart skhd"
 hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
 hash -d cdc=~/dev/cdc
+hash -d husky=~/dev/taiga/husky
+hash -d taiga=~/dev/taiga
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -121,6 +123,9 @@ export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/terminal/.p10k.zsh.
 [[ ! -f ~/dotfiles/terminal/.p10k.zsh ]] || source ~/dotfiles/terminal/.p10k.zsh

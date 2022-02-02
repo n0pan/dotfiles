@@ -88,6 +88,9 @@ require("packer").startup(function ()
     config = [[ require("plugins.telescope") ]]
   }
 
+  -- svelte --
+  use { "evanleck/vim-svelte" }
+
   -- git --
   use {
     "lewis6991/gitsigns.nvim",

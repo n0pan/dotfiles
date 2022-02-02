@@ -6,7 +6,6 @@ local lsp_servers = {
   "grammarly",
   "html",
   "pyright",
-  "remark_ls",
   "jsonls",
   "sumneko_lua",
   "svelte",
