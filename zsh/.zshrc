@@ -127,12 +127,8 @@ source ~/.bin/tmuxinator.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 export PATH="/bin:$PATH"
 export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/terminal/.p10k.zsh.
 [[ ! -f ~/dotfiles/terminal/.p10k.zsh ]] || source ~/dotfiles/terminal/.p10k.zsh
