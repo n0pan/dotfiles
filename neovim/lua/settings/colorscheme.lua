@@ -1,12 +1,3 @@
--- colorscheme --
-vim.o.background = "dark"
-
--- github --
-vim.g.github_transparent = true
-vim.g.github_dark_sidebar = true
-vim.g.github_keyword_style = "NONE"
-vim.g.github_comment_style = "NONE"
-
 -- catppuccin --
 require("catppuccin").setup({
   transparent_background = true,
@@ -41,6 +32,3 @@ require("catppuccin").setup({
     },
   }
 })
-
-vim.cmd([[ colorscheme catppuccin ]])
--- vim.cmd([[ colorscheme github_dark ]])

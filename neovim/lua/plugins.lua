@@ -8,34 +8,67 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 require("packer").startup(function ()
-  use { "wbthomason/packer.nvim", opt = true }
-
   use { "nvim-lua/plenary.nvim" }
+
+  use { "wbthomason/packer.nvim" }
 
   -- LSP --
   use {
     "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.lsp")
+    end,
+  }
+  use {
     "williamboman/nvim-lsp-installer",
-    "jose-elias-alvarez/nvim-lsp-ts-utils",
   }
 
+  use {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("plugins.completion")
+    end,
+  }
   use {
     "hrsh7th/cmp-nvim-lsp",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
-    "hrsh7th/nvim-cmp",
-    config = [[ require("plugins.completion") ]]
+  }
+  use {
+    "jose-elias-alvarez/nvim-lsp-ts-utils",
   }
 
   -- themes --
-  use { "projekt0n/github-nvim-theme" }
-  use { "Shatur/neovim-ayu" }
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+    "projekt0n/github-nvim-theme",
+    enable = false,
+    config = function()
+      vim.o.background = "dark"
+      vim.g.github_transparent = true
+      vim.g.github_dark_sidebar = true
+      vim.g.github_keyword_style = "NONE"
+      vim.g.github_comment_style = "NONE"
+      vim.cmd([[ colorscheme github_dark ]])
+    end,
+  }
+
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    enable = true,
+    config = function()
+      vim.o.background = "dark"
+      require("settings.colorscheme")
+      vim.cmd([[ colorscheme catppuccin ]])
+    end,
+  }
 
   -- indent lines --
   use {
     "lukas-reineke/indent-blankline.nvim",
-    config = [[ require("plugins.indent_lines") ]]
+    config = function()
+      require("plugins.indent_lines")
+    end,
   }
 
   -- kitty config syntax highlighting
@@ -48,7 +81,9 @@ require("packer").startup(function ()
       "kyazdani42/nvim-web-devicons",
       opt = true
     },
-    config = [[ require("plugins.status_bar") ]]
+    config = function()
+      require("plugins.status_bar")
+    end,
   }
 
   -- react / jsx --
@@ -67,7 +102,9 @@ require("packer").startup(function ()
   -- linters --
   use {
     "EgZvor/vim-black",
-    config = [[ require("plugins.black") ]]
+    config = function()
+      require("plugins.black")
+    end,
   }
   use {
     "prettier/vim-prettier",
@@ -78,14 +115,18 @@ require("packer").startup(function ()
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    config = [[ require("plugins.treesitter") ]]
+    config = function()
+      require("plugins.treesitter")
+    end,
   }
   use { "nvim-treesitter/playground" }
 
   -- telescope --
   use {
     "nvim-telescope/telescope.nvim",
-    config = [[ require("plugins.telescope") ]]
+    config = function()
+      require("plugins.telescope")
+    end,
   }
 
   -- svelte --
@@ -95,7 +136,9 @@ require("packer").startup(function ()
   use {
     "lewis6991/gitsigns.nvim",
     tag = "release",
-    config = [[ require("plugins.git") ]]
+    config = function()
+      require("plugins.git")
+    end,
   }
 
   -- quality of life --
