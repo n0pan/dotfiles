@@ -11,6 +11,11 @@ export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -51,6 +56,7 @@ alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.p
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
+alias gl="glab"
 
 hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
