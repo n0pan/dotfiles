@@ -71,6 +71,7 @@ hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
 hash -d cdc=~/dev/cdc
 hash -d husky=~/dev/taiga/husky
+hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
 hash -d bluetooth=~/dev/taiga/bluetooth-interface
 
