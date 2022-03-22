@@ -74,6 +74,7 @@ hash -d husky=~/dev/taiga/husky
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
 hash -d bluetooth=~/dev/taiga/bluetooth-interface
+hash -d notebook=~/dev/taiga/dev-notebook
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
