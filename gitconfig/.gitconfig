@@ -7,6 +7,7 @@
   default = current
 [core]
   editor = vim
+	excludesfile = /Users/lq/.gitignore_global
 [alias]
   c = commit
   cam = commit -a -m
@@ -18,3 +19,11 @@
   up = pull --rebase --autostash
 [branch]
   autosetuprebase = always
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/lq/.stCommitMsg
