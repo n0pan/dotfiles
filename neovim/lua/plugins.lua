@@ -156,7 +156,7 @@ require("packer").startup(function ()
 
   -- file explorer --
   use {
-    "scrooloose/nerdtree",
+    "preservim/nerdtree",
     requires = { "ryanoasis/vim-devicons", opt = true }
   }
 end)

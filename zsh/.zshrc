@@ -61,7 +61,7 @@ alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
 alias new-h="tmux new-window -n husky -c ~/dev/taiga/husky"
 alias new-hs="tmux new-window -n sandbox -c ~/dev/taiga/husky-sandbox"
-alias new-dw="tmux new-window -n dashweb -c ~/dev/taiga/dashboard-web"
+alias new-hmiw="tmux new-window -n dashweb -c ~/dev/taiga/hmi-web"
 alias new-hmi="tmux new-window -n hmi -c ~/dev/taiga/hmi"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
@@ -81,7 +81,7 @@ hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
 hash -d bluetooth=~/dev/taiga/bluetooth-interface
 hash -d notebook=~/dev/taiga/dev-notebook
-hash -d dashweb=~/dev/taiga/dashboard-web
+hash -d hmi-web=~/dev/taiga/hmi-web
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -137,6 +137,17 @@ tmate-unpair() {
   else
     echo "Session already killed"
   fi
+}
+
+clean-ios() {
+  rm -rf node_modules && rm yarn.lock
+  cd ios/
+  rm -rf Pods && rm -rf *.xcworkspace && rm Podfile.lock
+  pod deintegrate
+  cd ..
+  yarn
+  npx pod-install
+  yarn ios --device Foxy\ Brown
 }
 
 source ~/.bin/tmuxinator.zsh
