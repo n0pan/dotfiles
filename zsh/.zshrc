@@ -74,6 +74,7 @@ alias ecr-login='REGION=$(aws configure list | grep region | awk "{print \$2}");
 
 hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
+hash -d vi=~/dotfiles/neovim
 hash -d cdc=~/dev/cdc
 hash -d husky=~/dev/taiga/husky
 hash -d husky-s=~/dev/taiga/husky-sandbox
