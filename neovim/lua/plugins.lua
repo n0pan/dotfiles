@@ -58,6 +58,7 @@ require("packer").startup(function ()
     enable = true,
     config = function()
       vim.o.background = "dark"
+      vim.g.catppuccin_flavour = "mocha"
       require("settings.colorscheme")
       vim.cmd([[ colorscheme catppuccin ]])
     end,
