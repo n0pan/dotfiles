@@ -18,6 +18,11 @@ export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR='nvim'
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -58,11 +63,13 @@ alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.p
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
+alias gl="glab"
 
 hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
+hash -d vi=~/dotfiles/neovim
 hash -d cdc=~/dev/cdc
-hash -d husky=~/dev/taiga/husky
+hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -127,12 +134,8 @@ source ~/.bin/tmuxinator.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 export PATH="/bin:$PATH"
 export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/terminal/.p10k.zsh.
 [[ ! -f ~/dotfiles/terminal/.p10k.zsh ]] || source ~/dotfiles/terminal/.p10k.zsh

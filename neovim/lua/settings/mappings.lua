@@ -27,6 +27,17 @@ vim.cmd([[
   let NERDTreeShowLineNumbers = 1
 ]])
 
+-- Lualine --
+nmap("<leader>1", "<cmd>LualineBuffersJump 1<CR>")
+nmap("<leader>2", "<cmd>LualineBuffersJump 2<CR>")
+nmap("<leader>3", "<cmd>LualineBuffersJump 3<CR>")
+nmap("<leader>4", "<cmd>LualineBuffersJump 4<CR>")
+nmap("<leader>5", "<cmd>LualineBuffersJump 5<CR>")
+nmap("<leader>6", "<cmd>LualineBuffersJump 6<CR>")
+nmap("<leader>7", "<cmd>LualineBuffersJump 7<CR>")
+nmap("<leader>8", "<cmd>LualineBuffersJump 8<CR>")
+nmap("<leader>9", "<cmd>LualineBuffersJump 9<CR>")
+
 -- Prettier --
 nmap("<leader>pre", "<cmd>Prettier<cr>")
 

@@ -58,6 +58,7 @@ require("packer").startup(function ()
     enable = true,
     config = function()
       vim.o.background = "dark"
+      vim.g.catppuccin_flavour = "mocha"
       require("settings.colorscheme")
       vim.cmd([[ colorscheme catppuccin ]])
     end,
@@ -156,7 +157,7 @@ require("packer").startup(function ()
 
   -- file explorer --
   use {
-    "scrooloose/nerdtree",
+    "preservim/nerdtree",
     requires = { "ryanoasis/vim-devicons", opt = true }
   }
 end)

@@ -25,7 +25,7 @@ lualine.setup({
         "buffers",
         show_filename_only = true,
         show_modified_status = true,
-        mode = 2 -- shows buffer name + buffer index
+        mode = 4 -- shows buffer name + buffer number
       }
     },
   },

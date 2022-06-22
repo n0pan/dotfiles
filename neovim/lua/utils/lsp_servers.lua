@@ -1,5 +1,6 @@
 local lsp_servers = {
   "bashls",
+  "clangd",
   "cssls",
   "dockerls",
   "emmet_ls",
