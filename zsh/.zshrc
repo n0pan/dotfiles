@@ -59,31 +59,18 @@ alias top="vtop"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
-alias new-h="tmux new-window -n husky -c ~/dev/taiga/husky"
-alias new-hs="tmux new-window -n sandbox -c ~/dev/taiga/husky-sandbox"
-alias new-hmiw="tmux new-window -n dashweb -c ~/dev/taiga/hmi-web"
-alias new-hmi="tmux new-window -n hmi -c ~/dev/taiga/hmi"
-alias new-framboise="tmux new-window -n framboise ssh framboise"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
 alias gl="glab"
 
-# taiga aliases
-alias ecr-login='REGION=$(aws configure list | grep region | awk "{print \$2}"); aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin $(aws sts get-caller-identity --query "Account" --output text).dkr.ecr.${REGION}.amazonaws.com'
-
 hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
 hash -d vi=~/dotfiles/neovim
 hash -d cdc=~/dev/cdc
-hash -d husky=~/dev/taiga/husky
-hash -d husky-s=~/dev/taiga/husky-sandbox
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
-hash -d bluetooth=~/dev/taiga/bluetooth-interface
-hash -d notebook=~/dev/taiga/dev-notebook
-hash -d hmi-web=~/dev/taiga/hmi-web
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -139,17 +126,6 @@ tmate-unpair() {
   else
     echo "Session already killed"
   fi
-}
-
-clean-ios() {
-  rm -rf node_modules && rm yarn.lock
-  cd ios/
-  rm -rf Pods && rm -rf *.xcworkspace && rm Podfile.lock
-  pod deintegrate
-  cd ..
-  yarn
-  npx pod-install
-  yarn ios --device Foxy\ Brown
 }
 
 source ~/.bin/tmuxinator.zsh
