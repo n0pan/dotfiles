@@ -1,0 +1,17 @@
+# /Users/lq/.config/tmuxinator/dash-web.yml
+
+name: hmi-web
+root: ~/dev/taiga/hmi-web
+startup_window: hmi-web
+
+windows:
+  - build:
+      layout: main-vertical
+      panes:
+        - start_dev:
+          - yarn start
+  - hmi-web:
+      layout: main-vertical
+      panes:
+        - start-editor:
+          - nvim

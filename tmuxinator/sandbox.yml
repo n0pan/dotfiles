@@ -1,0 +1,19 @@
+# /Users/lq/.config/tmuxinator/sandbox.yml
+
+name: sandbox
+root: ~/dev/taiga/husky-sandbox
+startup_window: editor
+
+windows:
+  - build:
+      layout: main-vertical
+      panes:
+        - start_dev:
+          - yarn start
+        - start_ios:
+          - yarn ios
+  - husky:
+      layout: main-vertical
+      panes:
+        - start-editor:
+          - nvim

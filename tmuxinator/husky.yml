@@ -1,0 +1,32 @@
+# /Users/lq/.config/tmuxinator/husky.yml
+
+name: husky
+root: ~/dev/taiga/husky
+startup_window: husky
+
+windows:
+  - metro:
+      layout: main-vertical
+      panes:
+        - start_dev:
+          - yarn start
+  - bluetooth:
+      layout: main-vertical
+      panes:
+        - start-editor:
+          - ssh framboise
+          - cd bluetooth
+          - source venv/bin/activate
+          - python -m bluetoothServer --mock
+  - husky:
+      layout: main-vertical
+      panes:
+        - start-editor:
+          - nvim
+  - build:
+      layout: main-horizontal
+      panes:
+        - start_ios:
+          - yarn ios:dev
+        - start_android:
+          - yarn android:dev
