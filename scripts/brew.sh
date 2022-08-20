@@ -35,6 +35,7 @@ brew install php
 brew install composer
 brew install julia
 brew install lua
+brew install watchman
 
 # Terminal
 echo "Installing terminal..."
@@ -53,6 +54,5 @@ brew install ripgrep
 echo "Installing Tools..."
 brew install mas
 brew install neofetch
-brew install fontforge
 
 brew cleanup
