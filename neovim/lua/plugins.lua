@@ -40,19 +40,6 @@ require("packer").startup(function ()
 
   -- themes --
   use {
-    "projekt0n/github-nvim-theme",
-    enable = false,
-    config = function()
-      vim.o.background = "dark"
-      vim.g.github_transparent = true
-      vim.g.github_dark_sidebar = true
-      vim.g.github_keyword_style = "NONE"
-      vim.g.github_comment_style = "NONE"
-      vim.cmd([[ colorscheme github_dark ]])
-    end,
-  }
-
-  use {
     "catppuccin/nvim",
     as = "catppuccin",
     enable = true,

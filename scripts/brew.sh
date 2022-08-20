@@ -21,6 +21,7 @@ ln -s ~/dotfiles/.
 echo "Installing Git..."
 brew install git
 brew install gh
+brew install glab
 
 # Development
 echo "Installing Development..."
@@ -29,11 +30,11 @@ brew install python3
 brew install node
 brew install java
 brew install golang
-brew tap mongodb/brew
-brew install mongodb/brew/mongocli
-brew install mongodb/brew/mongocommunity
-brew install mongodb/brew/mongo-database-tools
 brew install awscli
+brew install php
+brew install composer
+brew install julia
+brew install lua
 
 # Terminal
 echo "Installing terminal..."
@@ -47,10 +48,6 @@ brew install docker-compose
 brew install tmuxinator
 brew install fd
 brew install ripgrep
-
-echo "Installing Spotify tool for terminal..."
-brew install Rigellute/tap/spotify-tui
-brew install spotifyd
 
 # Tools
 echo "Installing Tools..."
