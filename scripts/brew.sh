@@ -36,6 +36,7 @@ brew install composer
 brew install julia
 brew install lua
 brew install watchman
+brew install cocoapods
 
 # Terminal
 echo "Installing terminal..."

@@ -1,13 +1,13 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = LQ Hoang-Pham
+	name = Long-Quan Hoang-Pham
 	email = long-quan.hoang-pham@taigamotors.ca
 [push]
   default = current
 [core]
   editor = vim
-	excludesfile = /Users/lq/.gitignore_global
+	excludesfile = /Users/lhoangpham/.gitignore_global
 [alias]
   c = commit
   cam = commit -a -m

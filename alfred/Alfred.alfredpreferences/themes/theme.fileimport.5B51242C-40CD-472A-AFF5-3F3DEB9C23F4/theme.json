@@ -1,0 +1,64 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#6C6F85FF",
+        "font" : "System",
+        "color" : "#5C5F77FF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#4C4F69FF",
+        "font" : "System",
+        "color" : "#5C5F77FF"
+      },
+      "backgroundSelected" : "#ACB0BEFF",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#4C4F69FF",
+        "font" : "System",
+        "color" : "#5C5F77FF"
+      },
+      "iconPaddingHorizontal" : 4,
+      "roundness" : 0,
+      "paddingVertical" : 3,
+      "iconSize" : 40
+    },
+    "search" : {
+      "backgroundSelected" : "#ACB0BEFF",
+      "paddingHorizontal" : 8,
+      "spacing" : 8,
+      "text" : {
+        "size" : 34,
+        "colorSelected" : "#4C4F69FF",
+        "font" : "System Light",
+        "color" : "#4C4F69FF"
+      },
+      "background" : "#DCE0E8FF",
+      "roundness" : 0,
+      "paddingVertical" : 5
+    },
+    "window" : {
+      "color" : "#E6E9EFFF",
+      "paddingHorizontal" : 9,
+      "width" : 560,
+      "borderPadding" : 0,
+      "borderColor" : "#DCE0E8FF",
+      "blur" : 15,
+      "roundness" : 3,
+      "paddingVertical" : 8
+    },
+    "credit" : "Catppuccin Org",
+    "separator" : {
+      "color" : "#9CA0B0FF",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#9CA0B0FF",
+      "thickness" : 2
+    },
+    "name" : "Catppuccin Default - Latte"
+  }
+}

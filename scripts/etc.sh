@@ -16,6 +16,3 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "copy .config"
 cp -R ~/dotfiles/.config/ ~/.config/
-
-echo "installing cocoapods"
-sudo gem install cocoapods
