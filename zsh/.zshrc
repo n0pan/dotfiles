@@ -64,6 +64,7 @@ alias new-hs="tmux new-window -n sandbox -c ~/dev/taiga/husky-sandbox"
 alias new-hmiw="tmux new-window -n dashweb -c ~/dev/taiga/hmi-web"
 alias new-hmi="tmux new-window -n hmi -c ~/dev/taiga/hmi"
 alias new-framboise="tmux new-window -n framboise ssh framboise"
+alias new-dash="tmux new-window -n dash ssh dash"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
@@ -141,7 +142,7 @@ tmate-unpair() {
   fi
 }
 
-clean-ios() {
+reset-ios() {
   rm -rf node_modules && rm yarn.lock
   cd ios/
   rm -rf Pods && rm -rf *.xcworkspace && rm Podfile.lock
@@ -149,7 +150,7 @@ clean-ios() {
   cd ..
   yarn
   npx pod-install
-  yarn ios --device Foxy\ Brown
+  yarn ios --device iPhone\ de\ Taiga
 }
 
 source ~/.bin/tmuxinator.zsh
