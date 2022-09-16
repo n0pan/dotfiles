@@ -55,7 +55,7 @@ alias yabairc="nvim ~/.yabairc"
 alias skhdrc="nvim ~/.skhdrc"
 alias vi="nvim"
 alias vim="nvim"
-alias top="vtop"
+alias top="top"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
@@ -65,6 +65,7 @@ alias new-hmiw="tmux new-window -n dashweb -c ~/dev/taiga/hmi-web"
 alias new-hmi="tmux new-window -n hmi -c ~/dev/taiga/hmi"
 alias new-framboise="tmux new-window -n framboise ssh framboise"
 alias new-dash="tmux new-window -n dash ssh dash"
+alias new-dash-work="tmux new-window -n dash ssh dash-work"
 alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
@@ -142,7 +143,12 @@ tmate-unpair() {
   fi
 }
 
-reset-ios() {
+remove_derived_data() {
+  rm -rf ~/Library/Developer/Xcode/DerivedData
+}
+
+reset_ios() {
+  remove_derived_data()
   rm -rf node_modules && rm yarn.lock
   cd ios/
   rm -rf Pods && rm -rf *.xcworkspace && rm Podfile.lock
@@ -150,7 +156,7 @@ reset-ios() {
   cd ..
   yarn
   npx pod-install
-  yarn ios --device iPhone\ de\ Taiga
+  yarn ios:dev --device iPhone\ de\ Taiga
 }
 
 source ~/.bin/tmuxinator.zsh
