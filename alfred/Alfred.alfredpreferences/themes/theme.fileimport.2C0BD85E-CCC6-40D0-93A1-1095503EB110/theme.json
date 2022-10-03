@@ -23,7 +23,7 @@
       },
       "iconPaddingHorizontal" : 14,
       "roundness" : 0,
-      "paddingVertical" : 11,
+      "paddingVertical" : 15,
       "iconSize" : 40
     },
     "search" : {
@@ -31,14 +31,14 @@
       "paddingHorizontal" : 25,
       "spacing" : 0,
       "text" : {
-        "size" : 26,
+        "size" : 30,
         "colorSelected" : "#C6D0F5FF",
         "font" : "SF Mono Bold",
         "color" : "#C6D0F5FF"
       },
       "background" : "#232634FF",
       "roundness" : 0,
-      "paddingVertical" : 15
+      "paddingVertical" : 20
     },
     "window" : {
       "color" : "#292C3CFF",
@@ -47,7 +47,7 @@
       "borderPadding" : 5,
       "borderColor" : "#232634FF",
       "blur" : 15,
-      "roundness" : 3,
+      "roundness" : 14,
       "paddingVertical" : 0
     },
     "credit" : "Catppuccin Org",
