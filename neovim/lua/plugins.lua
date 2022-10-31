@@ -121,13 +121,13 @@ require("packer").startup(function ()
   use { "evanleck/vim-svelte" }
 
   -- git --
-  use {
-    "lewis6991/gitsigns.nvim",
-    tag = "release",
-    config = function()
-      require("plugins.git")
-    end,
-  }
+  -- use {
+  --   "lewis6991/gitsigns.nvim",
+  --   tag = "release",
+  --   config = function()
+  --     require("plugins.git")
+  --   end,
+  -- }
 
   -- quality of life --
   use { "unblevable/quick-scope" }
