@@ -5,20 +5,20 @@
       "subtext" : {
         "size" : 10,
         "colorSelected" : "#A5ADCEFF",
-        "font" : "SF Mono Regular",
+        "font" : "PragmataPro Mono",
         "color" : "#B5BFE2FF"
       },
       "shortcut" : {
         "size" : 12,
         "colorSelected" : "#C6D0F5FF",
-        "font" : "SF Mono Bold",
+        "font" : "PragmataPro Mono Bold",
         "color" : "#B5BFE2FF"
       },
       "backgroundSelected" : "#626880FF",
       "text" : {
         "size" : 13,
         "colorSelected" : "#C6D0F5FF",
-        "font" : "SF Mono Bold",
+        "font" : "PragmataPro Mono Bold",
         "color" : "#B5BFE2FF"
       },
       "iconPaddingHorizontal" : 14,
@@ -33,10 +33,10 @@
       "text" : {
         "size" : 30,
         "colorSelected" : "#C6D0F5FF",
-        "font" : "SF Mono Bold",
+        "font" : "PragmataPro Mono Bold",
         "color" : "#C6D0F5FF"
       },
-      "background" : "#232634FF",
+      "background" : "#292C3CFF",
       "roundness" : 0,
       "paddingVertical" : 20
     },
@@ -45,7 +45,7 @@
       "paddingHorizontal" : 0,
       "width" : 559,
       "borderPadding" : 5,
-      "borderColor" : "#232634FF",
+      "borderColor" : "#292C3CFF",
       "blur" : 15,
       "roundness" : 14,
       "paddingVertical" : 0
