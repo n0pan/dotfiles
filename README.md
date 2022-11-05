@@ -8,7 +8,7 @@ This repo contains configuration files that can be used to setup a new computer 
 ```bash
 git clone git@github.com:n0pan/dotfiles.git ~/dotfiles
 sh ~/dotfiles/install.sh
-vim +PlugInstall +qall
+vim +PackerSync +qall
 vim +UpdateRemotePlugins +qall
 ```
 
