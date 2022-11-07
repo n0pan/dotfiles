@@ -123,7 +123,6 @@ require("packer").startup(function ()
   -- git --
   use {
     "lewis6991/gitsigns.nvim",
-    tag = "release",
     config = function()
       require("plugins.git")
     end,
