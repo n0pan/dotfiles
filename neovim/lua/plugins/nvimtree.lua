@@ -42,23 +42,23 @@ nvimtree.setup({
         folder_arrow = true,
         git = true,
       },
-    },
-    glyphs = {
-      git = {
-        unstaged = "✗",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "★",
-        deleted = "",
-        ignored = "◌",
+      glyphs = {
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
       },
     },
-    actions = {
-      use_system_clipboard = true,
-      open_file = {
-        quit_on_open = true,
-      }
+  },
+  actions = {
+    use_system_clipboard = true,
+    open_file = {
+      quit_on_open = true,
     }
   }
 })
