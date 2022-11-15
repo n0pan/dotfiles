@@ -17,15 +17,10 @@ imap("<C-k>", "<Esc>:m .-2<CR>==gi")
 vmap('<C-j>', ':m ">+1<CR>gv=gv')
 vmap('<C-k>', ':m "<-2<CR>gv=gv')
 
--- NERDTree --
-nmap("<leader>ll", "<cmd>NERDTreeFind<CR>")
-nmap("<leader>pp", "<cmd>NERDTreeClose<CR>")
-nmap("<leader>oo", "<cmd>NERDTreeToggle<CR>")
-vim.cmd([[
-  let NERDTreeQuitOnOpen = 1
-  let NERDTreeShowHidden = 1
-  let NERDTreeShowLineNumbers = 1
-]])
+-- NvimTree --
+nmap("<leader>ll", "<cmd>NvimTreeOpen<CR>")
+nmap("<leader>pp", "<cmd>NvimTreeClose<CR>")
+nmap("<leader>oo", "<cmd>NvimTreeToggle<CR>")
 
 -- Lualine --
 nmap("<leader>1", "<cmd>LualineBuffersJump 1<CR>")

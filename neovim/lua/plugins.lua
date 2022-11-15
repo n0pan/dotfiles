@@ -1,13 +1,14 @@
 -- install packer if not installed already
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+    install_path })
 end
 
 vim.cmd [[packadd packer.nvim]]
 
-require("packer").startup(function ()
+require("packer").startup(function()
   use { "nvim-lua/plenary.nvim" }
 
   use { "wbthomason/packer.nvim" }
@@ -143,9 +144,14 @@ require("packer").startup(function ()
 
   -- file explorer --
   use {
-    "preservim/nerdtree",
-    requires = { "ryanoasis/vim-devicons", opt = true }
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require("plugins.nvimtree")
+    end
   }
+
+  use { 'kyazdani42/nvim-web-devicons' }
+
 end)
 
 vim.cmd([[
