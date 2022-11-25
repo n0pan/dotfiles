@@ -18,7 +18,7 @@ vmap('<C-j>', ':m ">+1<CR>gv=gv')
 vmap('<C-k>', ':m "<-2<CR>gv=gv')
 
 -- NvimTree --
-nmap("<leader>ll", "<cmd>NvimTreeOpen<CR>")
+nmap("<leader>ll", "<cmd>NvimTreeFindFile<CR>")
 nmap("<leader>pp", "<cmd>NvimTreeClose<CR>")
 nmap("<leader>oo", "<cmd>NvimTreeToggle<CR>")
 
