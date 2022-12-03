@@ -71,6 +71,7 @@ hash -d vi=~/dotfiles/neovim
 hash -d cdc=~/dev/cdc
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
+hash -d cashflow=~/dev/cashflow
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
