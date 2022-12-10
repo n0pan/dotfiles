@@ -72,6 +72,7 @@ hash -d cdc=~/dev/cdc
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
 hash -d cashflow=~/dev/cashflow
+hash -d aoc=~/dev/aoc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
