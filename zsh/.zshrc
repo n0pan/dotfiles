@@ -23,6 +23,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -86,6 +87,7 @@ hash -d taiga=~/dev/taiga
 hash -d bluetooth=~/dev/taiga/bluetooth-interface
 hash -d notebook=~/dev/taiga/dev-notebook
 hash -d hmi-web=~/dev/taiga/hmi-web
+hash -d android-release=~/dev/taiga/husky/android/app/build/outputs
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

@@ -82,11 +82,10 @@ require("packer").startup(function()
   use { "alvan/vim-closetag" }
 
   -- markdown --
-  use {
+  use({
     "iamcco/markdown-preview.nvim",
-    opt = true,
-    run = "cd app && yarn install"
-  }
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   -- linters --
   use {
