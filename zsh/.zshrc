@@ -72,6 +72,7 @@ alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
 alias gl="glab"
+alias neofetch="neofetch --ascii ~/.config/neofetch/logo"
 
 # taiga aliases
 alias ecr-login='REGION=$(aws configure list | grep region | awk "{print \$2}"); aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin $(aws sts get-caller-identity --query "Account" --output text).dkr.ecr.${REGION}.amazonaws.com'
