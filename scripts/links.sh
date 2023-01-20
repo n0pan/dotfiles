@@ -7,6 +7,7 @@ source ~/dotfiles/zsh/install.sh
 source ~/dotfiles/tmux/install.sh
 source ~/dotfiles/neovim/install.sh
 source ~/dotfiles/kitty/install.sh
+source ~/dotfiles/neofetch/install.sh
 
 echo "linking spotify-tui config"
 ln -sf ~/dotfiles/spotify-tui/client.yml ~/.config/spotify-tui/client.yml

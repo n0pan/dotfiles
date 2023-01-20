@@ -64,6 +64,7 @@ alias reload-zsh="source ~/.zshrc"
 alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
 alias gl="glab"
+alias neofetch="neofetch --ascii ~/.config/neofetch/logo"
 
 hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
