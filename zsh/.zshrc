@@ -86,7 +86,7 @@ hash -d husky-s=~/dev/taiga/husky-sandbox
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
 hash -d bluetooth=~/dev/taiga/bluetooth-interface
-hash -d notebook=~/dev/taiga/dev-notebook
+hash -d nb=~/dev/taiga/dev-notebook
 hash -d hmi-web=~/dev/taiga/hmi-web
 hash -d android-release=~/dev/taiga/husky/android/app/build/outputs
 
