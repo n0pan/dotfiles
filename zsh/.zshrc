@@ -89,6 +89,7 @@ hash -d bluetooth=~/dev/taiga/bluetooth-interface
 hash -d nb=~/dev/taiga/dev-notebook
 hash -d hmi-web=~/dev/taiga/hmi-web
 hash -d android-release=~/dev/taiga/husky/android/app/build/outputs
+hash -d tti=~/dev/taiga/taiga-test-interface/TTI_GUI
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
