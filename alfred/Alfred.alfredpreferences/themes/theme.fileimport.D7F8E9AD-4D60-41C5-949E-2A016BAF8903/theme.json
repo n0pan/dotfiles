@@ -4,22 +4,22 @@
       "textSpacing" : 5,
       "subtext" : {
         "size" : 12,
-        "colorSelected" : "#6C6F85FF",
+        "colorSelected" : "#A6ADC8FF",
         "font" : "System",
-        "color" : "#5C5F77FF"
+        "color" : "#BAC2DEFF"
       },
       "shortcut" : {
         "size" : 16,
-        "colorSelected" : "#4C4F69FF",
+        "colorSelected" : "#CDD6F4FF",
         "font" : "System",
-        "color" : "#5C5F77FF"
+        "color" : "#BAC2DEFF"
       },
-      "backgroundSelected" : "#ACB0BEFF",
+      "backgroundSelected" : "#585B70FF",
       "text" : {
         "size" : 18,
-        "colorSelected" : "#4C4F69FF",
+        "colorSelected" : "#CDD6F4FF",
         "font" : "System",
-        "color" : "#5C5F77FF"
+        "color" : "#BAC2DEFF"
       },
       "iconPaddingHorizontal" : 4,
       "roundness" : 0,
@@ -27,38 +27,38 @@
       "iconSize" : 40
     },
     "search" : {
-      "backgroundSelected" : "#ACB0BEFF",
+      "backgroundSelected" : "#585B70FF",
       "paddingHorizontal" : 8,
-      "spacing" : 8,
+      "spacing" : 4,
       "text" : {
         "size" : 34,
-        "colorSelected" : "#4C4F69FF",
+        "colorSelected" : "#CDD6F4FF",
         "font" : "System Light",
-        "color" : "#4C4F69FF"
+        "color" : "#CDD6F4FF"
       },
-      "background" : "#DCE0E8FF",
+      "background" : "#11111BFF",
       "roundness" : 0,
       "paddingVertical" : 5
     },
     "window" : {
-      "color" : "#E6E9EFFF",
-      "paddingHorizontal" : 9,
-      "width" : 560,
+      "color" : "#181825FF",
+      "paddingHorizontal" : 0,
+      "width" : 559,
       "borderPadding" : 0,
-      "borderColor" : "#DCE0E8FF",
+      "borderColor" : "#11111BFF",
       "blur" : 15,
       "roundness" : 3,
-      "paddingVertical" : 8
+      "paddingVertical" : 4
     },
     "credit" : "Catppuccin Org",
     "separator" : {
-      "color" : "#9CA0B0FF",
+      "color" : "#6C7086FF",
       "thickness" : 0
     },
     "scrollbar" : {
-      "color" : "#9CA0B0FF",
+      "color" : "#6C7086FF",
       "thickness" : 2
     },
-    "name" : "Catppuccin Default - Latte"
+    "name" : "Catppuccin MacOS - Mocha"
   }
 }

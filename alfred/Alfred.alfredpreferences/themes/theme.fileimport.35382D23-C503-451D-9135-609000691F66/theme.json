@@ -1,0 +1,65 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 7,
+      "subtext" : {
+        "size" : 11,
+        "colorSelected" : "#A6ADC8FF",
+        "font" : "PragmataPro Mono Liga Regular",
+        "color" : "#BAC2DEFF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#CDD6F4FF",
+        "font" : "PragmataPro Mono Liga Regular",
+        "color" : "#BAC2DEFF"
+      },
+      "backgroundSelected" : "#6C7086FF",
+      "text" : {
+        "size" : 13,
+        "colorSelected" : "#CDD6F4FF",
+        "font" : "PragmataPro Mono Liga Bold",
+        "color" : "#BAC2DEFF"
+      },
+      "iconPaddingHorizontal" : 18,
+      "roundness" : 8,
+      "paddingVertical" : 14,
+      "iconSize" : 40
+    },
+    "search" : {
+      "backgroundSelected" : "#585B70FF",
+      "paddingHorizontal" : 29,
+      "spacing" : 12,
+      "text" : {
+        "size" : 32,
+        "colorSelected" : "#CDD6F4FF",
+        "font" : "PragmataPro Mono Liga Bold",
+        "color" : "#CDD6F4FF"
+      },
+      "background" : "#11111BFF",
+      "roundness" : 8,
+      "paddingVertical" : 23
+    },
+    "window" : {
+      "color" : "#181825FF",
+      "paddingHorizontal" : 7,
+      "width" : 560,
+      "borderPadding" : 0,
+      "borderColor" : "#11111BFF",
+      "blur" : 0,
+      "roundness" : 15,
+      "paddingVertical" : 9
+    },
+    "credit" : "Catppuccin Org",
+    "visualEffectMode" : 2,
+    "separator" : {
+      "color" : "#6C7086FF",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#6C7086FF",
+      "thickness" : 2
+    },
+    "name" : "Catppuccin Modern - Mocha"
+  }
+}

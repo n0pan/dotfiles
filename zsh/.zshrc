@@ -14,6 +14,8 @@ if test -n "$KITTY_INSTALLATION_DIR"; then
     unfunction kitty-integration
 fi
 
+source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
 export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
