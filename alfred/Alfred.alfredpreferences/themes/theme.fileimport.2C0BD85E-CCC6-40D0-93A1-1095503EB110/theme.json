@@ -1,54 +1,54 @@
 {
   "alfredtheme" : {
     "result" : {
-      "textSpacing" : 9,
+      "textSpacing" : 8,
       "subtext" : {
         "size" : 12,
         "colorSelected" : "#A5ADCEFF",
-        "font" : "PragmataPro Mono",
+        "font" : "PragmataPro Mono Liga",
         "color" : "#B5BFE2FF"
       },
       "shortcut" : {
-        "size" : 15,
+        "size" : 12,
         "colorSelected" : "#C6D0F5FF",
-        "font" : "PragmataPro Mono Bold",
+        "font" : "PragmataPro Mono Liga Bold",
         "color" : "#B5BFE2FF"
       },
       "backgroundSelected" : "#626880FF",
       "text" : {
-        "size" : 15,
+        "size" : 14,
         "colorSelected" : "#C6D0F5FF",
-        "font" : "PragmataPro Mono Bold",
+        "font" : "PragmataPro Mono Liga Bold",
         "color" : "#B5BFE2FF"
       },
       "iconPaddingHorizontal" : 14,
       "roundness" : 0,
-      "paddingVertical" : 13,
+      "paddingVertical" : 15,
       "iconSize" : 40
     },
     "search" : {
       "backgroundSelected" : "#626880FF",
-      "paddingHorizontal" : 15,
-      "spacing" : 11,
+      "paddingHorizontal" : 25,
+      "spacing" : 0,
       "text" : {
-        "size" : 33,
+        "size" : 38,
         "colorSelected" : "#C6D0F5FF",
-        "font" : "PragmataPro Mono Bold",
+        "font" : "PragmataPro Mono Liga Bold",
         "color" : "#C6D0F5FF"
       },
-      "background" : "#232634FF",
+      "background" : "#292C3CFF",
       "roundness" : 0,
-      "paddingVertical" : 9
+      "paddingVertical" : 20
     },
     "window" : {
-      "color" : "#232634FF",
+      "color" : "#292C3CFF",
       "paddingHorizontal" : 0,
       "width" : 559,
-      "borderPadding" : 0,
-      "borderColor" : "#232634FF",
+      "borderPadding" : 5,
+      "borderColor" : "#292C3CFF",
       "blur" : 15,
       "roundness" : 14,
-      "paddingVertical" : 15
+      "paddingVertical" : 0
     },
     "credit" : "Catppuccin Org",
     "separator" : {
