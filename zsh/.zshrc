@@ -62,7 +62,7 @@ alias top="top"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
 alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
-alias new-h="tmux new-window -n husky -c ~/dev/taiga/husky"
+alias new-mobile="tmux new-window -n mobile-app -c ~/dev/taiga/mobile-app"
 alias new-hs="tmux new-window -n sandbox -c ~/dev/taiga/husky-sandbox"
 alias new-hmiw="tmux new-window -n dashweb -c ~/dev/taiga/hmi-web"
 alias new-hmi="tmux new-window -n hmi -c ~/dev/taiga/hmi"
@@ -83,14 +83,14 @@ hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
 hash -d vi=~/dotfiles/neovim
 hash -d cdc=~/dev/cdc
-hash -d husky=~/dev/taiga/husky
+hash -d mobile-app=~/dev/taiga/mobile-app
 hash -d husky-s=~/dev/taiga/husky-sandbox
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
 hash -d bluetooth=~/dev/taiga/bluetooth-interface
 hash -d nb=~/dev/taiga/dev-notebook
 hash -d hmi-web=~/dev/taiga/hmi-web
-hash -d android-release=~/dev/taiga/husky/android/app/build/outputs
+hash -d android-release=~/dev/taiga/mobile-app/android/app/build/outputs
 hash -d tti=~/dev/taiga/taiga-test-interface/TTI_GUI
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
