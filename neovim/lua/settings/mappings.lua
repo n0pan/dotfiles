@@ -45,7 +45,7 @@ nmap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
 nmap("<leader>bf", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 
 -- LSP --
-nmap("<leader>f", "<cmd>lua vim.lsp.buf.formatting()<cr>")
+nmap("<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>")
 nmap("<leader>gd", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 nmap("<leader>jd", "<cmd>lua vim.lsp.buf.definition()<cr>")
 nmap("<leader>td", "<cmd>lua vim.lsp.buf.type_definition()<cr>")

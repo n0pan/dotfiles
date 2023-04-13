@@ -1,32 +1,28 @@
 local servers = require("utils.lsp_servers")
-local lsp_installer_found, lsp_installer = pcall(require, "nvim-lsp-installer")
+local lsp_installer_found, lsp_installer = pcall(require, "mason")
+local _, mason_lspconfig = pcall(require, "mason-lspconfig")
+local _, lspconfig = pcall(require, "lspconfig")
 
 if not lsp_installer_found then
-  print "[Warning] Cannot find nvim-lsp-installer"
+  print "[Warning] Cannot find mason"
   return
 end
 
-for _, lsp_name in pairs(servers) do
-  local server_is_found, server = lsp_installer.get_server(lsp_name)
-  if server_is_found and not server:is_installed() then
-    print("Installing " .. lsp_name .. "...")
-    server:install()
-  end
-end
-
-lsp_installer.settings({
+lsp_installer.setup({
   ui = {
+    check_outdated_packages_on_open = true,
+    border = "rounded",
     icons = {
-      server_installed = "✓",
-      server_pending = "➜",
-      server_uninstalled = "✗",
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗",
     },
   },
 })
 
 local custom_settings = {
   jsonls = "plugins.lsp.settings.jsonls",
-  sumneko_lua = "plugins.lsp.settings.sumneko_lua",
+  luals = "plugins.lsp.settings.lua_ls",
   tsserver = "plugins.lsp.settings.tsserver",
 }
 
@@ -40,11 +36,17 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-lsp_installer.on_server_ready(function(server)
-  local default_opts = {
-    -- on_attach = require("plugins.configs.lsp.handlers").on_attach,
-    capabilities = capabilities,
-  }
-  local opts = use_custom_settings(server.name, default_opts)
-  server:setup(opts)
-end)
+mason_lspconfig.setup({
+  ensure_installed = servers,
+  automatic_installation = true,
+})
+
+mason_lspconfig.setup_handlers {
+  function(server_name)
+    local default_opts = {
+      capabilities = capabilities,
+    }
+    local opts = use_custom_settings(server_name, default_opts)
+    lspconfig[server_name].setup(opts)
+  end
+}

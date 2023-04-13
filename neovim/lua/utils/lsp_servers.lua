@@ -7,7 +7,7 @@ local lsp_servers = {
   "html",
   "pyright",
   "jsonls",
-  "sumneko_lua",
+  "lua_ls",
   "svelte",
   "tsserver",
   "vimls"

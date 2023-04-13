@@ -27,7 +27,7 @@ local function tmap(shortcut, command)
 end
 
 mapping_commands.map = map
-mapping_commands.nmap =  nmap
+mapping_commands.nmap = nmap
 mapping_commands.imap = imap
 mapping_commands.vmap = vmap
 mapping_commands.cmap = cmap
