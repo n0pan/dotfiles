@@ -3,7 +3,7 @@ HOME = os.getenv("HOME")
 vim.g.mapleader = " "
 
 local options = {
--- options --
+  -- options --
   guicursor = "", -- set cursor to always be a block
   ignorecase = true,
   hlsearch = true,
@@ -19,13 +19,13 @@ local options = {
   autowrite = true,
   backspace = "indent,eol,start",
   laststatus = 2,
--- display --
+  -- display --
   synmaxcol = 128,
   termguicolors = true,
--- line numbers --
+  -- line numbers --
   rnu = true,
   nu = true,
--- backup files --,
+  -- backup files --,
   undofile = true,
   undodir = HOME .. "/.nvim/undo",
   swapfile = false,

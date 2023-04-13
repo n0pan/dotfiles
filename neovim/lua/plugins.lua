@@ -21,7 +21,9 @@ require("packer").startup(function()
     end,
   }
   use {
-    "williamboman/nvim-lsp-installer",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
   }
 
   use {
@@ -157,7 +159,6 @@ require("packer").startup(function()
   }
 
   use { 'kyazdani42/nvim-web-devicons' }
-
 end)
 
 vim.cmd([[
