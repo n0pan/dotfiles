@@ -92,6 +92,8 @@ hash -d nb=~/dev/taiga/dev-notebook
 hash -d hmi-web=~/dev/taiga/hmi-web
 hash -d android-release=~/dev/taiga/mobile-app/android/app/build/outputs
 hash -d tti=~/dev/taiga/taiga-test-interface/TTI_GUI
+hash -d softup=~/dev/taiga/softup
+hash -d system=~/dev/taiga/dash-system
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
