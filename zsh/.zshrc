@@ -26,6 +26,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+export AWS_PROFILE=dev
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -77,6 +78,7 @@ alias gl="glab"
 alias neofetch="neofetch --ascii ~/.config/neofetch/logo"
 
 # taiga aliases
+alias attach-toolkit="~/dev/taiga/dash-dev-tools/misc-tools/attach-toolkit"
 alias ecr-login='REGION=$(aws configure list | grep region | awk "{print \$2}"); aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin $(aws sts get-caller-identity --query "Account" --output text).dkr.ecr.${REGION}.amazonaws.com'
 
 hash -d lq=~/dev/long-quan
@@ -87,7 +89,7 @@ hash -d mobile-app=~/dev/taiga/mobile-app
 hash -d husky-s=~/dev/taiga/husky-sandbox
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
-hash -d bluetooth=~/dev/taiga/bluetooth-interface
+hash -d bluetooth=~/dev/taiga/bluetooth
 hash -d nb=~/dev/taiga/dev-notebook
 hash -d hmi-web=~/dev/taiga/hmi-web
 hash -d android-release=~/dev/taiga/mobile-app/android/app/build/outputs
