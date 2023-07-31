@@ -85,11 +85,11 @@ hash -d lq=~/dev/long-quan
 hash -d df=~/dotfiles
 hash -d vi=~/dotfiles/neovim
 hash -d cdc=~/dev/cdc
-hash -d mobile-app=~/dev/taiga/mobile-app
+hash -d mobile=~/dev/taiga/mobile-app
 hash -d husky-s=~/dev/taiga/husky-sandbox
 hash -d hmi=~/dev/taiga/hmi
 hash -d taiga=~/dev/taiga
-hash -d bluetooth=~/dev/taiga/bluetooth
+hash -d bt=~/dev/taiga/dash-bluetooth
 hash -d nb=~/dev/taiga/dev-notebook
 hash -d hmi-web=~/dev/taiga/hmi-web
 hash -d android-release=~/dev/taiga/mobile-app/android/app/build/outputs
@@ -167,6 +167,16 @@ reset_ios() {
   yarn
   npx pod-install
   yarn ios:dev --device iPhone\ de\ Taiga
+}
+
+die() { echo "$*" 1>&2 ; exit 1; }
+
+ota-job-cancel() { 
+  [[ -z "$1" ]] && die "need to provide the job id as argument";
+  if ! aws sts get-caller-identity; then
+      aws sso login || die;
+  fi;
+  aws iot cancel-job --force --job-id="$1" --profile dev
 }
 
 source ~/.bin/tmuxinator.zsh
