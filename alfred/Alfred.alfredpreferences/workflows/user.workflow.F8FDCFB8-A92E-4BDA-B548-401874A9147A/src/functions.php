@@ -5,43 +5,6 @@ require_once './src/createLibrary.php';
 require_once './src/refreshLibrary.php';
 require './vendor/autoload.php';
 
-/**
- * fixPermissions function.
- *
- */
-function fixPermissions($w)
-{
-    $theme_color = getSetting($w, 'theme_color');
-
-    // check for quarantine and remove it if required
-    exec('/usr/bin/xattr ./fzf', $response);
-    foreach ($response as $line) {
-        if (strpos($line, 'com.apple.quarantine') !== false) {
-            logMsg($w, "Info(fix_permissions) for fzf");
-            exec('/usr/bin/xattr -d com.apple.quarantine ./fzf', $response);
-            break;
-        }
-    }
-
-    // check for quarantine and remove it if required
-    exec('/usr/bin/xattr ./terminal-notifier.app', $response);
-    foreach ($response as $line) {
-        if (strpos($line, 'com.apple.quarantine') !== false) {
-            logMsg($w, "Info(fix_permissions) for terminal-notifier");
-            exec('/usr/bin/xattr -d com.apple.quarantine ./terminal-notifier.app', $response);
-            break;
-        }
-    }
-
-    exec('/usr/bin/xattr "' . './App/' . $theme_color . '/Spotify Mini Player.app' . '"', $response);
-    foreach ($response as $line) {
-        if (strpos($line, 'com.apple.quarantine') !== false) {
-            logMsg($w, "Info(fix_permissions) for Spotify Mini Player");
-            exec('/usr/bin/xattr -d com.apple.quarantine "' . './App/' . $theme_color . '/Spotify Mini Player.app' . '"', $response);
-            break;
-        }
-    }
-}
 
 /**
  * getExternalSettings function.
@@ -277,7 +240,7 @@ function getFuzzySearchResults($w, $update_in_progress, $query, $table_name, $ta
 
     $delimiter = '{::}';
 
-    exec("/usr/bin/sqlite3 -separator $delimiter '$dbfile' 'select ".implode(",",$table_columns)." from ".$table_name." ".$where_clause.";' | ./fzf --filter \"$query\" --delimiter=\"$delimiter\" --nth=\"$nth\"" , $retArr, $retVal);
+    exec("/usr/bin/sqlite3 -separator $delimiter '$dbfile' 'select ".implode(",",$table_columns)." from ".$table_name." ".$where_clause.";' | fzf --filter \"$query\" --delimiter=\"$delimiter\" --nth=\"$nth\"" , $retArr, $retVal);
 
     $i = 0;
     $results = array();
@@ -1267,10 +1230,16 @@ function getEpisode($w, $episode_uri)
  {
     $retry = true;
     $nb_retry = 0;
+    $should_skip_first_seconds_of_episode = false;
     while ($retry) {
         try {
             $api = getSpotifyWebAPI($w);
-
+            if ($track_uri != '') {
+                $tmp = explode(':', $track_uri);
+                if ($tmp[1] == 'episode' && getenv('skip_first_seconds_of_episode') > 0) {
+                    $should_skip_first_seconds_of_episode = true;
+                }
+            }
             if ($context_uri != '') {
                 if ($track_uri != '') {
                     $offset = [
@@ -1286,6 +1255,9 @@ function getEpisode($w, $episode_uri)
                     ];
                 }
                 $api->play($device_id, $options);
+                if($should_skip_first_seconds_of_episode) {
+                    seekTo($w, (getenv('skip_first_seconds_of_episode')*1000));
+                }
                 $retry = false;
             } else {
                 $uris = array();
@@ -1294,6 +1266,9 @@ function getEpisode($w, $episode_uri)
                     'uris' => $uris
                 ];
                 $api->play($device_id, $options);
+                if ($should_skip_first_seconds_of_episode) {
+                    seekTo($w, (getenv('skip_first_seconds_of_episode') * 1000));
+                }
                 $retry = false;
             }
         } catch (SpotifyWebAPI\SpotifyWebAPIException $e) {
@@ -1424,11 +1399,11 @@ function addToQueueSpotifyConnect($w, $trackId, $device_id)
 }
 
  /**
- * seekToBeginning function.
+ * seekTo function.
  *
  * @param mixed $w
  */
-function seekToBeginning($w)
+function seekTo($w,$position_ms)
 {
    $retry = true;
    $nb_retry = 0;
@@ -1436,11 +1411,11 @@ function seekToBeginning($w)
        try {
            $api = getSpotifyWebAPI($w);
            $api->seek([
-            'position_ms' => 0,
+            'position_ms' => $position_ms,
             ]);
            $retry = false;
        } catch (SpotifyWebAPI\SpotifyWebAPIException $e) {
-           logMsg($w,'Error(seekToBeginning): retry '.$nb_retry.' (exception '.jTraceEx($e).')');
+           logMsg($w,'Error(seekTo): retry '.$nb_retry.' (exception '.jTraceEx($e).')');
            if ($e->getCode() == 404 || $e->getCode() == 403) {
                // skip
                break;
@@ -1696,6 +1671,91 @@ function seekToBeginning($w)
         }
     }
  }
+
+/**
+ * getSpotifyConnectPreferredDevice function.
+ *
+ * @param mixed $w
+ */
+function getSpotifyConnectPreferredDevice($w)
+{
+    $preferred_spotify_connect_device = getSetting($w, 'preferred_spotify_connect_device');
+
+    $retry = true;
+    $nb_retry = 0;
+    while ($retry) {
+        try {
+            $api = getSpotifyWebAPI($w);
+            $devices = $api->getMyDevices();
+            $retry = false;
+            if (isset($devices->devices)) {
+                if ($preferred_spotify_connect_device != "") {
+                    foreach ($devices->devices as $device) {
+                        if ($device->name == $preferred_spotify_connect_device) {
+                            return $device->id;
+                        }
+                    }
+                }
+            }
+            return '';
+        } catch (SpotifyWebAPI\SpotifyWebAPIException $e) {
+            if ($e->getMessage() == 'Permissions missing') {
+                $retry = false;
+                $w->result(null, serialize(array(
+                    '' /*track_uri*/,
+                    '' /* album_uri */,
+                    '' /* artist_uri */,
+                    '' /* playlist_uri */,
+                    '' /* spotify_command */,
+                    '' /* query */,
+                    '' /* other_settings*/,
+                    'reset_oauth_settings' /* other_action */,
+                    '' /* artist_name */,
+                    '' /* track_name */,
+                    '' /* album_name */,
+                    '' /* track_artwork_path */,
+                    '' /* artist_artwork_path */,
+                    '' /* album_artwork_path */,
+                    '' /* playlist_name */,
+                    '', /* playlist_artwork_path */
+                )), 'The workflow needs more privilages to do this, click to restart authentication', array(
+                    'Next time you invoke the workflow, you will have to re-authenticate',
+                    'alt' => '',
+                    'cmd' => '',
+                    'shift' => '',
+                    'fn' => '',
+                    'ctrl' => '',
+                ), './images/warning.png', 'yes', null, '');
+            } else {
+                logMsg($w, 'Error(getSpotifyConnectPreferredDevice): retry ' . $nb_retry . ' (exception ' . jTraceEx($e) . ')');
+                if ($e->getCode() == 404 || $e->getCode() == 403) {
+                    // skip
+                    break;
+                } else if (strpos(strtolower($e->getMessage()), 'ssl') !== false) {
+                    // cURL transport error: 35 LibreSSL SSL_connect: SSL_ERROR_SYSCALL error #251
+                    // https://github.com/vdesabou/alfred-spotify-mini-player/issues/251
+                    // retry any SSL error
+                    ++$nb_retry;
+                } else if ($e->getCode() == 500 || $e->getCode() == 502 || $e->getCode() == 503 || $e->getCode() == 202 || $e->getCode() == 400 || $e->getCode() == 504) {
+                    // retry
+                    if ($nb_retry > 3) {
+                        handleSpotifyWebAPIException($w, $e);
+                        $retry = false;
+
+                        return false;
+                    }
+                    ++$nb_retry;
+                    sleep(5);
+                } else {
+                    handleSpotifyWebAPIException($w, $e);
+                    $retry = false;
+
+                    return false;
+                }
+            }
+        }
+    }
+}
 
 /**
  * getSpotifyConnectCurrentDeviceId function.
@@ -2217,58 +2277,6 @@ function getSpotifyWebAPI($w)
     return $api;
 }
 
-/**
- * invokeMopidyMethod function.
- *
- * @param mixed $w
- * @param mixed $method
- * @param mixed $params
- */
-function invokeMopidyMethod($w, $method, $params, $displayError = true)
-{
-
-
-
-
-    $mopidy_server = getSetting($w,'mopidy_server');
-    $mopidy_port = getSetting($w,'mopidy_port');
-
-    exec("curl -s -X POST -H Content-Type:application/json -d '{
-  \"method\": \"" .$method.'",
-  "jsonrpc": "2.0",
-  "params": ' .json_encode($params, JSON_HEX_APOS).",
-  \"id\": 1
-}' http://" .$mopidy_server.':'.$mopidy_port.'/mopidy/rpc', $retArr, $retVal);
-
-    if ($retVal != 0) {
-        if ($displayError) {
-            displayNotificationWithArtwork($w, 'Mopidy Exception: returned error '.$retVal, './images/warning.png', 'Error!');
-            exec("osascript -e 'tell application id \"".getAlfredName()."\" to search \"".getenv('c_spot_mini_debug').' Mopidy Exception: returned error '.$retVal."\"'");
-        }
-
-        return false;
-    }
-
-    if (isset($retArr[0])) {
-        $result = json_decode($retArr[0]);
-        if (isset($result->result)) {
-            return $result->result;
-        }
-        if (isset($result->error)) {
-            logMsg($w,'Error(invokeMopidyMethod): '.$method.' params: '.json_encode($params, JSON_HEX_APOS).' exception:'.print_r($result));
-
-            if ($displayError) {
-                displayNotificationWithArtwork($w, 'Mopidy Exception: '.htmlspecialchars($result->error->message), './images/warning.png', 'Error!');
-                exec("osascript -e 'tell application id \"".getAlfredName()."\" to search \"".getenv('c_spot_mini_debug').' Mopidy Exception: '.htmlspecialchars($result->error->message)."\"'");
-            }
-
-            return false;
-        }
-    } else {
-        logMsg($w,'Error(invokeMopidyMethod): empty response from Mopidy method: '.$method.' params: '.json_encode($params, JSON_HEX_APOS));
-        displayNotificationWithArtwork($w, 'ERROR: empty response from Mopidy method: '.$method.' params: '.json_encode($params, JSON_HEX_APOS), './images/warning.png');
-    }
-}
 
 /**
  * switchThemeColor function.
@@ -2560,29 +2568,9 @@ function switchThemeColor($w,$theme_color)
         }
     }
 
-    // Get APP
-    $app_url = 'https://github.com/vdesabou/alfred-spotify-mini-player/raw/master/resources/images_' . $theme_color . '/' . rawurlencode('Spotify Mini Player.app.zip');
-
-    $zip_file = '/tmp/SpotifyMiniPlayer.app.zip';
-    $fp = fopen($zip_file, 'w+');
-    $options = array(
-        CURLOPT_FILE => $fp,
-        CURLOPT_FOLLOWLOCATION => 1,
-        CURLOPT_TIMEOUT => 5,
-    );
-
-    $w->request("$app_url", $options);
     ++$nb_images_downloaded;
     $w->write('Change Theme Color to ' . $theme_color . '▹'.$nb_images_downloaded.'▹'.$nb_images_total.'▹'.$words[3].'▹'.'Icons UUID remote page', 'change_theme_color_in_progress');
 
-    if (!is_file($zip_file) || (is_file($zip_file) && filesize($zip_file) == 0)) {
-        $hasError = true;
-        logMsg($w,'Error(switchThemeColor): (failed to load /tmp/SpotifyMiniPlayer.app.zip for '.$theme_color.')');
-    }
-    $zip_command = 'unzip -o '  . $zip_file . ' -d ' . '\'./App/'.$theme_color.'/\'';
-    exec($zip_command);
-
-    exec('open "'.'./App/'.$theme_color.'/Spotify Mini Player.app'.'"');
     //update settings
     updateSetting($w, 'theme_color', $theme_color);
 
@@ -2675,11 +2663,7 @@ function createDebugFile($w)
     $output = $output."\n";
     $output = $output.'automatically_open_spotify_app:'.getenv('automatically_open_spotify_app');
     $output = $output."\n";
-    if ($output_application != 'MOPIDY') {
-        $output = $output.'Spotify desktop version:'.exec("osascript -e 'tell application \"Spotify\" to version'");
-    } else {
-        $output = $output.'Mopidy version:'.invokeMopidyMethod($w, 'core.get_version', array(), false);
-    }
+    $output = $output.'Spotify desktop version:'.exec("osascript -e 'tell application \"Spotify\" to version'");
     $output = $output."\n";
     if (isUserPremiumSubscriber($w)) {
         $output = $output . 'PREMIUM';
@@ -2688,13 +2672,6 @@ function createDebugFile($w)
         $output = $output . 'NOT PREMIUM';
         $output = $output . "\n";
     }
-
-    $response = shell_exec('/usr/bin/xattr "'.'./App/'.$theme_color.'/Spotify Mini Player.app'.'"');
-    $output = $output."xattr Spotify Mini Player.app returned: \n";
-    $output = $output.$response."\n";
-    $response = shell_exec('/usr/bin/xattr "'.'./terminal-notifier.app'.'"');
-    $output = $output."xattr terminal-notifier returned: \n";
-    $output = $output.$response."\n";
 
     $output = $output."----------------------------------------------\n";
     $output = $output."Settings\n";
@@ -2773,51 +2750,6 @@ function decryptString($w, $encrypted)
     }
 
     return $decrypted;
-}
-
-/**
- * getCurrentTrackInfoWithMopidy function.
- *
- * @param mixed $w
- * @param bool  $displayError (default: true)
- */
-function getCurrentTrackInfoWithMopidy($w, $displayError = true)
-{
-    $tl_track = invokeMopidyMethod($w, 'core.playback.get_current_track', array(), $displayError);
-    if ($tl_track == false) {
-        return 'mopidy_stopped';
-    }
-    $state = invokeMopidyMethod($w, 'core.playback.get_state', array(), $displayError);
-
-    $track_name = '';
-    $artist_name = '';
-    $album_name = '';
-    $track_uri = '';
-    $length = 0;
-
-    if (isset($tl_track->name)) {
-        $track_name = $tl_track->name;
-    }
-
-    if (isset($tl_track->artists) &&
-        isset($tl_track->artists[0]) &&
-        isset($tl_track->artists[0])) {
-        $artist_name = $tl_track->artists[0]->name;
-    }
-
-    if (isset($tl_track->album) && isset($tl_track->album->name)) {
-        $album_name = $tl_track->album->name;
-    }
-
-    if (isset($tl_track->uri)) {
-        $track_uri = $tl_track->uri;
-    }
-
-    if (isset($tl_track->length)) {
-        $length = $tl_track->length;
-    }
-
-    return ''.$track_name.'▹'.$artist_name.'▹'.$album_name.'▹'.$state.'▹'.$track_uri.'▹'.$length.'▹'.'0';
 }
 
 /**
@@ -2913,60 +2845,6 @@ function getCurrentTrackInfoWithMopidy($w, $displayError = true)
     }
  }
 
-/**
- * playUriWithMopidyWithoutClearing function.
- *
- * @param mixed $w
- * @param mixed $uri
- */
-function playUriWithMopidyWithoutClearing($w, $uri)
-{
-    $tl_tracks = invokeMopidyMethod($w, 'core.tracklist.add', array('uris' => array($uri), 'at_position' => 0));
-    if (isset($tl_tracks[0])) {
-        invokeMopidyMethod($w, 'core.playback.play', array('tl_track' => $tl_tracks[0]));
-    } else {
-        displayNotificationWithArtwork($w, 'Cannot play track with uri '.$uri, './images/warning.png', 'Error!');
-    }
-}
-
-/**
- * playUriWithMopidy function.
- *
- * @param mixed $w
- * @param mixed $uri
- */
-function playUriWithMopidy($w, $uri)
-{
-    invokeMopidyMethod($w, 'core.tracklist.clear', array());
-    playUriWithMopidyWithoutClearing($w, $uri);
-}
-
-/**
- * playTrackInContextWithMopidy function.
- *
- * @param mixed $w
- * @param mixed $track_uri
- * @param mixed $context_uri
- */
-function playTrackInContextWithMopidy($w, $track_uri, $context_uri)
-{
-    invokeMopidyMethod($w, 'core.tracklist.clear', array());
-    invokeMopidyMethod($w, 'core.tracklist.add', array('uri' => $context_uri, 'at_position' => 0));
-    $tl_tracks = invokeMopidyMethod($w, 'core.tracklist.get_tl_tracks', array());
-
-    // loop to find track_uri
-    $i = 0;
-    foreach ($tl_tracks as $tl_track) {
-        if ($tl_track->track->uri == $track_uri) {
-            // found the track move it to position 0
-            invokeMopidyMethod($w, 'core.tracklist.move', array('start' => $i, 'end' => $i, 'to_position' => 0));
-        }
-        ++$i;
-    }
-
-    $tl_tracks = invokeMopidyMethod($w, 'core.tracklist.get_tl_tracks', array());
-    invokeMopidyMethod($w, 'core.playback.play', array('tl_track' => $tl_tracks[0]));
-}
 
 /**
  * setThePlaylistPrivacy function.
@@ -4341,19 +4219,20 @@ function removeTrackFromPlaylist($w, $track_uri, $playlist_uri, $playlist_name, 
 
     // https://github.com/vdesabou/alfred-spotify-mini-player/issues/522
     // Automatically play next track when removing track from playlist
-    if ($output_application == 'MOPIDY') {
-        invokeMopidyMethod($w, 'core.playback.next', array());
-    } else if ($output_application == 'APPLESCRIPT') {
-        exec("osascript -e 'tell application \"Spotify\" to next track'");
-    } else {
-        $device_id = getSpotifyConnectCurrentDeviceId($w);
-        if ($device_id != '') {
-            nextTrackSpotifyConnect($w, $device_id);
+    if(getenv('skip_current_track_when_removed')) {
+        if ($output_application == 'MOPIDY') {
+            invokeMopidyMethod($w, 'core.playback.next', array());
+        } else if ($output_application == 'APPLESCRIPT') {
+            exec("osascript -e 'tell application \"Spotify\" to next track'");
         } else {
-            displayNotificationWithArtwork($w, 'No Spotify Connect device is available', './images/warning.png', 'Error!');
+            $device_id = getSpotifyConnectCurrentDeviceId($w);
+            if ($device_id != '') {
+                nextTrackSpotifyConnect($w, $device_id);
+            } else {
+                displayNotificationWithArtwork($w, 'No Spotify Connect device is available', './images/warning.png', 'Error!');
+            }
         }
     }
-
     if ($refreshLibrary) {
         if(getenv('automatically_refresh_library') == 1) {
             refreshLibrary($w);
@@ -4478,7 +4357,7 @@ function getRandomAlbum($w)
                 PDO::ATTR_PERSISTENT => true,
             ));
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $getTracks = 'select album_uri,album_name,artist_name from tracks where yourmusic=1 order by random() limit 1';
+        $getTracks = 'select album_uri,album_name,artist_name from tracks where yourmusic_album=1 order by random() limit 1';
         $stmt = $db->prepare($getTracks);
         $stmt->execute();
         $track = $stmt->fetch();
@@ -5987,45 +5866,15 @@ function checkIfShowDuplicate($my_show_array, $show)
  */
 function displayNotificationWithArtwork($w, $subtitle, $artwork, $title = 'Spotify Mini Player', $force = false)
 {
-
     if(getenv('reduce_notifications') == 1 && $title != "Error!" && $force == false) {
         // skip any non error
         return;
     }
 
-
-
     $use_growl = getSetting($w,'use_growl');
 
     if (!$use_growl) {
-        $theme_color = getSetting($w,'theme_color');
-        if (!is_dir('./App/'.$theme_color.'/Spotify Mini Player.app') || (is_dir('./App/'.$theme_color.'/Spotify Mini Player.app') && filesize('./App/'.$theme_color.'/Spotify Mini Player.app') == 0)) {
-            // reset to default
-            updateSetting($w, 'theme_color', 'green');
-            $theme_color = getSetting($w,'theme_color');
-        }
-        if ($artwork != '' && file_exists($artwork)) {
-            copy($artwork, '/tmp/tmp_' . exec("whoami") );
-        }
-
-        // check for quarantine and remove it if required
-        exec('/usr/bin/xattr ./terminal-notifier.app',$response);
-        foreach($response as $line) {
-            if (strpos($line, 'com.apple.quarantine') !== false) {
-                exec('/usr/bin/xattr -d com.apple.quarantine ./terminal-notifier.app',$response);
-                exit;
-            }
-        }
-
-        exec('/usr/bin/xattr "'.'./App/'.$theme_color.'/Spotify Mini Player.app'.'"',$response);
-        foreach($response as $line) {
-            if (strpos($line, 'com.apple.quarantine') !== false) {
-                exec('/usr/bin/xattr -d com.apple.quarantine "'.'./App/'.$theme_color.'/Spotify Mini Player.app'.'"',$response);
-                exit;
-            }
-        }
-
-        exec("./terminal-notifier.app/Contents/MacOS/terminal-notifier -title '".$title."' -sender 'com.spotify.miniplayer.".$theme_color."' -appIcon '/tmp/tmp_".exec("whoami")."' -message '".$subtitle."'");
+        exec("./src/notificator --title '".$title. "' --message '".$subtitle."'");
     } else {
         exec('./src/growl_notification.ksh -t "'.$title.'" -s "'.$subtitle.'" >> "'.$w->cache().'/action.log" 2>&1 & ');
     }
@@ -6038,11 +5887,6 @@ function displayNotificationWithArtwork($w, $subtitle, $artwork, $title = 'Spoti
  */
 function displayNotificationForCurrentTrack($w)
 {
-
-
-
-
-
     $output_application = getSetting($w,'output_application');
     $is_display_rating = getSetting($w,'is_display_rating');
     $use_artworks = getSetting($w,'use_artworks');
@@ -6369,7 +6213,7 @@ function downloadArtworks($w, $silent = false)
         $elapsed_time = time() - $words[3];
         if(!$silent)
             displayNotificationWithArtwork($w, 'All artworks have been downloaded ('.$nb_artworks_total.' artworks) - took '.beautifyTime($elapsed_time, true), './images/artworks.png', 'Artworks');
-        stathat_ez_count('AlfredSpotifyMiniPlayer', 'artworks', $nb_artworks_total);
+        
     }
 
     // Get size of artwork directory
@@ -6454,7 +6298,7 @@ function getTrackOrAlbumArtwork($w, $spotifyURL, $fetchIfNotPresent, $fetchLater
                 if ($isLaterFetch == true) {
                     return true;
                 } else {
-                    stathat_ez_count('AlfredSpotifyMiniPlayer', 'artworks', 1);
+                    
                 }
             } else {
                 if ($isLaterFetch == true) {
@@ -6593,7 +6437,7 @@ function getPlaylistArtwork($w, $playlist_uri, $fetchIfNotPresent, $forceFetch =
                 );
 
                 $w->request("$artwork", $options);
-                stathat_ez_count('AlfredSpotifyMiniPlayer', 'artworks', 1);
+                
             } else {
                 return './images/playlists.png';
             }
@@ -6647,7 +6491,7 @@ function getCategoryArtwork($w, $categoryId, $categoryURI, $fetchIfNotPresent, $
                 CURLOPT_TIMEOUT => 5,
             );
             $w->request("$categoryURI", $options);
-            stathat_ez_count('AlfredSpotifyMiniPlayer', 'artworks', 1);
+            
         } else {
             return './images/browse.png';
         }
@@ -6724,7 +6568,7 @@ function getShowArtwork($w, $show_uri, $fetchIfNotPresent = false, $fetchLater =
                     CURLOPT_TIMEOUT => 5,
                 );
                 $w->request("$artwork", $options);
-                stathat_ez_count('AlfredSpotifyMiniPlayer', 'artworks', 1);
+                
                 if ($isLaterFetch == true) {
                     return true;
                 }
@@ -6847,7 +6691,7 @@ function getEpisodeArtwork($w, $episode_uri, $fetchIfNotPresent = false, $fetchL
                     CURLOPT_TIMEOUT => 5,
                 );
                 $w->request("$artwork", $options);
-                stathat_ez_count('AlfredSpotifyMiniPlayer', 'artworks', 1);
+                
                 if ($isLaterFetch == true) {
                     return true;
                 }
@@ -6922,7 +6766,7 @@ function getArtistArtwork($w, $artist_uri, $artist_name, $fetchIfNotPresent = fa
     if (!$useArtworks) {
         return './images/artists.png';
     }
-    $parsedArtist = urlencode(escapeQuery($artist_name));
+    $parsedArtist = truncateStr(urlencode(escapeQuery($artist_name)),250);
 
     if (!file_exists($w->data().'/artwork')):
         exec("mkdir '".$w->data()."/artwork'");
@@ -6969,7 +6813,7 @@ function getArtistArtwork($w, $artist_uri, $artist_name, $fetchIfNotPresent = fa
                     CURLOPT_TIMEOUT => 5,
                 );
                 $w->request("$artwork", $options);
-                stathat_ez_count('AlfredSpotifyMiniPlayer', 'artworks', 1);
+                
                 if ($isLaterFetch == true) {
                     return true;
                 }
@@ -7898,136 +7742,6 @@ function startsWithNumber($str) {
 }
 
 /**
- * checkForUpdate function.
- *
- * @param mixed $w
- * @param mixed $last_check_update_time
- * @param bool  $download               (default: true)
- */
-function checkForUpdate($w, $last_check_update_time, $download = false)
-{
-    if (time() - $last_check_update_time > 172800 || $download == true) {
-        // update last_check_update_time
-        $ret = updateSetting($w, 'last_check_update_time', time());
-        if ($ret == false) {
-            return 'Error while updating settings';
-        }
-
-        if (!$w->internet()) {
-            return 'No internet connection !';
-        }
-
-        // get local information
-        $local_version = shell_exec("/usr/libexec/PlistBuddy -c 'print version' info.plist");
-        $local_version = preg_replace("/\s+/", "", $local_version);
-        $remote_info_plist_url='https://raw.githubusercontent.com/vdesabou/alfred-spotify-mini-player/master/spotify-mini-player/info.plist';
-
-        // get remote information
-        $remote_info_plist_name = '/tmp/info.plist';
-        $fp = fopen($remote_info_plist_name, 'w+');
-        $options = array(
-            CURLOPT_FILE => $fp,
-            CURLOPT_USERAGENT => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:7.0.1) Gecko/20100101 Firefox/7.0.1',
-        );
-        $w->request("$remote_info_plist_url", $options);
-
-        if (!file_exists($remote_info_plist_name)) {
-            return 'The remote info.plist file cannot be downloaded';
-        }
-        $remote_version = shell_exec("/usr/libexec/PlistBuddy -c 'print version' $remote_info_plist_name");
-        $remote_version = preg_replace("/\s+/", "", $remote_version);
-        if (!startsWithNumber($remote_version)) {
-            return 'The remote version does not start with a number';
-        }
-
-
-
-
-
-        $workflow_version = getSetting($w,'workflow_version');
-        $theme_color = getSetting($w,'theme_color');
-
-        if($local_version != $workflow_version) {
-            // update workflow_version
-            updateSetting($w, 'workflow_version', ''.$local_version);
-            stathat_ez_count('AlfredSpotifyMiniPlayer', 'workflow_installations', 1);
-            fixPermissions($w);
-            // open SpotifyMiniPlayer.app for notifications
-            exec('open "'.'./App/'.$theme_color.'/Spotify Mini Player.app'.'"',$response);
-        }
-
-
-        if ($local_version < $remote_version) {
-
-            if ($download == true) {
-
-                $workflow_file_name = exec('printf $HOME').'/Downloads/spotify-mini-player-'.$remote_version.'.alfredworkflow';
-
-                // get remote information
-                $options = array(
-                    CURLOPT_USERAGENT => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:7.0.1) Gecko/20100101 Firefox/7.0.1',
-                );
-                $jsonDataRemote = $w->request("https://api.github.com/repos/vdesabou/alfred-spotify-mini-player/releases/latest", $options);
-
-                if (empty($jsonDataRemote)) {
-                    logMsg($w,"ERROR: The github release page cannot be found");
-                    return 'The github release page cannot be found';
-                }
-                $json = json_decode($jsonDataRemote);
-                if (json_last_error() === JSON_ERROR_NONE) {
-
-                    if(isset($json->assets[0]->browser_download_url)) {
-                        $download_url = $json->assets[0]->browser_download_url;
-                    } else {
-                        logMsg($w,"ERROR: Cannot find URL");
-                        return 'Cannot find URL';
-                    }
-                } else {
-                    logMsg($w,"ERROR: The github release page cannot be decoded: ".json_last_error());
-                    return 'The github release page cannot be decoded';
-                }
-
-                $fp = fopen($workflow_file_name, 'w+');
-                $options = array(
-                    CURLOPT_FILE => $fp,
-                    CURLOPT_FOLLOWLOCATION => true,
-                );
-                $w->request("$download_url", $options);
-
-                return array(
-                    $remote_version,
-                    $workflow_file_name,
-                );
-            } else {
-                $w->result(null, serialize(array(
-                            '' /*track_uri*/,
-                            '' /* album_uri */,
-                            '' /* artist_uri */,
-                            '' /* playlist_uri */,
-                            '' /* spotify_command */,
-                            '' /* query */,
-                            '' /* other_settings*/,
-                            'download_update' /* other_action */,
-                            '' /* artist_name */,
-                            '' /* track_name */,
-                            '' /* album_name */,
-                            '' /* track_artwork_path */,
-                            '' /* artist_artwork_path */,
-                            '' /* album_artwork_path */,
-                            '' /* playlist_name */,
-                            '', /* playlist_artwork_path */
-                        )), 'An update is available, version '.$remote_version.'. Click to download', ''.'This will download the new release in your Downloads folder', './images/check_update.png', 'yes', '');
-
-                return array(
-                    '',
-                    '',
-                );
-            }
-        }
-    }
-}
-
-/**
  * doJsonRequest function.
  *
  * @param mixed $w
@@ -8243,7 +7957,6 @@ function getSetting($w, $setting_name)
         updateSetting($w, 'alfred_playlist_uri', $settings->alfred_playlist_uri);
         updateSetting($w, 'alfred_playlist_name', $settings->alfred_playlist_name);
         updateSetting($w, 'country_code', $settings->country_code);
-        updateSetting($w, 'last_check_update_time', $settings->last_check_update_time);
         updateSetting($w, 'oauth_client_id', $settings->oauth_client_id);
         updateSetting($w, 'oauth_client_secret', $settings->oauth_client_secret);
         updateSetting($w, 'oauth_redirect_uri', $settings->oauth_redirect_uri);
@@ -8254,8 +7967,6 @@ function getSetting($w, $setting_name)
         updateSetting($w, 'is_public_playlists', $settings->is_public_playlists);
         updateSetting($w, 'quick_mode', $settings->quick_mode);
         updateSetting($w, 'output_application', $settings->output_application);
-        updateSetting($w, 'mopidy_server', $settings->mopidy_server);
-        updateSetting($w, 'mopidy_port', $settings->mopidy_port);
         updateSetting($w, 'volume_percent', $settings->volume_percent);
         updateSetting($w, 'is_display_rating', $settings->is_display_rating);
         updateSetting($w, 'is_autoplay_playlist', $settings->is_autoplay_playlist);
@@ -8319,7 +8030,6 @@ function resetSettings($w)
     updateSetting($w, 'alfred_playlist_uri', '');
     updateSetting($w, 'alfred_playlist_name', '');
     updateSetting($w, 'country_code', '');
-    updateSetting($w, 'last_check_update_time', '0');
     updateSetting($w, 'oauth_client_id', '');
     updateSetting($w, 'oauth_client_secret', '');
     updateSetting($w, 'oauth_redirect_uri', 'http://localhost:15298/callback.php');
@@ -8330,8 +8040,6 @@ function resetSettings($w)
     updateSetting($w, 'is_public_playlists', '0');
     updateSetting($w, 'quick_mode', '0');
     updateSetting($w, 'output_application', 'APPLESCRIPT');
-    updateSetting($w, 'mopidy_server', '127.0.0.1');
-    updateSetting($w, 'mopidy_port', '6680');
     updateSetting($w, 'volume_percent', '20');
     updateSetting($w, 'is_display_rating', '1');
     updateSetting($w, 'is_autoplay_playlist', '1');
@@ -8414,128 +8122,6 @@ function removeDirectory($path)
     }
 
     return false;
-}
-
-///////////////
-
-// StatHat integration
-
-/**
- * do_post_request function.
- *
- * @param mixed $url
- * @param mixed $data
- * @param mixed $optional_headers (default: null)
- */
-function do_post_request($url, $data, $optional_headers = null)
-{
-    $params = array(
-        'http' => array(
-            'method' => 'POST',
-            'content' => $data,
-        ),
-    );
-    if ($optional_headers !== null) {
-        $params['http']['header'] = $optional_headers;
-    }
-    $ctx = stream_context_create($params);
-    $fp = @fopen($url, 'rb', false, $ctx);
-    if (!$fp) {
-        throw new Exception("Problem with $url, $php_errormsg");
-    }
-    $response = @stream_get_contents($fp);
-    if ($response === false) {
-        throw new Exception("Problem reading data from $url, $php_errormsg");
-    }
-
-    return $response;
-}
-
-/**
- * do_async_post_request function.
- *
- * @param mixed $url
- * @param mixed $params
- */
-function do_async_post_request($url, $params)
-{
-    foreach ($params as $key => &$val) {
-        if (is_array($val)) {
-            $val = implode(',', $val);
-        }
-        $post_params[] = $key.'='.urlencode($val);
-    }
-    $post_string = implode('&', $post_params);
-
-    $parts = parse_url($url);
-
-    $fp = @fsockopen($parts['host'], isset($parts['port']) ? $parts['port'] : 80, $errno, $errstr, 30);
-
-    if ($fp) {
-        $out = 'POST '.$parts['path']." HTTP/1.1\r\n";
-        $out .= 'Host: '.$parts['host']."\r\n";
-        $out .= "Content-Type: application/x-www-form-urlencoded\r\n";
-        $out .= 'Content-Length: '.strlen($post_string)."\r\n";
-        $out .= "Connection: Close\r\n\r\n";
-        if (isset($post_string)) {
-            $out .= $post_string;
-        }
-
-        fwrite($fp, $out);
-        fclose($fp);
-    }
-}
-
-/**
- * stathat_count function.
- *
- * @param mixed $stat_key
- * @param mixed $user_key
- * @param mixed $count
- */
-function stathat_count($stat_key, $user_key, $count)
-{
-    return do_async_post_request('http://api.stathat.com/c', array(
-            'key' => $stat_key,
-            'ukey' => $user_key,
-            'count' => $count,
-        ));
-}
-
-/**
- * stathat_value function.
- *
- * @param mixed $stat_key
- * @param mixed $user_key
- * @param mixed $value
- */
-function stathat_value($stat_key, $user_key, $value)
-{
-    do_async_post_request('http://api.stathat.com/v', array(
-            'key' => $stat_key,
-            'ukey' => $user_key,
-            'value' => $value,
-        ));
-}
-
-/**
- * stathat_ez_count function.
- *
- * @param mixed $email
- * @param mixed $stat_name
- * @param mixed $count
- */
-function stathat_ez_count($email, $stat_name, $count)
-{
-    if(getenv('disable_anonymous_metrics') == 1)
-    {
-        return;
-    }
-    do_async_post_request('http://api.stathat.com/ez', array(
-            'email' => $email,
-            'stat' => $stat_name,
-            'count' => $count,
-        ));
 }
 
 /**

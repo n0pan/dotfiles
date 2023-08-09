@@ -63,44 +63,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
 				<false/>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>4</integer>
-				<key>keyword</key>
-				<string>m</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>loading...</string>
-				<key>script</key>
-				<string>./menu -async -cache 5 -query "{query}"
-</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
+				<key>focusedappvariablename</key>
 				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Menu Bar Search</string>
-				<key>type</key>
+				<key>hotkey</key>
 				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>25DA0D72-264A-4CD8-9A6A-9FFD4B652DF1</string>
+			<string>892B9EF8-E33C-4D32-BBEB-591DFBEFFFEC</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -130,33 +115,71 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>alfredfiltersresults</key>
 				<false/>
-				<key>focusedappvariablename</key>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>m</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>loading...</string>
+				<key>script</key>
+				<string>./menu \
+-cache 2 \
+-max-children "$maxItemsPerMenu" \
+-max-depth "$maxSubMenusToSearch" \
+-show-disabled "$showDisabledItems" \
+-show-apple-menu "$showAppleMenuItems" \
+-async \
+-recache "$recacheOnStartup" \
+-query "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
 				<string></string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Menu Bar Search</string>
+				<key>type</key>
 				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>892B9EF8-E33C-4D32-BBEB-591DFBEFFFEC</string>
+			<string>25DA0D72-264A-4CD8-9A6A-9FFD4B652DF1</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
@@ -193,13 +216,23 @@
 			<key>uid</key>
 			<string>CD061C82-1321-458D-B46E-3603B3DB27E0</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>path</key>
 				<string></string>
+				<key>sortBy</key>
+				<integer>0</integer>
+				<key>sortDirection</key>
+				<integer>0</integer>
+				<key>sortFoldersAtTop</key>
+				<false/>
+				<key>sortOverride</key>
+				<false/>
+				<key>stackBrowserView</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.browseinalfred</string>
@@ -225,20 +258,6 @@ E.g
 
 - `m new tab` will match the menu item **New Tab**
 - `m cw` will match the menu item **Close Window**
-
-
-## Settings
-
-You can change the workflow environment variables to fine tune menu listings
-
-* -show-disabled    true/false    controls if diabled menu items should be shown (default is false)
-
-*  -show-apple-menu    true/false    if true, menus items under the apple menu will be shown (default is false)
-
-*  -max-children    number    how many sub-menu items to load for each menu item (default is 40)
-
-*  -max-depth    number    how many nested levels if sub menus should be listed (default is 10)
-
 
 
 ## Change log
@@ -267,66 +286,186 @@ You can change the workflow environment variables to fine tune menu listings
   - 1.5.4 - Added various environment variables to fine tune menu listings
   - 1.5.5 - Tweaked ranking of search results for better menu listings
 
-- 1.6 - added per app customization settings, `-show-apple-menu` flag</string>
+- 1.6 - added per app customization settings, `-show-apple-menu` flag
+- 1.7 - universal build for M1 and Intel
+- 1.8 - fixed universal build
+- 1.9 - changed to user configuration, and signed executable (exported using Alfred 5)
+- 2.0 - Alfred workflow gallery support! With added shortcut search, brand new configuration settings, tweaks to caching behaviour, brand new icons</string>
 	<key>uidata</key>
 	<dict>
 		<key>25DA0D72-264A-4CD8-9A6A-9FFD4B652DF1</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<real>345</real>
 			<key>ypos</key>
-			<integer>140</integer>
+			<real>165</real>
 		</dict>
 		<key>892B9EF8-E33C-4D32-BBEB-591DFBEFFFEC</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
+			<key>note</key>
+			<string>Thanks for downloading! 
+
+I highly recommend you set a hotkey for this so that it's even easier to trigger it.
+
+I personally set it to double-tapping the ⌘ (command) key.</string>
 			<key>xpos</key>
-			<integer>70</integer>
+			<real>125</real>
 			<key>ypos</key>
-			<integer>140</integer>
+			<real>165</real>
 		</dict>
 		<key>C8DFF277-2C74-48D3-B685-F304268DF007</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<integer>560</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>140</integer>
+			<real>165</real>
 		</dict>
 		<key>CD061C82-1321-458D-B46E-3603B3DB27E0</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
 			<key>xpos</key>
-			<integer>290</integer>
+			<real>345</real>
 			<key>ypos</key>
-			<integer>280</integer>
+			<real>320</real>
 		</dict>
 		<key>CE6777D4-DFB9-460C-897D-EB6C45E6A769</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
 			<key>xpos</key>
-			<integer>560</integer>
+			<real>615</real>
 			<key>ypos</key>
-			<integer>280</integer>
+			<real>320</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>-max-children</key>
-		<string></string>
-		<key>-max-depth</key>
-		<string></string>
-		<key>-show-apple-menu</key>
-		<string></string>
-		<key>-show-disabled</key>
-		<string></string>
-	</dict>
-	<key>variablesdontexport</key>
+	<key>userconfigurationconfig</key>
 	<array>
-		<string>-show-apple-menu</string>
-		<string>-max-children</string>
-		<string>-show-disabled</string>
-		<string>-max-depth</string>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>40</string>
+				<key>placeholder</key>
+				<string>Enter a postive integer, defaults to 40</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>This configuration controls how many menu items should be loaded at every level of the menu hierarchy. 
+
+Limiting this will speed up getting results, but you can tweak this in case you need to fetch more results.
+
+Some applications, e.g. internet browsers, may offer a "History" menu of all web pages accessed, which may contain a lot of sub-menu items. Loading all of them will make the workflow slow, and we limit to the first few, as specified using this configuration.</string>
+			<key>label</key>
+			<string>Maximum items per menu</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>maxItemsPerMenu</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>10</string>
+				<key>placeholder</key>
+				<string>Enter a postive integer, defaults to 10</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>How deep should we search for menu items.
+
+The depth of a menu item is determined by how many menu entries you need to select to reach that menu item. E.g. If you have a menu structure like "File → Export → Export to PDF", the "Export to PDF" is at a depth of 2, since that option has two menu items in its path:  "File" and "Export".
+
+Limiting the depth allows for the menus to be loaded quicker.</string>
+			<key>label</key>
+			<string>Maximum sub menu depth</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>maxSubMenusToSearch</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Show in search results</string>
+			</dict>
+			<key>description</key>
+			<string>If enabled, disabled menu items will be displayed. Selecting them may not perform any valid action in the focused app.</string>
+			<key>label</key>
+			<string>Disabled menu items</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>showDisabledItems</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Show in search results</string>
+			</dict>
+			<key>description</key>
+			<string>Determines if menu items from the Apple menu be included in the search results. By default, we only include the app-specific menu items.</string>
+			<key>label</key>
+			<string>Apple  menu items</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>showAppleMenuItems</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Refresh on every new search</string>
+			</dict>
+			<key>description</key>
+			<string>When enabled, we will refresh all cached menu items for the current app when starting a new search.
+
+If disabled, the previous cached menu items are loaded (if they exist).
+
+Keeping this enabled incurs a slight delay for new searches, but ensures you will always have menu items that are the latest.
+
+Recommended to keep this enabled always.</string>
+			<key>label</key>
+			<string>Cached menu items</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>recacheOnStartup</string>
+		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>1.6</string>
+	<string>2.0</string>
 	<key>webaddress</key>
-	<string>folded-paper.com</string>
+	<string>https://github.com/BenziAhamed/Menu-Bar-Search</string>
 </dict>
 </plist>

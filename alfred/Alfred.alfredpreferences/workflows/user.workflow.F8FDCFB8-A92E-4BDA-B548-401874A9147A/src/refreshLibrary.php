@@ -14,8 +14,6 @@ function refreshLibrary($w, $silent = false) {
             displayNotificationWithArtwork($w, 'Refresh library called while library does not exist', './images/warning.png');
         return;
     }
-
-    fixPermissions($w);
     
     $update_type = 'Refresh Library';
     if (file_exists($w->data() . '/create_library')) {
@@ -1600,12 +1598,26 @@ function refreshLibrary($w, $silent = false) {
                 $savedMySavedEpisodes = array();
                 $offsetGetMySavedEpisodes = 0;
                 $limitGetMySavedEpisodes = 50;
+                $max_number_of_episode_per_show = getenv('max_number_of_episode_per_show');
+                if ($max_number_of_episode_per_show > 0) {
+                    $total_limit_episodes = $max_number_of_episode_per_show;
+                }
                 do {
                     $retry = true;
                     $nb_retry = 0;
                     while ($retry) {
                         try {
+                            if ($max_number_of_episode_per_show > 0) {
+                                if($max_number_of_episode_per_show < 50) {
+                                    $limitGetMySavedEpisodes = $max_number_of_episode_per_show;
+                                } else {
+                                    $limitGetMySavedEpisodes = 50;
+                                }
+                            }
                             $userMySavedEpisodes = $api->getShowEpisodes($show->uri, array('limit' => $limitGetMySavedEpisodes, 'offset' => $offsetGetMySavedEpisodes, 'market' => $country_code,));
+                            if ($max_number_of_episode_per_show == 0) {
+                                $total_limit_episodes = $userMySavedEpisodes->total;
+                            }
                             if($debug) {
                                 logMsg($w,"DEBUG: getShowEpisodes for show uri ".$show->uri." (offset ".$offsetGetMySavedEpisodes.")");
                             }
@@ -1647,11 +1659,16 @@ function refreshLibrary($w, $silent = false) {
 
                     $offsetGetMySavedEpisodes += $limitGetMySavedEpisodes;
                 }
-                while ($offsetGetMySavedEpisodes < $userMySavedEpisodes->total);
+                while ($offsetGetMySavedEpisodes < $total_limit_episodes);
 
                 // Handle Show Episodes
+                $counter_episodes = 0;
                 foreach ($savedMySavedEpisodes as $episode) {
-
+                    if ($max_number_of_episode_per_show > 0) {
+                        if($counter_episodes > $max_number_of_episode_per_show) {
+                            break;
+                        }
+                    }
                     try {
 
                         // Download artworks in Fetch later mode
@@ -1734,6 +1751,7 @@ function refreshLibrary($w, $silent = false) {
                         return false;
                     }
                 }
+                $counter_episodes++;
                 if(!$silent)
                     displayNotificationWithArtwork($w, 'Added show ' . escapeQuery($show->name), $show_artwork_path, 'Refresh Library');
             }
@@ -1760,12 +1778,25 @@ function refreshLibrary($w, $silent = false) {
                     // Handle Episodes
                     $offsetGetMySavedEpisodes = 0;
                     $limitGetMySavedEpisodes = 50;
+                    if ($max_number_of_episode_per_show > 0) {
+                        $total_limit_episodes = $max_number_of_episode_per_show;
+                    }
                     do {
                         $retry = true;
                         $nb_retry = 0;
                         while ($retry) {
                             try {
+                                if ($max_number_of_episode_per_show > 0) {
+                                    if ($max_number_of_episode_per_show < 50) {
+                                        $limitGetMySavedEpisodes = $max_number_of_episode_per_show;
+                                    } else {
+                                        $limitGetMySavedEpisodes = 50;
+                                    }
+                                }
                                 $userMySavedEpisodes = $api->getShowEpisodes($show->uri, array('limit' => $limitGetMySavedEpisodes, 'offset' => $offsetGetMySavedEpisodes, 'market' => $country_code,));
+                                if ($max_number_of_episode_per_show == 0) {
+                                    $total_limit_episodes = $userMySavedEpisodes->total;
+                                }
                                 if($debug) {
                                     logMsg($w,"DEBUG: getShowEpisodes for show uri ".$show->uri." (offset ".$offsetGetMySavedEpisodes.")");
                                 }
@@ -1807,11 +1838,16 @@ function refreshLibrary($w, $silent = false) {
 
                         $offsetGetMySavedEpisodes += $limitGetMySavedEpisodes;
                     }
-                    while ($offsetGetMySavedEpisodes < $userMySavedEpisodes->total);
+                    while ($offsetGetMySavedEpisodes < $total_limit_episodes);
 
                     // Handle Show Episodes
+                    $counter_episodes = 0;
                     foreach ($savedMySavedEpisodes as $episode) {
-
+                        if ($max_number_of_episode_per_show > 0) {
+                            if ($counter_episodes > $max_number_of_episode_per_show) {
+                                break;
+                            }
+                        }
                         try {
 
                             // Download artworks in Fetch later mode
@@ -1896,7 +1932,7 @@ function refreshLibrary($w, $silent = false) {
                     }
 
                     try {
-                        $stmtUpdateShowsNbEpisodes->bindValue(':nb_episodes', $userMySavedEpisodes->total);
+                        $stmtUpdateShowsNbEpisodes->bindValue(':nb_episodes', $total_limit_episodes);
                         $stmtUpdateShowsNbEpisodes->bindValue(':uri', $show->uri);
                         $stmtUpdateShowsNbEpisodes->execute();
                     }
@@ -1908,6 +1944,7 @@ function refreshLibrary($w, $silent = false) {
 
                         return;
                     }
+                    $counter_episodes++;
                     if(!$silent)
                         displayNotificationWithArtwork($w, 'Updated show ' . escapeQuery($show->name), getShowArtwork($w, $show->uri, true, false, $use_artworks), 'Refresh Library');
                 }

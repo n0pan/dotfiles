@@ -9,10 +9,21 @@ require_once './src/workflows.php';
 
 function main($argv) {
     // $begin_time = computeTime();
-    // Report all PHP errors
-    //error_reporting(E_ALL);
-    error_reporting(0);
     $w = new Workflows('com.vdesabou.spotify.mini.player');
+
+    $is_alfred_playlist_active = getSetting($w, 'is_alfred_playlist_active');
+    $now_playing_notifications = getSetting($w, 'now_playing_notifications');
+    $alfred_playlist_uri = getSetting($w, 'alfred_playlist_uri');
+    $alfred_playlist_name = getSetting($w, 'alfred_playlist_name');
+    $country_code = getSetting($w, 'country_code');
+    $userid = getSetting($w, 'userid');
+    $debug = getSetting($w, 'debug');
+    if($debug) {
+        // Report all PHP errors
+        error_reporting(E_ALL);
+    } else {
+        error_reporting(0);
+    }
 
     $query = escapeQuery($argv[1]);
 
@@ -73,17 +84,6 @@ function main($argv) {
                     ), './images/update_in_progress.png', 'no', null, '');
         }
     }
-
-
-
-
-    $is_alfred_playlist_active = getSetting($w,'is_alfred_playlist_active');
-    $now_playing_notifications = getSetting($w,'now_playing_notifications');
-    $alfred_playlist_uri = getSetting($w,'alfred_playlist_uri');
-    $alfred_playlist_name = getSetting($w,'alfred_playlist_name');
-    $country_code = getSetting($w,'country_code');
-    $last_check_update_time = getSetting($w,'last_check_update_time');
-    $userid = getSetting($w,'userid');
 
     // Check that user is logged
     oAuthChecks($w, $query, $update_in_progress);
@@ -151,9 +151,6 @@ function main($argv) {
 
         return;
     }
-
-    // Check for workflow update
-    checkForUpdate($w, $last_check_update_time, false);
 
     // thanks to http://www.alfredforum.com/topic/1788-prevent-flash-of-no-result
     mb_internal_encoding('UTF-8');
@@ -267,8 +264,6 @@ function main($argv) {
                     firstDelimiterLyrics($w, $query, $db, $update_in_progress);
                 } elseif ($kind == 'Settings') {
                     firstDelimiterSettings($w, $query, $db, $update_in_progress);
-                } elseif ($kind == 'Check for update...') {
-                    firstDelimiterCheckForUpdate($w, $query, $db, $update_in_progress);
                 } elseif ($kind == 'Play Queue') {
                     firstDelimiterPlayQueue($w, $query, $db, $update_in_progress);
                 } elseif ($kind == 'Browse') {
