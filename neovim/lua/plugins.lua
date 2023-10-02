@@ -124,7 +124,7 @@ require("packer").startup(function()
   }
 
   -- svelte --
-  use { "evanleck/vim-svelte" }
+  use { "burner/vim-svelte" }
 
   -- flutter --
   use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
