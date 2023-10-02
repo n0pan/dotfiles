@@ -123,7 +123,7 @@ require("packer").startup(function()
   }
 
   -- svelte --
-  use { "evanleck/vim-svelte" }
+  use { "burner/vim-svelte" }
 
   -- git --
   use {
