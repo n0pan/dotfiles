@@ -1,4 +1,4 @@
-local blankline_present, indent_blankline = pcall(require, "indent_blankline")
+local blankline_present, ibl = pcall(require, "ibl")
 
 if not blankline_present then
   return
@@ -7,10 +7,13 @@ end
 vim.opt.list = true
 -- vim.opt.listchars:append("space:⋅")
 
-indent_blankline.setup({
-  show_end_of_line = false,
-  -- space_char_blankline = " ",
-  indentLine_enabled = 1,
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = false,
+ibl.setup({
+  enabled = true,
+  scope = {
+    show_end = false,
+    show_start = false,
+  },
+  whitespace = {
+    remove_blankline_trail = false,
+  }
 })
