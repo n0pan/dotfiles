@@ -78,6 +78,7 @@ hash -d taiga=~/dev/taiga
 hash -d cashflow=~/dev/cashflow
 hash -d aoc=~/dev/aoc
 hash -d hn=~/dev/hnevaluation
+hash -d morse=~/dev/morseapp
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
