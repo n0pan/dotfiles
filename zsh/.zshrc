@@ -76,6 +76,7 @@ alias restart-yabai="brew services restart yabai"
 alias restart-skhd="brew services restart skhd"
 alias gl="glab"
 alias neofetch="neofetch --ascii ~/.config/neofetch/logo"
+alias git-remove-untracked='git fetch --prune && git branch -r | awk "{print \$1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print \$1}" | xargs git branch -d'
 
 # taiga aliases
 alias start-docker="~/dev/taiga/dash-dev-tools/misc-tools/start-docker"
