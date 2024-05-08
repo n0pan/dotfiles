@@ -51,6 +51,7 @@ nmap("<leader>jd", "<cmd>lua vim.lsp.buf.definition()<cr>")
 nmap("<leader>td", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 nmap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
 nmap("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
+nmap("<leader>g", "<cmd>lua vim.diagnostic.open_float({'line'})<cr>")
 
 -- git signs --
 nmap("<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>")
