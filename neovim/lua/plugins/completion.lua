@@ -108,6 +108,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "supermaven" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },

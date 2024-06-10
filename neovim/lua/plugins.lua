@@ -159,6 +159,27 @@ require("packer").startup(function()
   }
 
   use { 'kyazdani42/nvim-web-devicons' }
+
+  -- supermaven --
+  use {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
+  }
+
+  -- zen mode --
+  use {
+    "folke/zen-mode.nvim",
+    opts = {
+      plugins = {
+        kitty = {
+          enabled = true,
+          font = "+2",
+        }
+      }
+    }
+  }
 end)
 
 vim.cmd([[
