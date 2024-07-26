@@ -147,3 +147,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/terminal/.p10k.zsh.
 [[ ! -f ~/dotfiles/terminal/.p10k.zsh ]] || source ~/dotfiles/terminal/.p10k.zsh
+
+# bun completions
+[ -s "/Users/lq/.bun/_bun" ] && source "/Users/lq/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
