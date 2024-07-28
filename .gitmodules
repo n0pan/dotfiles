@@ -1,0 +1,3 @@
+[submodule "workfiles"]
+	path = workfiles
+	url = git@github.com:n0pan/workfiles.git

@@ -154,3 +154,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+if [ -f ./workfiles/.zshrc.work ]; then
+    source ./workfiles/.zshrc.work
+fi
