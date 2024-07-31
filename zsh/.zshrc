@@ -79,6 +79,7 @@ hash -d cashflow=~/dev/cashflow
 hash -d aoc=~/dev/aoc
 hash -d hn=~/dev/hnevaluation
 hash -d morse=~/dev/morseapp
+hash -d wf=~/workfiles
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
