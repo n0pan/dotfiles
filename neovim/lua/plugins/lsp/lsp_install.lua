@@ -23,7 +23,7 @@ lsp_installer.setup({
 local custom_settings = {
   jsonls = "plugins.lsp.settings.jsonls",
   luals = "plugins.lsp.settings.lua_ls",
-  tsserver = "plugins.lsp.settings.tsserver",
+  ts_ls = "plugins.lsp.settings.ts_ls",
 }
 
 local use_custom_settings = function(server_name, default_opts)

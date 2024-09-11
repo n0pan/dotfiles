@@ -9,7 +9,7 @@ local lsp_servers = {
   "jsonls",
   "lua_ls",
   "svelte",
-  "tsserver",
+  "ts_ls",
   "vimls"
 }
 
