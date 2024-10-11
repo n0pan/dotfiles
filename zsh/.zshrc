@@ -27,8 +27,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
 # Setting default_user
 DEFAULT_USER=`whoami`
 
