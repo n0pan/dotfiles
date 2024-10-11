@@ -38,8 +38,6 @@ plugins=(
   colorize 
   pip 
   brew 
-  zsh-autosuggestions 
-  zsh-syntax-highlighting
 )
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=204"
