@@ -156,6 +156,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 if [ -f ~/dotfiles/workfiles/.zshrc.work ]; then
     source ~/dotfiles/workfiles/.zshrc.work
 fi
