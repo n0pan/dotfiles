@@ -42,8 +42,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
-
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=204"
 
 # aliases
@@ -158,7 +156,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 if [ -f ~/dotfiles/workfiles/.zshrc.work ]; then
     source ~/dotfiles/workfiles/.zshrc.work
 fi
+
+source $ZSH/oh-my-zsh.sh
