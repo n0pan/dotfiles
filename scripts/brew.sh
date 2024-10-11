@@ -6,7 +6,7 @@ echo "Installing homebrew"
 which -s brew
 if [ "$?" -ne 0 ]; then
    echo "No Homebrew found. Installing now..."
-   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 brew update
