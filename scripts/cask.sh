@@ -25,6 +25,7 @@ echo "Installing Productivity..."
 brew install --cask alfred
 brew install --cask contexts
 brew install --cask bitwarden
+brew install --cask rectangle
 
 # Communication
 echo "Installing Communication..."
