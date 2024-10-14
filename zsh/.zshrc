@@ -149,8 +149,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 
-source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-
 if [ -f ~/dotfiles/workfiles/.zshrc.work ]; then
     source ~/dotfiles/workfiles/.zshrc.work
 fi
@@ -158,5 +156,6 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme

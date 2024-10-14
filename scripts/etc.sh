@@ -4,9 +4,9 @@ echo "installing rustup..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 echo "installing neovim..."
-npm install neovim
-pip2 install pynvim
-pip3 install pynvim
+npm install --global neovim
+pip2 install pynvim --break-system-packages
+pip3 install pynvim --break-system-packages
 
 echo "install powerlevel10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH/themes/powerlevel10k
