@@ -56,3 +56,6 @@ nmap("<leader>g", "<cmd>lua vim.diagnostic.open_float({'line'})<cr>")
 -- git signs --
 nmap("<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>")
 nmap("<leader>gs", "<cmd>Gitsigns toggle_signs<cr>")
+
+-- zen mode --
+nmap("<leader>zz", "<cmd>ZenMode<cr>")
