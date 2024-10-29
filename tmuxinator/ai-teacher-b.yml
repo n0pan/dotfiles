@@ -2,12 +2,11 @@
 
 name: ai-teacher-b
 root: ~/dev/woodside/ai-teacher-backend
-
+pre_window: source venv/bin/activate
 windows:
   - server:
-      layout: main-vertical
+      layout: even-horizontal
       panes:
-        - source venv/bin/activate
-        - fastapi dev app/app.py
-        - ngrok http --url=secondly-awake-lioness.ngrok-free.app 8000
+        - server: fastapi dev app/app.py
+        - ngrok: ngrok http --url=secondly-awake-lioness.ngrok-free.app 8000
   - editor: nvim
