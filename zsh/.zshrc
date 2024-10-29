@@ -148,6 +148,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 if [ -f ~/dotfiles/workfiles/.zshrc.work ]; then
     source ~/dotfiles/workfiles/.zshrc.work
@@ -159,3 +160,6 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

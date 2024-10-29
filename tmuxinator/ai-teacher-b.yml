@@ -4,11 +4,9 @@ name: ai-teacher-b
 root: ~/dev/woodside/ai-teacher-backend
 
 windows:
-  # - server:
-  #     layout: main-vertical
-  #     # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-  #     # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-  #     # synchronize: after
-  #     panes:
-  #       - yarn web
+  - server:
+      layout: main-vertical
+      panes:
+        - fastapi dev app/app.py
+        - ngrok http --url=secondly-awake-lioness.ngrok-free.app 8000
   - editor: nvim
