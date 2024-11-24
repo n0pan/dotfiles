@@ -163,3 +163,6 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Created by `pipx` on 2024-11-12 21:22:39
+export PATH="$PATH:/Users/lq/.local/bin"

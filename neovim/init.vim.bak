@@ -274,7 +274,7 @@ let g:github_keyword_style = "NONE"
 let g:github_comment_style = "NONE"
 
 " Black
-let g:black_virtualenv = "~/.env/bin/black"
+let g:black_virtualenv = "~/.local/bin/black"
 
 " catppuccin
 lua << EOF
