@@ -42,15 +42,26 @@ require("packer").startup(function()
   }
 
   -- themes --
+  -- use {
+  --   "catppuccin/nvim",
+  --   as = "catppuccin",
+  --   enable = true,
+  --   config = function()
+  --     vim.o.background = "dark"
+  --     vim.g.catppuccin_flavour = "mocha"
+  --     require("settings.colorscheme")
+  --     vim.cmd([[ colorscheme catppuccin ]])
+  --   end,
+  -- }
+
   use {
-    "catppuccin/nvim",
-    as = "catppuccin",
+    "rebelot/kanagawa.nvim",
+    as = "kanagawa",
     enable = true,
     config = function()
       vim.o.background = "dark"
-      vim.g.catppuccin_flavour = "mocha"
       require("settings.colorscheme")
-      vim.cmd([[ colorscheme catppuccin ]])
+      vim.cmd([[ colorscheme kanagawa ]])
     end,
   }
 
