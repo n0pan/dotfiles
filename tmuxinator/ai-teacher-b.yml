@@ -2,11 +2,14 @@
 
 name: ai-teacher-b
 root: ~/dev/woodside/ai-teacher-backend
-pre_window: source ~/.zshrc && source venv/bin/activate
+pre_window: source ~/.zshrc && source venv/bin/activate && export PYTHONPATH=src
 windows:
   - server:
-      layout: even-horizontal
+      layout: even-vertical
       panes:
-        - api-server: cd src && uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+        - api-server: uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+        - aws-collector: docker run --name awscollector --rm -p 4317:4317 -p 55680:55680 -p 8889:8888 --env-file .env.local -v "./otel-local-config.yaml":/otel-local-config.yaml public.ecr.aws/aws-observability/aws-otel-collector:latest --config otel-local-config.yaml
+  - agent:
+      panes:
         - agent-server: python src/agent.py dev
   - editor: nvim
