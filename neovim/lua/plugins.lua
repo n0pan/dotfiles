@@ -55,14 +55,13 @@ require("packer").startup(function()
   -- }
 
   use {
-    "rebelot/kanagawa.nvim",
-    as = "kanagawa",
+    'projekt0n/github-nvim-theme',
+    as = 'github-theme',
     enable = true,
     config = function()
-      vim.o.background = "dark"
-      require("settings.colorscheme")
-      vim.cmd([[ colorscheme kanagawa ]])
-    end,
+      -- require("settings.colorscheme")
+      vim.cmd([[ colorscheme github_dark_default ]])
+    end
   }
 
   -- indent lines --
