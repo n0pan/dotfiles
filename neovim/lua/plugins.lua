@@ -42,26 +42,16 @@ require("packer").startup(function()
   }
 
   -- themes --
-  -- use {
-  --   "catppuccin/nvim",
-  --   as = "catppuccin",
-  --   enable = true,
-  --   config = function()
-  --     vim.o.background = "dark"
-  --     vim.g.catppuccin_flavour = "mocha"
-  --     require("settings.colorscheme")
-  --     vim.cmd([[ colorscheme catppuccin ]])
-  --   end,
-  -- }
-
   use {
-    'projekt0n/github-nvim-theme',
-    as = 'github-theme',
+    "catppuccin/nvim",
+    as = "catppuccin",
     enable = true,
     config = function()
-      -- require("settings.colorscheme")
-      vim.cmd([[ colorscheme github_dark_default ]])
-    end
+      vim.o.background = "dark"
+      vim.g.catppuccin_flavour = "mocha"
+      require("settings.colorscheme")
+      vim.cmd([[ colorscheme catppuccin ]])
+    end,
   }
 
   -- indent lines --
