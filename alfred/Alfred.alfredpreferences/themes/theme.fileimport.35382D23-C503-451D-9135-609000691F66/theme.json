@@ -1,7 +1,7 @@
 {
   "alfredtheme" : {
     "result" : {
-      "textSpacing" : 7,
+      "textSpacing" : 9,
       "subtext" : {
         "size" : 11,
         "colorSelected" : "#A6ADC8FF",
@@ -16,14 +16,14 @@
       },
       "backgroundSelected" : "#6C7086FF",
       "text" : {
-        "size" : 13,
+        "size" : 14,
         "colorSelected" : "#CDD6F4FF",
         "font" : "PragmataPro Mono Liga Bold",
         "color" : "#BAC2DEFF"
       },
       "iconPaddingHorizontal" : 18,
-      "roundness" : 8,
-      "paddingVertical" : 14,
+      "roundness" : 0,
+      "paddingVertical" : 18,
       "iconSize" : 40
     },
     "search" : {
