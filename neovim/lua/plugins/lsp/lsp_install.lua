@@ -24,6 +24,7 @@ local custom_settings = {
   jsonls = "plugins.lsp.settings.jsonls",
   luals = "plugins.lsp.settings.lua_ls",
   ts_ls = "plugins.lsp.settings.ts_ls",
+  pylsp = "plugins.lsp.settings.pylsp",
 }
 
 local use_custom_settings = function(server_name, default_opts)
