@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>apikey_fixer</key>
+	<string>fc5a80f4fd18a9014d313dc67088f18</string>
+	<key>base_currencies</key>
+	<string>CAD</string>
+	<key>vat_value</key>
+	<string>14.975%</string>
+</dict>
+</plist>

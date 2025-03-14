@@ -17,6 +17,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -37,23 +39,35 @@
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>B21F5F58-454A-4396-A924-15452A297612</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>ip</string>
+				<string>ip?</string>
 				<key>queuedelaycustom</key>
 				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -83,6 +97,10 @@ cat&lt;&lt;EOB
 &lt;/item&gt;
 &lt;/items&gt;
 EOB</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>Get your local and external IP address</string>
 				<key>title</key>
@@ -97,7 +115,7 @@ EOB</string>
 			<key>uid</key>
 			<string>4DE38804-DD3A-4619-B68A-D9290EC54602</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -106,15 +124,21 @@ EOB</string>
 	<dict>
 		<key>4DE38804-DD3A-4619-B68A-D9290EC54602</key>
 		<dict>
+			<key>xpos</key>
+			<real>300</real>
 			<key>ypos</key>
-			<real>10</real>
+			<real>15</real>
 		</dict>
 		<key>B21F5F58-454A-4396-A924-15452A297612</key>
 		<dict>
+			<key>xpos</key>
+			<real>700</real>
 			<key>ypos</key>
-			<real>10</real>
+			<real>15</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>webaddress</key>
 	<string>jdfwarrior.tumblr.com</string>
 </dict>
