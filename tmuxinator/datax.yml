@@ -8,7 +8,8 @@ pre_window: source venv/bin/activate
 # startup_window: editor
 
 windows:
-  - server: streamlit run Home.py
+  # - server: ./build-and-run.sh
+  - server: streamlit run app.py
   - ssh: ssh lq.datax
   - editor:
       layout: main-vertical
