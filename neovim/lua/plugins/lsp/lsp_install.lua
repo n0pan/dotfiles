@@ -40,14 +40,14 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protoc
 mason_lspconfig.setup({
   ensure_installed = servers,
   automatic_installation = true,
+  automatic_enable = true,
 })
 
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    local default_opts = {
-      capabilities = capabilities,
-    }
-    local opts = use_custom_settings(server_name, default_opts)
-    lspconfig[server_name].setup(opts)
-  end
-}
+for server_idx, _ in pairs(servers) do
+  server_name = servers[server_idx]
+  local default_opts = {
+    capabilities = capabilities,
+  }
+  local opts = use_custom_settings(server_name, default_opts)
+  lspconfig[server_name].setup(opts)
+end

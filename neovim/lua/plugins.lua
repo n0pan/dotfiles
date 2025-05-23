@@ -42,16 +42,35 @@ require("packer").startup(function()
   }
 
   -- themes --
+  -- use {
+  --   "catppuccin/nvim",
+  --   as = "catppuccin",
+  --   enable = true,
+  --   config = function()
+  --     vim.o.background = "dark"
+  --     vim.g.catppuccin_flavour = "mocha"
+  --     require("settings.colorscheme")
+  --     vim.cmd([[ colorscheme catppuccin ]])
+  --   end,
+  -- }
+
+  -- use {
+  --   "rebelot/kanagawa.nvim",
+  --   as = "kanagawa",
+  --   enable = true,
+  --   config = function()
+  --     require("settings.colorscheme")
+  --     vim.cmd([[ colorscheme kanagawa ]])
+  --   end,
+  -- }
+
   use {
-    "catppuccin/nvim",
-    as = "catppuccin",
-    enable = true,
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.o.background = "dark"
-      vim.g.catppuccin_flavour = "mocha"
-      require("settings.colorscheme")
-      vim.cmd([[ colorscheme catppuccin ]])
-    end,
+      require('nordic').load()
+    end
   }
 
   -- indent lines --

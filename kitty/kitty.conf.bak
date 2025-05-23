@@ -61,13 +61,13 @@ map kitty_mod+enter    toggle_fullscreen
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Nord
+# Kanagawa_dragon
 include current-theme.conf
 # END_KITTY_THEME
 
 # OS Window titlebar colors
 # wayland_titlebar_color system
-macos_titlebar_color #191D24
+macos_titlebar_color #181616
 
 tab_bar_edge                bottom
 tab_bar_style               powerline
