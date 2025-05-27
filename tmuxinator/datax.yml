@@ -10,7 +10,7 @@ pre_window: source venv/bin/activate
 windows:
   # - server: ./build-and-run.sh
   - server: streamlit run app.py
-  - ssh: ssh lq.datax
+  - ssh: ssh lq.ec2
   - editor:
       layout: main-vertical
       panes:
