@@ -1,0 +1,17 @@
+name: datax-sl
+root: ~/dev/woodside/datax-demo
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: source venv/bin/activate
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+windows:
+  # - server: ./build-and-run.sh
+  - server: streamlit run app.py
+  - ssh: ssh lq.ec2
+  - editor:
+      layout: main-vertical
+      panes:
+        - nvim

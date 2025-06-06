@@ -1,17 +1,14 @@
+# /Users/lq/.config/tmuxinator/datax.yml
+
 name: datax
-root: ~/dev/woodside/datax-demo
-
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: source venv/bin/activate
-
-# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-# startup_window: editor
+root: ~/dev/woodside/datax
 
 windows:
-  # - server: ./build-and-run.sh
-  - server: streamlit run app.py
-  - ssh: ssh lq.ec2
-  - editor:
+  - server:
       layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
       panes:
-        - nvim
+        - make dev
+  - editor: nvim
