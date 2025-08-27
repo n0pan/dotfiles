@@ -27,3 +27,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/lq/.stCommitMsg
+[init]
+	defaultBranch = main
