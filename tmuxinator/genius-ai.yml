@@ -1,7 +1,7 @@
-# /Users/lq/.config/tmuxinator/ai-teacher.yml
+# /Users/lq/.config/tmuxinator/genius-ai.yml
 
-name: ai-teacher
-root: ~/dev/woodside/ai-teacher-web
+name: genius-ai
+root: ~/dev/woodside/genius-ai
 
 windows:
   - server:
@@ -10,5 +10,7 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - yarn start
+        - make run-api
+        - make run-agent
+        - make run-web
   - editor: nvim
