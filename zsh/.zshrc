@@ -166,3 +166,4 @@ eval "$(pyenv init -)"
 
 # Created by `pipx` on 2024-11-12 21:22:39
 export PATH="$PATH:/Users/lq/.local/bin"
+alias claude="/Users/lq/.claude/local/claude"

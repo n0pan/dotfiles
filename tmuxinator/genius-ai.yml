@@ -10,7 +10,8 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - make run-api
+        - npx supabase start
         - make run-agent
         - make run-web
+  - claude: claude
   - editor: nvim
