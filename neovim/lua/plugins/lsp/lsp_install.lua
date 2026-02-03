@@ -1,7 +1,6 @@
 local servers = require("utils.lsp_servers")
 local lsp_installer_found, lsp_installer = pcall(require, "mason")
 local _, mason_lspconfig = pcall(require, "mason-lspconfig")
-local _, lspconfig = pcall(require, "lspconfig")
 
 if not lsp_installer_found then
   print "[Warning] Cannot find mason"
@@ -49,5 +48,8 @@ for server_idx, _ in pairs(servers) do
     capabilities = capabilities,
   }
   local opts = use_custom_settings(server_name, default_opts)
-  lspconfig[server_name].setup(opts)
+
+  -- Use new vim.lsp.config API (Neovim 0.11+)
+  vim.lsp.config(server_name, opts)
+  vim.lsp.enable(server_name)
 end

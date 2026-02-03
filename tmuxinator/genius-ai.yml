@@ -13,5 +13,5 @@ windows:
         - npx supabase start
         - make run-agent
         - make run-web
-  - claude: claude
+  - opencode: opencode
   - editor: nvim
