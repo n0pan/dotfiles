@@ -1,7 +1,7 @@
 local treesitter_configs_present, treesitter_configs = pcall(require, "nvim-treesitter.configs")
 local treesitter_parsers_present, treesitter_parsers = pcall(require, "nvim-treesitter.parsers")
 
-if not treesitter_configs_present or treesitter_parsers_present then
+if not treesitter_configs_present or not treesitter_parsers_present then
   return
 end
 
@@ -21,8 +21,6 @@ treesitter_configs.setup({
     "dockerfile",
     "bash",
     "graphql",
-    "html",
-    "regex",
     "lua",
     "svelte",
   },

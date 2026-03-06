@@ -54,5 +54,3 @@ brew install --cask bettermouse
 echo "Installing App Store apps"
 # MindNode
 mas install 1289197285
-# Xcode
-mas install 497799835

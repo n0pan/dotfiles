@@ -46,18 +46,12 @@ alias vicolor="nvim ~/.config/nvim/lua/settings/colorscheme.lua"
 alias colorconf="nvim ~/.config/nvim/colors"
 alias tmuxconf="nvim ~/.tmux.conf"
 alias kittyconf="nvim ~/.config/kitty/kitty.conf"
-alias yabairc="nvim ~/.yabairc"
-alias skhdrc="nvim ~/.skhdrc"
 alias vi="nvim"
 alias vim="nvim"
 alias top="vtop"
 alias new-df="tmux new-window -n dotfiles -c ~/dotfiles"
-alias new-spt="tmux new-window -n spotify spt"
 alias new-top="tmux new-window -n top vtop"
-alias reload-spt="sudo launchctl stop /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl unload -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl load -w /Library/LaunchDaemons/rustlang.spotifyd.plist; sudo launchctl start /Library/LaunchDaemons/rustlang.spotifyd.plist"
 alias reload-zsh="source ~/.zshrc"
-alias restart-yabai="brew services restart yabai"
-alias restart-skhd="brew services restart skhd"
 alias gl="glab"
 alias neofetch="neofetch --ascii ~/.config/neofetch/logo"
 
@@ -136,8 +130,6 @@ source ~/.bin/tmuxinator.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 export PATH="/bin:$PATH"
 export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/terminal/.p10k.zsh.
 [[ ! -f ~/dotfiles/terminal/.p10k.zsh ]] || source ~/dotfiles/terminal/.p10k.zsh

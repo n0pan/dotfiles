@@ -75,7 +75,7 @@ defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false
 ## spotlight
 
 ### disable spotlight in menu bar
-defaults write ~/Library/Preferences/ByHost/com.apple.Spotlight MenuItemHidden -bool false
+defaults write ~/Library/Preferences/ByHost/com.apple.Spotlight MenuItemHidden -bool true
 
 # ----------------------------------------------------------
 
@@ -131,8 +131,8 @@ defaults write com.apple.finder AppleShowAllFiles true
 defaults delete com.apple.dock persistent-apps
 
 ### kill preferences and dock
-killall cfprefsd
-killall Dock
+killall cfprefsd 2>/dev/null
+killall Dock 2>/dev/null
 
 ### clear cache
 for app in \
@@ -140,5 +140,5 @@ for app in \
   "Activity Monitor" "Address Book" "Calendar" \
   "Contacts" "Dock" "Finder" "Mail" "Messages" \
   "SystemUIServer" "Terminal" "Transmission" "iCal"; do
-  killall "${app}"
+  killall "${app}" 2>/dev/null
 done

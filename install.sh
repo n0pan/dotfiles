@@ -1,5 +1,10 @@
 #!/bin/bash
 
+cd "$(dirname "$0")"
+
+echo "NOTE: PragmataPro Mono Liga is the primary Kitty font and must be installed manually (paid font)."
+echo ""
+
 echo "Initializing git submodules..."
 git submodule update --init --recursive
 
@@ -16,8 +21,7 @@ source ./wallpapers/install.sh
 source ./gitconfig/install.sh
 source ./mac/macos.sh
 
-echo "Sourcing zshrc"
-source ./zsh/.zshrc
-tmux source ./tmux/.tmux.conf
+tmux source ./tmux/.tmux.conf 2>/dev/null || true
 
 echo "Installation complete!"
+echo "NOTE: Open a new shell to load zsh configuration."

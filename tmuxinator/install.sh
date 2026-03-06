@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "installing tmuxinator"
+mkdir -p ~/.bin
 ln -sf ~/dotfiles/tmuxinator/tmuxinator.zsh ~/.bin/tmuxinator.zsh
 ln -sf ~/dotfiles/tmuxinator ~/.config/tmuxinator
 

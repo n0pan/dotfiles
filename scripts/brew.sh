@@ -48,5 +48,14 @@ brew install mas
 brew install neofetch
 brew install fontforge
 brew install opencode
+brew install fzf
+brew install pyenv
+brew install glab
+brew install tmate
+brew install vtop
 
 brew cleanup
+
+# Bun
+echo "Installing bun..."
+curl -fsSL https://bun.sh/install | bash

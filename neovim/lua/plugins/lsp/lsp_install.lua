@@ -22,9 +22,8 @@ lsp_installer.setup({
 local custom_settings = {
   eslint = "plugins.lsp.settings.eslint",
   jsonls = "plugins.lsp.settings.jsonls",
-  luals = "plugins.lsp.settings.lua_ls",
-  ts_ls = "plugins.lsp.settings.ts_ls",
-  pylsp = "plugins.lsp.settings.pylsp",
+  luals  = "plugins.lsp.settings.lua_ls",
+  ts_ls  = "plugins.lsp.settings.ts_ls",
 }
 
 local use_custom_settings = function(server_name, default_opts)

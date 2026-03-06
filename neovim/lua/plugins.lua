@@ -122,12 +122,6 @@ require("lazy").setup({
   -- Svelte --
   { "burner/vim-svelte" },
 
-  -- Flutter --
-  {
-    "akinsho/flutter-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-
   -- Git --
   {
     "lewis6991/gitsigns.nvim",
@@ -141,7 +135,7 @@ require("lazy").setup({
   { "tmux-plugins/vim-tmux-focus-events" },
   { "tpope/vim-surround" },
   { "jiangmiao/auto-pairs" },
-  { "terryma/vim-multiple-cursors" },
+  { "mg979/vim-visual-multi" },
   { "tomtom/tcomment_vim" },
   { "junegunn/vim-slash" },
 
