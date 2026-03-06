@@ -105,7 +105,6 @@ require("lazy").setup({
       require("plugins.treesitter")
     end,
   },
-  { "nvim-treesitter/playground" },
 
   -- Telescope --
   {
