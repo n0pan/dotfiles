@@ -1,0 +1,9 @@
+# /Users/lq/.config/tmuxinator/clinique-smart.yml
+
+name: clinique-smart
+root: ~/dev/clinique-smart
+
+windows:
+  - server: yarn dev
+  - opencode: opencode
+  - editor: vim
