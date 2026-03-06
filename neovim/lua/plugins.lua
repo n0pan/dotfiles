@@ -74,7 +74,7 @@ require("lazy").setup({
 
   -- React / JSX --
   { "mattn/emmet-vim" },
-  { "Valloric/MatchTagAlways" },
+  { "andymass/vim-matchup" },
   { "styled-components/vim-styled-components", branch = "main" },
   { "alvan/vim-closetag" },
 
