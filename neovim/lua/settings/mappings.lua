@@ -53,7 +53,7 @@ local smart_format = function()
     vim.lsp.buf.format()
   end
 end
-nmap("<leader>f", smart_format)
+vim.keymap.set("n", "<leader>f", smart_format, { noremap = true, silent = true })
 nmap("<leader>gd", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 nmap("<leader>jd", "<cmd>lua vim.lsp.buf.definition()<cr>")
 nmap("<leader>td", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
