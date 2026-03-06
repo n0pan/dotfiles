@@ -3,12 +3,18 @@
 
 ## Installation
 
-This repo contains configuration files that can be used to setup a new computer running macOS. 
+This repo contains configuration files that can be used to setup a new Mac.
 
 ```bash
 git clone git@github.com:n0pan/dotfiles.git ~/dotfiles
-sh ~/dotfiles/install.sh
-vim +PackerSync +qall
-vim +UpdateRemotePlugins +qall
+cd ~/dotfiles
+sh install.sh
 ```
+
+Neovim plugins are installed automatically via lazy.nvim on first launch.
+
+## Notes
+
+- The `workfiles` submodule requires SSH access to `git@github.com:n0pan/workfiles.git`
+- [PragmataPro Mono Liga](https://fsd.it/shop/fonts/pragmatapro/) (primary Kitty font) is a paid font and must be installed manually
 
