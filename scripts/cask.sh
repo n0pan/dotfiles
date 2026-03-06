@@ -1,8 +1,5 @@
 #!/bin/sh
 
-brew tap homebrew/cask-versions
-brew tap homebrew/cask-fonts
-
 # Browsers
 echo "Installing Browsers..."
 brew install --cask arc
@@ -19,6 +16,7 @@ brew install --cask postman
 brew install --cask ngrok
 brew install --cask dash
 brew install --cask docker
+brew install --cask docker-desktop
 
 # Productivity
 echo "Installing Productivity..."
@@ -50,6 +48,8 @@ brew install --cask authy
 brew install --cask fantastical
 brew install --cask flycut
 brew install --cask betterdisplay
+brew install --cask scroll-reverser
+brew install --cask bettermouse
 
 echo "Installing App Store apps"
 # MindNode

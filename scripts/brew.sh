@@ -11,31 +11,29 @@ fi
 
 brew update
 
-# Install ZSH
-echo "Installing ZSH..."
+# Shell
+echo "Installing shell tools..."
 brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
-
-ln -s ~/dotfiles/.
 
 # Git
 echo "Installing Git..."
 brew install git
 brew install gh
 
-# Development
-echo "Installing Development..."
-brew install python
+# Languages / runtimes
+echo "Installing languages and runtimes..."
 brew install python3
 brew install node
-brew install java
-brew install golang
+brew install n
+brew install openjdk
+brew install go
 brew install awscli
 
-# Terminal
-echo "Installing terminal..."
+# Terminal / editor
+echo "Installing terminal tools..."
 brew install cmake
 brew install luarocks
-brew install pkg-config
+brew install pkgconf
 brew install neovim
 brew install tmux
 brew install the_silver_searcher
@@ -44,10 +42,11 @@ brew install tmuxinator
 brew install fd
 brew install ripgrep
 
-# Tools
-echo "Installing Tools..."
+# Utilities
+echo "Installing utilities..."
 brew install mas
 brew install neofetch
 brew install fontforge
+brew install opencode
 
 brew cleanup

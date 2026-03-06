@@ -1,5 +1,11 @@
 #!/bin/bash
 
+echo "Initializing git submodules..."
+git submodule update --init --recursive
+
+echo "Symlinking ~/workfiles..."
+ln -sf ~/dotfiles/workfiles ~/workfiles
+
 source ./scripts/brew.sh
 source ./scripts/cask.sh
 source ./scripts/links.sh

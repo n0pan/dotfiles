@@ -1,209 +1,182 @@
--- install packer if not installed already
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-    install_path })
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd [[packadd packer.nvim]]
-
-require("packer").startup(function()
-  use { "nvim-lua/plenary.nvim" }
-
-  use { "wbthomason/packer.nvim" }
+require("lazy").setup({
 
   -- LSP --
-  use {
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require("plugins.lsp")
     end,
-  }
-  use {
+  },
+  {
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-  }
+    config = function()
+      require("mason").setup()
+      vim.cmd("MasonUpdate")
+    end,
+  },
+  { "williamboman/mason-lspconfig.nvim" },
 
-  use {
+  -- Completion --
+  {
     "hrsh7th/nvim-cmp",
     config = function()
       require("plugins.completion")
     end,
-  }
-  use {
-    "hrsh7th/cmp-nvim-lsp",
-    "saadparwaiz1/cmp_luasnip",
-    "L3MON4D3/LuaSnip",
-  }
-  use {
-    "jose-elias-alvarez/nvim-lsp-ts-utils",
-  }
+  },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "saadparwaiz1/cmp_luasnip" },
+  { "L3MON4D3/LuaSnip" },
 
-  -- themes --
-  -- use {
-  --   "catppuccin/nvim",
-  --   as = "catppuccin",
-  --   enable = true,
-  --   config = function()
-  --     vim.o.background = "dark"
-  --     vim.g.catppuccin_flavour = "mocha"
-  --     require("settings.colorscheme")
-  --     vim.cmd([[ colorscheme catppuccin ]])
-  --   end,
-  -- }
-
-  use {
+  -- Colorscheme --
+  {
     "rebelot/kanagawa.nvim",
-    as = "kanagawa",
-    enable = true,
+    name = "kanagawa",
+    priority = 1000,
     config = function()
       require("settings.colorscheme")
       vim.cmd([[ colorscheme kanagawa ]])
     end,
-  }
+  },
 
-  -- use {
-  --   'AlexvZyl/nordic.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require('nordic').load()
-  --   end
-  -- }
-
-  -- indent lines --
-  use {
+  -- Indent guides --
+  {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("plugins.indent_lines")
     end,
-  }
+  },
 
-  -- kitty config syntax highlighting
-  use { "fladson/vim-kitty" }
+  -- Kitty config syntax highlighting --
+  { "fladson/vim-kitty" },
 
-  -- lualine --
-  use {
+  -- Statusline --
+  {
     "nvim-lualine/lualine.nvim",
-    requires = {
-      "kyazdani42/nvim-web-devicons",
-      opt = true
-    },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("plugins.status_bar")
     end,
-  }
+  },
 
-  -- react / jsx --
-  use { "mattn/emmet-vim" }
-  use { "Valloric/MatchTagAlways" }
-  use { "styled-components/vim-styled-components", branch = "main" }
-  use { "alvan/vim-closetag" }
+  -- React / JSX --
+  { "mattn/emmet-vim" },
+  { "Valloric/MatchTagAlways" },
+  { "styled-components/vim-styled-components", branch = "main" },
+  { "alvan/vim-closetag" },
 
-  -- markdown --
-  use {
+  -- Markdown --
+  {
     "iamcco/markdown-preview.nvim",
-    opt = true,
-    run = "cd app && yarn install"
-  }
+    lazy = true,
+    build = "cd app && yarn install",
+  },
 
-  -- linters --
-  use {
+  -- Linters / formatters --
+  {
     "EgZvor/vim-black",
     config = function()
       require("plugins.black")
     end,
-  }
-  use {
+  },
+  {
     "prettier/vim-prettier",
-    run = "yarn install --frozen-lockfile --production"
-  }
+    build = "yarn install --frozen-lockfile --production",
+  },
 
-  -- treesitter --
-  use {
+  -- Treesitter --
+  {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    build = ":TSUpdate",
     config = function()
       require("plugins.treesitter")
     end,
-  }
-  use { "nvim-treesitter/playground" }
+  },
+  { "nvim-treesitter/playground" },
 
-  -- telescope --
-  use {
-    "nvim-telescope/telescope-fzf-native.nvim", run = "make"
-  }
-  use {
+  -- Telescope --
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+  },
+  {
     "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("plugins.telescope")
     end,
-  }
+  },
 
-  -- svelte --
-  use { "burner/vim-svelte" }
+  -- Svelte --
+  { "burner/vim-svelte" },
 
-  -- flutter --
-  use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- Flutter --
+  {
+    "akinsho/flutter-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
-  -- git --
-  use {
+  -- Git --
+  {
     "lewis6991/gitsigns.nvim",
     config = function()
       require("plugins.git")
     end,
-  }
+  },
 
-  -- quality of life --
-  use { "unblevable/quick-scope" }
-  use { "tmux-plugins/vim-tmux-focus-events" }
-  use { "tpope/vim-surround" }
-  use { "jiangmiao/auto-pairs" }
+  -- Quality of life --
+  { "unblevable/quick-scope" },
+  { "tmux-plugins/vim-tmux-focus-events" },
+  { "tpope/vim-surround" },
+  { "jiangmiao/auto-pairs" },
+  { "terryma/vim-multiple-cursors" },
+  { "tomtom/tcomment_vim" },
+  { "junegunn/vim-slash" },
 
-  -- use C-n to toggle vim-multiple-cursors
-  use { "terryma/vim-multiple-cursors" }
-  use { "tomtom/tcomment_vim" }
-
-  -- removes search highlighting after cursor moves --
-  use { "junegunn/vim-slash" }
-
-  -- file explorer --
-  use {
-    'nvim-tree/nvim-tree.lua',
+  -- File explorer --
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("plugins.nvimtree")
-    end
-  }
+    end,
+  },
 
-  use { 'kyazdani42/nvim-web-devicons' }
-
-  -- supermaven --
-  use {
+  -- AI completion --
+  {
     "supermaven-inc/supermaven-nvim",
     config = function()
       require("supermaven-nvim").setup({})
     end,
-  }
+  },
 
-  -- zen mode --
-  use {
+  -- Zen mode --
+  {
     "folke/zen-mode.nvim",
     opts = {
       plugins = {
         kitty = {
           enabled = true,
           font = "+2",
-        }
-      }
-    }
-  }
-end)
+        },
+      },
+    },
+  },
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost lua/plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+  -- Shared utilities --
+  { "nvim-lua/plenary.nvim" },
+
+})
