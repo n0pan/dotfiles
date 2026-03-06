@@ -45,7 +45,15 @@ nmap("<leader>ss", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
 nmap("<leader>bf", "<cmd>lua require('telescope.builtin').buffers()<cr>")
 
 -- LSP --
-nmap("<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>")
+local smart_format = function()
+  local ft = vim.bo.filetype
+  if ft == "javascript" or ft == "javascriptreact" or ft == "typescript" or ft == "typescriptreact" then
+    vim.cmd("Prettier")
+  else
+    vim.lsp.buf.format()
+  end
+end
+nmap("<leader>f", smart_format)
 nmap("<leader>gd", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 nmap("<leader>jd", "<cmd>lua vim.lsp.buf.definition()<cr>")
 nmap("<leader>td", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
