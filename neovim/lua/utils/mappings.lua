@@ -6,6 +6,10 @@ local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, options)
 end
 
+local function xmap(shortcut, command)
+  map("x", shortcut, command)
+end
+
 local function nmap(shortcut, command)
   map("n", shortcut, command)
 end
@@ -32,5 +36,6 @@ mapping_commands.imap = imap
 mapping_commands.vmap = vmap
 mapping_commands.cmap = cmap
 mapping_commands.tmap = tmap
+mapping_commands.xmap = xmap
 
 return mapping_commands
