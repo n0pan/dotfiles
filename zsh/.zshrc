@@ -162,3 +162,4 @@ alias claude="/Users/lq/.claude/local/claude"
 
 # opencode
 export PATH=/Users/lq/.opencode/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
