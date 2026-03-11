@@ -16,6 +16,7 @@ fi
 
 export TERM="xterm-256color"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 export EDITOR='nvim'
@@ -149,9 +150,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -162,4 +160,9 @@ alias claude="/Users/lq/.claude/local/claude"
 
 # opencode
 export PATH=/Users/lq/.opencode/bin:$PATH
-export PATH="/opt/homebrew/bin:$PATH"
+
+# Plugins — must be sourced last; zsh-syntax-highlighting must be final
+HOMEBREW_PREFIX=$(brew --prefix)
+source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
