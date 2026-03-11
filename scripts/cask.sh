@@ -45,10 +45,8 @@ echo "Installing Tools..."
 brew install --cask bartender
 brew install --cask rocket
 brew install --cask authy
-brew install --cask fantastical
 brew install --cask flycut
 brew install --cask betterdisplay
-brew install --cask scroll-reverser
 brew install --cask bettermouse
 
 echo "Installing App Store apps"
