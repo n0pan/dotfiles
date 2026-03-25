@@ -9,8 +9,8 @@
 defaults delete .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically > /dev/null 2>&1
 defaults write .GlobalPreferences AppleInterfaceStyle -string "Dark"
 
-### set system accent color to red
-defaults write .GlobalPreferences AppleAccentColor -int 0
+### unset accent color (multicolor)
+defaults delete .GlobalPreferences AppleAccentColor 2>/dev/null || true
 
 ### set highlight color to red
 defaults write .GlobalPreferences AppleHighlightColor -string "1.000000 0.733333 0.721569 Red"
@@ -27,7 +27,7 @@ defaults -currentHost write com.apple.coreservices.useractivityd.plist ActivityA
 ## dock & menu bar
 
 ### set dock size
-defaults write com.apple.dock tilesize -int 20
+defaults write com.apple.dock tilesize -int 65
 
 ### remove magnification
 defaults delete com.apple.dock magnification
@@ -44,8 +44,8 @@ defaults write com.apple.dock autohide -bool true
 ### don't show recent applications in dock
 defaults write com.apple.dock show-recents -bool false
 
-### automatically hide/show the menu bar
-defaults write .GlobalPreferences _HIHideMenuBar -bool true
+### don't automatically hide/show the menu bar
+defaults write .GlobalPreferences _HIHideMenuBar -bool false
 
 # ----------------------------------------------------------
 
@@ -60,15 +60,15 @@ defaults write .GlobalPreferences AppleSpacesSwitchOnActivate -bool true
 ### don't group windows by application
 defaults write com.apple.dock expose-group-apps -bool false
 
-### displays have separate spaces
-defaults write com.apple.spaces spans-displays -bool true
+### displays share spaces
+defaults write com.apple.spaces spans-displays -bool false
 
 # ----------------------------------------------------------
 
 ## siri
 
-### disable siri
-defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false
+### enable siri
+defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool true
 
 # ----------------------------------------------------------
 
@@ -92,7 +92,7 @@ defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"
 ## keyboard
 
 ### set key repeat to fastest
-defaults write .GlobalPreferences InitialKeyRepeat -int 15
+defaults write .GlobalPreferences InitialKeyRepeat -int 12
 
 ### set delay until repeat to fastest
 defaults write .GlobalPreferences KeyRepeat -int 2

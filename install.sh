@@ -17,7 +17,6 @@ source ./scripts/links.sh
 source ./scripts/etc.sh
 source ./tmuxinator/install.sh
 source ./fonts/install.sh
-source ./wallpapers/install.sh
 source ./gitconfig/install.sh
 source ./mac/macos.sh
 
