@@ -9,7 +9,6 @@ alias vim="nvim"
 alias top="vtop"
 alias reload-zsh="source ~/.zshrc"
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-alias claude="/Users/lq/.claude/local/claude"
 
 # directory hashes
 hash -d lq=~/dev/long-quan

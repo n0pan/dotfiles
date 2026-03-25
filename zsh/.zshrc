@@ -53,3 +53,8 @@ HOMEBREW_PREFIX=$(brew --prefix)
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source ~/dotfiles/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/lq/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

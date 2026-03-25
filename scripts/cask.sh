@@ -29,6 +29,7 @@ brew install --cask rectangle
 echo "Installing Communication..."
 brew install --cask slack
 brew install --cask whatsapp
+brew install --cask signal
 
 # Terminal
 echo "Installing Terminal..."

@@ -28,6 +28,7 @@ brew install n
 brew install openjdk
 brew install go
 brew install awscli
+brew install yarn
 
 # Terminal / editor
 echo "Installing terminal tools..."
