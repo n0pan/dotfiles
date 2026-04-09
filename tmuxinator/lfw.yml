@@ -1,0 +1,7 @@
+name: lfw
+root: ~/dev/lfw.app
+
+windows:
+  - server: yarn
+  - claude: claude
+  - editor: vim
