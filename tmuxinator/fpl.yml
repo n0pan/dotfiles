@@ -1,11 +1,9 @@
 # /Users/lq/.config/tmuxinator/fpl.yml
 
 name: fpl
-root: ~/dev/floating-point-labs
+root: ~/dev/floating-point-labs/floatingpointlabs.github.io
 
 windows:
-  - server: bundle exec rails s
-  - editor:
-      layout: main-vertical
-      panes:
-        - vim
+  - server: npm run dev
+  - claude: claude
+  - editor: vim
