@@ -1,0 +1,12 @@
+# /Users/lq/.config/tmuxinator/taiga.yml
+
+name: taiga
+root: ~/dev/taiga
+tmux_options: -f ~/dotfiles/workfiles/.tmux.taiga.conf
+
+windows:
+  - server: 
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
