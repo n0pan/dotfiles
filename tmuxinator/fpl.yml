@@ -2,6 +2,7 @@
 
 name: fpl
 root: ~/dev/floating-point-labs/floatingpointlabs.github.io
+tmux_options: -f ~/dotfiles/workfiles/.tmux.fpl.conf
 
 windows:
   - server: npm run dev
