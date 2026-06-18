@@ -1,11 +1,14 @@
 # /Users/lq/.config/tmuxinator/taiga.yml
 
 name: taiga
+session_name: taiga
 root: ~/dev/taiga
-tmux_options: -f ~/dotfiles/workfiles/.tmux.taiga.conf
+pre_window: tmux source ~/dotfiles/workfiles/.tmux.taiga.conf
 
 windows:
-  - server: 
+  - server: cd dash-hmi-web && yarn dev
+  - claude: claude
+  - dash: ssh dash-home
   - editor:
       layout: main-vertical
       panes:
