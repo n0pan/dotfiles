@@ -17,6 +17,7 @@
   b = branch
   s = status
   up = pull --rebase --autostash
+	tree = log --graph --oneline --all
 [branch]
   autosetuprebase = always
 [commit]
