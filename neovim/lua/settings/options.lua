@@ -21,6 +21,9 @@ local options = {
   -- display --
   synmaxcol = 128,
   termguicolors = true,
+  -- tmux's synchronized-output buffering drops frames (blank floats until
+  -- a forced repaint), so don't emit sync markers
+  termsync = false,
   -- line numbers --
   rnu = true,
   nu = true,
