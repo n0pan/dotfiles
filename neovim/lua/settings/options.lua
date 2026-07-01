@@ -9,7 +9,6 @@ local options = {
   hlsearch = true,
   undolevels = 1000,
   history = 1000,
-  lazyredraw = true,
   clipboard = "unnamedplus",
   shiftwidth = 2,
   tabstop = 2,
