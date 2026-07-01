@@ -5,7 +5,8 @@ export PATH="/bin:$PATH"
 export PATH="/usr/local/opt/docker-virtualbox/bin:$PATH"
 
 # Shell
-export TERM="xterm-256color"
+# don't clobber TERM inside tmux — tmux sets tmux-256color itself
+[ -z "$TMUX" ] && export TERM="xterm-256color"
 export EDITOR='nvim'
 
 # oh-my-zsh
