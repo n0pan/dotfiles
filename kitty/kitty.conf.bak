@@ -1,12 +1,6 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 # vim:ft=kitty
 
-## name:     Catppuccin Kitty Mocha
-## author:   Catppuccin Org
-## license:  MIT
-## upstream: https://github.com/catppuccin/kitty/blob/main/mocha.conf
-## blurb:    Soothing pastel theme for the high-spirited!
-
 # : Terminal {{{
 shell_integration   disabled
 #: }}}
@@ -61,13 +55,12 @@ map kitty_mod+enter    toggle_fullscreen
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Atelier Forest Dark
+# Kanagawa_dragon
 include current-theme.conf
 # END_KITTY_THEME
 
 # OS Window titlebar colors
 # wayland_titlebar_color system
-# macos_titlebar_color #191D24
 # macos_titlebar_color #1E222A
 
 tab_bar_edge                bottom
