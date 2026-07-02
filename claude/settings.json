@@ -1,0 +1,46 @@
+{
+  "model": "opus",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "s=$(jq -r \".session_id // empty\" 2>/dev/null); [ -n \"$s\" ] && touch \"${TMPDIR:-/tmp}/claude-review-pending-$s\" 2>/dev/null; true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "input=$(cat); s=$(printf \"%s\" \"$input\" | jq -r \".session_id // empty\"); active=$(printf \"%s\" \"$input\" | jq -r \".stop_hook_active // false\"); marker=\"${TMPDIR:-/tmp}/claude-review-pending-$s\"; if [ \"$active\" = \"true\" ]; then rm -f \"$marker\"; exit 0; fi; if [ -f \"$marker\" ]; then rm -f \"$marker\"; jq -n --arg r \"This turn changed files. Before stopping, review ONLY this turn's changes (run git diff for tracked files and check any new/untracked files) for correctness bugs and clear simplification/optimization wins. Apply low-risk fixes directly and briefly report anything riskier; keep it proportional to the change. Use the code-review or simplify skill if helpful, then stop.\" '{decision:\"block\",reason:$r}'; fi; exit 0",
+            "statusMessage": "Reviewing changes…"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "supabase@claude-plugins-official": false
+  },
+  "extraKnownMarketplaces": {
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
+    }
+  },
+  "theme": "custom:kanso",
+  "verbose": true,
+  "skipAutoPermissionPrompt": true
+}
