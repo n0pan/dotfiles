@@ -42,13 +42,23 @@ require("lazy").setup({
   { "L3MON4D3/LuaSnip" },
 
   -- Colorscheme --
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   name = "kanagawa",
+  --   priority = 1000,
+  --   config = function()
+  --     require("settings.colorscheme")
+  --     vim.cmd([[ colorscheme kanagawa ]])
+  --   end,
+  -- },
+
   {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
+    "webhooked/kanso.nvim",
+    lazy = false,
     priority = 1000,
     config = function()
       require("settings.colorscheme")
-      vim.cmd([[ colorscheme kanagawa ]])
+      vim.cmd([[ colorscheme kanso ]])
     end,
   },
 
@@ -167,6 +177,15 @@ require("lazy").setup({
         },
       },
     },
+  },
+
+  {
+    "nvim-mini/mini.nvim",
+    version = false,
+    config = function()
+      require("mini.starter").setup({})
+      require("mini.git").setup({})
+    end,
   },
 
   -- Shared utilities --
