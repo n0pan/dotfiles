@@ -184,11 +184,27 @@ require("lazy").setup({
     version = false,
     config = function()
       require("mini.starter").setup({})
-      require("mini.git").setup({})
     end,
   },
 
   -- Shared utilities --
   { "nvim-lua/plenary.nvim" },
+
+  -- nvim v0.8.0
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
 
 })

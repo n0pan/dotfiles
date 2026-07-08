@@ -19,6 +19,7 @@ brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
 echo "Installing Git..."
 brew install git
 brew install gh
+brew install lazygit
 
 # Languages / runtimes
 echo "Installing languages and runtimes..."

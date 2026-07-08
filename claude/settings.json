@@ -40,7 +40,12 @@
       }
     }
   },
+  "tui": "fullscreen",
   "theme": "custom:kanso",
+  "editorMode": "normal",
   "verbose": true,
-  "skipAutoPermissionPrompt": true
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "autoUpdatesChannel": "latest"
 }
