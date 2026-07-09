@@ -5,6 +5,6 @@ root: ~/dev/floating-point-labs/floatingpointlabs.github.io
 pre_window: tmux source ~/dotfiles/workfiles/.tmux.fpl.conf
 
 windows:
-  - server: npm run dev
+  - server: pnpm run dev
   - claude: claude
   - editor: vim

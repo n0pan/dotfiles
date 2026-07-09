@@ -190,7 +190,6 @@ require("lazy").setup({
   -- Shared utilities --
   { "nvim-lua/plenary.nvim" },
 
-  -- nvim v0.8.0
   {
     "kdheepak/lazygit.nvim",
     lazy = true,
@@ -205,6 +204,12 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-  }
+  },
 
+  {
+    "sphamba/smear-cursor.nvim",
+    config = function()
+      require("plugins.smear")
+    end,
+  }
 })
