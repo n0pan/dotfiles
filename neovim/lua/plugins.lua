@@ -42,16 +42,6 @@ require("lazy").setup({
   { "L3MON4D3/LuaSnip" },
 
   -- Colorscheme --
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   name = "kanagawa",
-  --   priority = 1000,
-  --   config = function()
-  --     require("settings.colorscheme")
-  --     vim.cmd([[ colorscheme kanagawa ]])
-  --   end,
-  -- },
-
   {
     "webhooked/kanso.nvim",
     lazy = false,
@@ -143,10 +133,6 @@ require("lazy").setup({
   -- Quality of life --
   { "unblevable/quick-scope" },
   { "tmux-plugins/vim-tmux-focus-events" },
-  { "tpope/vim-surround" },
-  { "jiangmiao/auto-pairs" },
-  { "mg979/vim-visual-multi" },
-  { "tomtom/tcomment_vim" },
   { "junegunn/vim-slash" },
 
   -- File explorer --
@@ -184,6 +170,12 @@ require("lazy").setup({
     version = false,
     config = function()
       require("mini.starter").setup({})
+      require("mini.comment").setup({})
+      require("mini.surround").setup({})
+      require("mini.indentscope").setup({})
+      require("mini.pairs").setup({})
+      require("mini.move").setup({})
+      require("mini.hipatterns").setup({})
     end,
   },
 
