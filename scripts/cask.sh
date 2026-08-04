@@ -57,7 +57,7 @@ brew install --cask betterdisplay
 brew install --cask bettermouse
 
 echo "Installing App Store apps"
-mas install 1289197285  # MindNode
+mas install 1289197285  # MindNode Classic
 mas install 975937182   # Fantastical
 mas install 966085870   # TickTick
 mas install 1176895641  # Spark
