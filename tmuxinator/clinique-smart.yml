@@ -5,5 +5,5 @@ root: ~/dev/clinique-smart
 
 windows:
   - server: yarn dev
-  - opencode: opencode
+  - claude: claude
   - editor: vim
