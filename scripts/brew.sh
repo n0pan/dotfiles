@@ -28,8 +28,13 @@ brew install node
 brew install n
 brew install openjdk
 brew install go
+brew install deno
 brew install awscli
+brew install azure-cli
 brew install yarn
+brew install pnpm
+brew install uv
+brew install cocoapods
 
 # Terminal / editor
 echo "Installing terminal tools..."
@@ -54,7 +59,12 @@ brew install fzf
 brew install pyenv
 brew install glab
 brew install tmate
-brew install vtop
+brew install direnv
+
+# Containers / infra
+echo "Installing container and infra tools..."
+brew install colima
+brew install pulumi/tap/pulumi
 
 brew cleanup
 

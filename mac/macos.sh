@@ -102,6 +102,11 @@ defaults write .GlobalPreferences AppleICUForce12HourTime -bool false
 ### set temperature to celsius
 defaults write .GlobalPreferences AppleTemperatureUnit -string "Celsius"
 
+### menu bar clock: show the day, flash the time separators, no seconds
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
+defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
+defaults write com.apple.menuextra.clock ShowSeconds -bool false
+
 # ----------------------------------------------------------
 
 ## keyboard
