@@ -28,8 +28,13 @@ brew install node
 brew install n
 brew install openjdk
 brew install go
+brew install deno
 brew install awscli
+brew install azure-cli
 brew install yarn
+brew install pnpm
+brew install uv
+brew install cocoapods
 
 # Terminal / editor
 echo "Installing terminal tools..."
@@ -37,6 +42,9 @@ brew install cmake
 brew install luarocks
 brew install pkgconf
 brew install neovim
+# 2026-07-07: 3.7 shipped a TUI render regression and a tmux@3.6b pin was built
+# in a private lq/local tap. The pin was keg-only so it never linked, 3.7b has
+# been in use ever since, and the tap has been removed. Track core again.
 brew install tmux
 brew install the_silver_searcher
 brew install docker-compose
@@ -54,7 +62,12 @@ brew install fzf
 brew install pyenv
 brew install glab
 brew install tmate
-brew install vtop
+brew install direnv
+
+# Containers / infra
+echo "Installing container and infra tools..."
+brew install colima
+brew install pulumi/tap/pulumi
 
 brew cleanup
 
