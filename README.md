@@ -1,5 +1,6 @@
 # dotfiles
-![image](https://user-images.githubusercontent.com/5914327/213944947-3497dabf-efe1-4805-98c1-0a8a73c971bd.png)
+<img width="1270" height="929" alt="image" src="https://github.com/user-attachments/assets/4429320c-a2cf-4e14-8695-cb8695e4867d" />
+
 
 ## Installation
 
