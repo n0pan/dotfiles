@@ -21,12 +21,12 @@
   "modules": [
     { "type": "custom", "format": "\u001b[1m┌───────── Hardware Information ─────────┐\u001b[0m" },
 
-    { "type": "host",         "key": " ​ ​  " },
-    { "type": "cpu",          "key": " ​ ​  ", "format": "{name}" },
-    { "type": "gpu",          "key": " ​ ​ ﬙ ", "format": "{name}" },
-    { "type": "disk",         "key": " ​ ​  ", "folders": "/", "format": "{size-used} / {size-total} ({size-percentage})" },
-    { "type": "memory",       "key": " ​ ​ 塞" },
-    { "type": "display",      "key": " ​ ​  ", "format": "{width}x{height} @ {refresh-rate} Hz" },
+    { "type": "host",         "key": " ​ ​ 󰌢 " },
+    { "type": "cpu",          "key": " ​ ​ 󰱛 ", "format": "{name}" },
+    { "type": "gpu",          "key": " ​ ​ 󰾲 ", "format": "{name}" },
+    { "type": "disk",         "key": " ​ ​ 󰋊 ", "folders": "/", "format": "{size-used} / {size-total} ({size-percentage})" },
+    { "type": "memory",       "key": " ​ ​ 󰍛 " },
+    { "type": "display",      "key": " ​ ​ 󰍹 ", "format": "{width}x{height} @ {refresh-rate} Hz" },
     { "type": "battery",      "key": " ​ ​ 󱈑 " },
 
     { "type": "custom", "format": "\u001b[1m├───────── Software Information ─────────┤\u001b[0m" },
@@ -37,7 +37,7 @@
     { "type": "shell",        "key": " ​ ​  " },
     { "type": "terminal",     "key": " ​ ​  " },
     { "type": "terminalfont", "key": " ​ ​  " },
-    { "type": "packages",     "key": " ​ ​  " },
+    { "type": "packages",     "key": " ​ ​ 󰏖 " },
     { "type": "uptime",       "key": " ​ ​ 󰅐 " },
     { "type": "localip",      "key": " ​ ​  ", "showPrefixLen": false },
 
