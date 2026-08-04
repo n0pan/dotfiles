@@ -42,6 +42,9 @@ brew install cmake
 brew install luarocks
 brew install pkgconf
 brew install neovim
+# 2026-07-07: 3.7 shipped a TUI render regression and a tmux@3.6b pin was built
+# in a private lq/local tap. The pin was keg-only so it never linked, 3.7b has
+# been in use ever since, and the tap has been removed. Track core again.
 brew install tmux
 brew install the_silver_searcher
 brew install docker-compose
