@@ -47,7 +47,7 @@ brew install ripgrep
 # Utilities
 echo "Installing utilities..."
 brew install mas
-brew install neofetch
+brew install fastfetch
 brew install fontforge
 brew install anomalyco/tap/opencode
 brew install fzf

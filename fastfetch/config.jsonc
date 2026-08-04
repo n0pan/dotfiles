@@ -1,0 +1,47 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  // Ported from the neofetch "chick2d" theme (github.com/chick2d/neofetch-themes).
+  // Keys are Nerd Font glyphs indented with zero-width spaces, exactly as the
+  // original `info " <icon> "` calls were written.
+
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/logo.txt",
+    "color": { "1": "blue" },
+    "padding": { "right": 2 }
+  },
+
+  "display": {
+    "separator": "  ",
+    "color": { "keys": "1;33" },
+    "percent": { "type": 9 }
+  },
+
+  "modules": [
+    { "type": "custom", "format": "\u001b[1m┌───────── Hardware Information ─────────┐\u001b[0m" },
+
+    { "type": "host",         "key": " ​ ​  " },
+    { "type": "cpu",          "key": " ​ ​  ", "format": "{name}" },
+    { "type": "gpu",          "key": " ​ ​ ﬙ ", "format": "{name}" },
+    { "type": "disk",         "key": " ​ ​  ", "folders": "/", "format": "{size-used} / {size-total} ({size-percentage})" },
+    { "type": "memory",       "key": " ​ ​ 塞" },
+    { "type": "display",      "key": " ​ ​  ", "format": "{width}x{height} @ {refresh-rate} Hz" },
+    { "type": "battery",      "key": " ​ ​ 󱈑 " },
+
+    { "type": "custom", "format": "\u001b[1m├───────── Software Information ─────────┤\u001b[0m" },
+
+    { "type": "os",           "key": " ​ ​  ", "format": "{name} {codename} {version} ({build-id})" },
+    { "type": "kernel",       "key": " ​ ​  ", "format": "{release}" },
+    { "type": "wm",           "key": " ​ ​  " },
+    { "type": "shell",        "key": " ​ ​  " },
+    { "type": "terminal",     "key": " ​ ​  " },
+    { "type": "terminalfont", "key": " ​ ​  " },
+    { "type": "packages",     "key": " ​ ​  " },
+    { "type": "uptime",       "key": " ​ ​ 󰅐 " },
+    { "type": "localip",      "key": " ​ ​  ", "showPrefixLen": false },
+
+    { "type": "custom", "format": "\u001b[1m└───────────────────────────────────────┘\u001b[0m" },
+    { "type": "custom", "format": "\u001b[1;37m \u001b[1;31m \u001b[1;32m \u001b[1;33m \u001b[1;34m \u001b[1;35m \u001b[1;36m \u001b[0m\u001b[0m" }
+  ]
+}
