@@ -1,0 +1,3 @@
+Never create git commits on your own initiative, even when running autonomously or in auto/accept-edits mode. Finish the work, run the relevant checks, and leave all changes uncommitted in the working tree — the user reviews diffs and owns the commit boundary. Do not `git add` ahead of time either.
+
+Only commit when the user explicitly asks for a commit in that conversation. When they do, use semantic commit messages: a `type: subject` first line with a lowercase imperative subject, where type is one of `feat`, `fix`, `test`, `refactor`, `chore`, `docs`, `style`, `perf`, `build`, `ci`. Choose the type by the change's primary intent; add a body only when the subject can't carry the why.
