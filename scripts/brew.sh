@@ -60,7 +60,7 @@ brew install fontforge
 brew install anomalyco/tap/opencode
 brew install fzf
 brew install pyenv
-brew install glab
+brew install tea
 brew install tmate
 brew install direnv
 
