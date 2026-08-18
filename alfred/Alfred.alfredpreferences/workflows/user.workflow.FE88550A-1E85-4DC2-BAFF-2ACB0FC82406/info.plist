@@ -1713,9 +1713,37 @@ https://github.com/caleb531/play-song#readme</string>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>defaultvalue</key>
+				<integer>15</integer>
+				<key>markercount</key>
+				<integer>30</integer>
+				<key>maxvalue</key>
+				<integer>150</integer>
+				<key>minvalue</key>
+				<integer>5</integer>
+				<key>onlystoponmarkers</key>
+				<true/>
+				<key>showmarkers</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Maximum number of songs, albums, etc. to show in Alfred. 
+
+Run the clearcache action afterwards for changes to take effect.</string>
+			<key>label</key>
+			<string>Result Limit</string>
+			<key>type</key>
+			<string>slider</string>
+			<key>variable</key>
+			<string>result_limit</string>
+		</dict>
+	</array>
 	<key>version</key>
-	<string>9.3.0</string>
+	<string>9.6.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/caleb531/play-song</string>
 </dict>

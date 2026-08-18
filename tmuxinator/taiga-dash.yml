@@ -1,7 +1,7 @@
 # /Users/lq/.config/tmuxinator/taiga.yml
 
-name: taiga
-session_name: taiga
+name: taiga-dash
+session_name: taiga-dash
 root: ~/dev/taiga
 pre_window: tmux source ~/dotfiles/workfiles/.tmux.taiga.conf
 

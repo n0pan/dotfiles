@@ -1,0 +1,14 @@
+# /Users/lq/.config/tmuxinator/taiga-mobile.yml
+
+name: taiga-mobile
+session_name: taiga-mobile
+root: ~/dev/taiga/app_native
+pre_window: tmux source ~/dotfiles/workfiles/.tmux.taiga.conf
+
+windows:
+  - server: flutter run --dart-define-from-file=.taiga.stage.env --flavor=taiga lib/main_taiga.dart
+  - claude: claude
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim

@@ -2,8 +2,8 @@
 
 -- configurable options --
 
--- limit number of songs to improve efficiency
-property resultLimit : 15
+-- dynamic limit of result items (defaulted to 15, the original value, in workflow configuration)
+property resultLimit : (system attribute "result_limit") as number
 -- whether or not to retrieve/display album artwork for each result
 property albumArtEnabled : true
 
@@ -189,7 +189,7 @@ on getResultListFeedback(query)
 	end repeat
 
 	-- remove trailing comma after last item
-	set json to text 1 thru (length of json - 1) of json
+	if last character of json is "," then set json to text 1 thru (length of json - 1) of json
 	set json to json & "]}"
 	return json
 
@@ -207,7 +207,7 @@ on getSongArtworkPath(theSong)
 			-- get persistent ID of song and use it to fetch album artwork
 			set songId to persistent ID of theSong
 			-- the base path to the artwork file (without extension)
-			set artworkPath to (do shell script "./resources/get-song-artwork-path.sh" & space & songId & space & defaultIconName)
+			set artworkPath to (do shell script "sh ./resources/get-song-artwork-path.sh" & space & songId & space & defaultIconName)
 
 		end tell
 
@@ -317,24 +317,20 @@ end getGenreSongs
 -- retrieves list of album names for the given artist
 on getArtistAlbums(artistName)
 
-    tell application "Music"
+	tell application "Music"
 
-        set artistSongs to every track of playlist 2 whose artist is artistName
-        set albumNames to {}
+		-- Get songs where any of the three fields match
+		set artistSongs to every track of playlist 2 whose artist is artistName or composer is artistName or album artist is artistName
+		set albumNames to {}
 
-        repeat with theSong in artistSongs
+		repeat with theSong in artistSongs
+			if (album of theSong) is not in albumNames then
+				set albumNames to albumNames & (album of theSong)
+			end if
+		end repeat
+	end tell
 
-            if (album of theSong) is not in albumNames then
-
-                set albumNames to albumNames & (album of theSong)
-
-            end if
-
-        end repeat
-
-    end tell
-
-    return albumNames
+	return albumNames
 
 end getArtistAlbums
 
@@ -343,7 +339,8 @@ on getArtistSongs(artistName)
 
 	tell application "Music"
 
-		set artistSongs to every track of playlist 2 whose artist is artistName
+		-- Get songs where any of the three fields match
+		set artistSongs to every track of playlist 2 whose artist is artistName or composer is artistName or album artist is artistName
 
 	end tell
 
@@ -351,7 +348,7 @@ on getArtistSongs(artistName)
 
 end getArtistSongs
 
--- retrieves list of songs in the given album
+-- retrieves list of songs in the given album, sorted by disc and track number
 on getAlbumSongs(albumName)
 
 	tell application "Music"
@@ -360,9 +357,70 @@ on getAlbumSongs(albumName)
 
 	end tell
 
-	return albumSongs
+	-- Sort tracks by disc number first, then track number
+	return sortTracksByDiscAndTrack(albumSongs)
 
 end getAlbumSongs
+
+-- sorts tracks by disc number first, then track number for proper album order
+on sortTracksByDiscAndTrack(trackList)
+
+	if length of trackList ≤ 1 then return trackList
+
+	script TrackSorter
+		on isLessThan(track1, track2)
+			tell application "Music"
+				set disc1 to disc number of track1
+				set disc2 to disc number of track2
+				set trackNum1 to track number of track1
+				set trackNum2 to track number of track2
+
+				-- Handle missing disc numbers (treat as disc 1)
+				if disc1 is missing value then set disc1 to 1
+				if disc2 is missing value then set disc2 to 1
+
+				-- Handle missing track numbers (treat as track 0)
+				if trackNum1 is missing value then set trackNum1 to 0
+				if trackNum2 is missing value then set trackNum2 to 0
+
+				-- Sort by disc number first
+				if disc1 < disc2 then
+					return true
+				else if disc1 > disc2 then
+					return false
+				else
+					-- Same disc, sort by track number
+					return trackNum1 < trackNum2
+				end if
+			end tell
+		end isLessThan
+	end script
+
+	return quickSortTracks(trackList, TrackSorter)
+
+end sortTracksByDiscAndTrack
+
+-- quick sort implementation for AppleScript
+on quickSortTracks(theList, comparisonScript)
+
+	if length of theList ≤ 1 then return theList
+
+	set pivot to item 1 of theList
+	set lessItems to {}
+	set greaterItems to {}
+
+	repeat with i from 2 to length of theList
+		set currentItem to item i of theList
+		if comparisonScript's isLessThan(currentItem, pivot) then
+			set lessItems to lessItems & {currentItem}
+		else
+			set greaterItems to greaterItems & {currentItem}
+		end if
+	end repeat
+
+	return (quickSortTracks(lessItems, comparisonScript)) & {pivot} & (quickSortTracks(greaterItems, comparisonScript))
+
+end quickSortTracks
 
 -- retrieves the song with the given ID
 on getSong(songId)
@@ -380,81 +438,101 @@ end getSong
 -- retrieves a list of objects or names matching the given query and type
 on getResultsFromQuery(query, queryType)
 
-	set evalScript to run script "
-	script
+	-- Special handling for artist queries to search across multiple fields
+	if queryType is "artist" then
+		set evalScript to run script "
+		script
+			on findResults(query, resultLimit)
+				tell application \"Music\"
+					-- Get all songs where any of the three fields contain the query
+					set theSongs to (get every track in playlist 2 whose artist contains query)
+					set theSongs to theSongs & (get every track in playlist 2 whose composer contains query)
+					set theSongs to theSongs & (get every track in playlist 2 whose album artist contains query)
 
-		on findResults(query, queryType, resultLimit)
-
-			tell application \"Music\"
-
-				set theSongs to (get every track in playlist 2 whose " & queryType & " starts with query)
-
-				if length of theSongs < resultLimit then
-
-					set theSongs to theSongs & (get every track in playlist 2 whose " & queryType & " contains (space & query) and " & queryType & " does not start with query)
-
-				end if
-
-				if length of theSongs < resultLimit then
-
-					set theSongs to theSongs & (get every track in playlist 2 whose " & queryType & " contains query and " & queryType & " does not start with query and " & queryType & " does not contain (space & query))
-
-				end if
-
-				if length of theSongs is 0 then
-
-					if queryType is \"name\" then
-
-						set theSongs to theSongs & (search playlist 2 for query only songs)
-
-					else if queryType is not \"genre\" then
-
-						set theSongs to theSongs & (search playlist 2 for query only " & queryType & "s)
-
-					end if
-
-				end if
-
-				if queryType is \"name\" then
-
-					if length of theSongs > resultLimit then
-
-						set theSongs to items 1 thru resultLimit of theSongs
-
-					end if
-
-					set theResults to theSongs
-
-				else
-
+					-- Extract unique artist, composer, and album artist values that contain the query
 					set theResults to {}
 
 					repeat with theSong in theSongs
-
 						if length of theResults is resultLimit then exit repeat
 
-						set theResult to " & queryType & " of theSong
+						-- Check artist field
+						set artistValue to artist of theSong
+						if artistValue contains query and artistValue is not in theResults and artistValue is not \"\" then
+							set theResults to theResults & artistValue
+						end if
 
-						if theResult is not in theResults then
+						-- Check composer field
+						set composerValue to composer of theSong
+						if composerValue contains query and composerValue is not in theResults and composerValue is not \"\" then
+							set theResults to theResults & composerValue
+						end if
 
-							set theResults to theResults & theResult
+						-- Check album artist field
+						set albumArtistValue to album artist of theSong
+						if albumArtistValue contains query and albumArtistValue is not in theResults and albumArtistValue is not \"\" then
+							set theResults to theResults & albumArtistValue
+						end if
+					end repeat
+				end tell
+
+				return theResults
+			end findResults
+		end script
+		"
+
+		return evalScript's findResults(query, resultLimit)
+	else
+		-- Original implementation for other query types
+		set evalScript to run script "
+		script
+			on findResults(query, queryType, resultLimit)
+
+				tell application \"Music\"
+
+					set theSongs to (get every track in playlist 2 whose " & queryType & " contains query)
+
+					if queryType is \"name\" then
+
+						if length of theSongs > resultLimit then
+
+							set theSongs to items 1 thru resultLimit of theSongs
 
 						end if
 
-					end repeat
+						set theResults to theSongs
 
-				end if
+					else
 
-			end tell
+						set theResults to {}
 
-			return theResults
+						repeat with theSong in theSongs
 
-		end findResults
+							if length of theResults is resultLimit then exit repeat
 
-	end script
-	"
+							set theResult to " & queryType & " of theSong
 
-	evalScript's findResults(query, queryType, resultLimit)
+							if theResult is not in theResults then
+
+								set theResults to theResults & theResult
+
+							end if
+
+						end repeat
+
+					end if
+
+				end tell
+
+				return theResults
+
+			end findResults
+
+		end script
+		"
+
+		return evalScript's findResults(query, queryType, resultLimit)
+
+	end if
 
 end getResultsFromQuery
 
