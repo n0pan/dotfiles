@@ -1,5 +1,8 @@
 {
-  "model": "opus",
+  "attribution": {
+    "commit": ""
+  },
+  "model": "opus[1m]",
   "hooks": {
     "PostToolUse": [
       {
@@ -30,13 +33,20 @@
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
-    "supabase@claude-plugins-official": false
+    "supabase@claude-plugins-official": false,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "impeccable": {
       "source": {
         "source": "github",
         "repo": "pbakaus/impeccable"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       }
     }
   },
@@ -47,8 +57,5 @@
   "verbose": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "attribution": {
-    "commit": ""
-  }
+  "skipAutoPermissionPrompt": true
 }

@@ -9,10 +9,11 @@ else
 fi
 
 echo "linking claude code configuration"
-mkdir -p ~/.claude/themes ~/.claude/rules
+mkdir -p ~/.claude/themes ~/.claude/rules ~/.claude/skills
 ln -sf ~/dotfiles/claude/settings.json ~/.claude/settings.json
 ln -sf ~/dotfiles/claude/statusline.sh ~/.claude/statusline.sh
 ln -sf ~/dotfiles/claude/themes/kanso.json ~/.claude/themes/kanso.json
-ln -sf ~/dotfiles/claude/rules/context7.md ~/.claude/rules/context7.md
-ln -sf ~/dotfiles/claude/rules/git-commits.md ~/.claude/rules/git-commits.md
+ln -sf ~/dotfiles/claude/rules/*.md ~/.claude/rules/
+# -sfn, not -sf: skills are directories, and -sf would nest the link inside on re-run
+ln -sfn ~/dotfiles/claude/skills/*/ ~/.claude/skills/
 echo "done!"
