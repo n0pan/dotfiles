@@ -57,5 +57,34 @@
   "verbose": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: Not queryable via gh (remote host gitea.floatingpointlabs.ca is not github.com); repo name `fpl/website` paired with the public marketing README (landing page for floatingpointlabs.ca, hosted on GitHub Pages) indicates this is a public-facing site — treat the deployed output as public, but assume the Gitea repo itself private unless stated otherwise",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured",
+      "**Default / protected branches**: main (default; deploy workflow triggers on push to main per README) — branch protection not queryable (gh unsupported for gitea.floatingpointlabs.ca host)",
+      "**CI/CD deploy targets**: GitHub Pages via `.github/workflows/deploy.yml` (actions/deploy-pages), custom domain floatingpointlabs.ca via public/CNAME",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine or CI runner with open internet",
+      "**Source control**: gitea.floatingpointlabs.ca/fpl/website (origin) only — no additional orgs configured",
+      "**Trusted internal domains**: gitea.floatingpointlabs.ca",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: .env, .env.* (gitignored, excluding .env.example) — any file or store holding personal data, confidential business data, credentials, regulated data, or similarly sensitive material; preserve exact handles when known and share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (Astro-based marketing site for Floating Point Labs)",
+      "**Trusted repo**: gitea.floatingpointlabs.ca/fpl/website (this checkout at /Users/lq/dev/floating-point-labs/website/.claude/worktrees/instrument-redesign) and its origin remote",
+      "**Org-specific CLIs**: None configured",
+      "routine under this repo's src/, public/, and astro.config.mjs — pnpm/astro/npx build & dev commands are routine here"
+    ]
+  }
 }

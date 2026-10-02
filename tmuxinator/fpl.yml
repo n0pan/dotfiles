@@ -1,10 +1,10 @@
 # /Users/lq/.config/tmuxinator/fpl.yml
 
 name: fpl
-root: ~/dev/floating-point-labs/floatingpointlabs.github.io
+root: ~/dev/floating-point-labs
 pre_window: tmux source ~/dotfiles/workfiles/.tmux.fpl.conf
 
 windows:
-  - server: pnpm run dev
+  - server: cd website && pnpm run dev
   - claude: claude
-  - editor: vim
+  - editor: cd website && vim
