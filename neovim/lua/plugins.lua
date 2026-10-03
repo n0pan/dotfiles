@@ -43,14 +43,15 @@ require("lazy").setup({
 
   -- Colorscheme --
   {
-    "webhooked/kanso.nvim",
+    "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
       require("settings.colorscheme")
-      vim.cmd([[ colorscheme kanso ]])
+      vim.cmd.colorscheme "gruvbox"
     end,
   },
+
 
   -- Indent guides --
   {
