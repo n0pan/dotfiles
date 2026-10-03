@@ -52,7 +52,7 @@
   },
   "autoUpdatesChannel": "latest",
   "tui": "fullscreen",
-  "theme": "custom:kanso",
+  "theme": "auto",
   "editorMode": "normal",
   "verbose": true,
   "remoteControlAtStartup": true,
